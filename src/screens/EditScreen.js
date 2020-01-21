@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
+import LoginHOC from '../HOCs/LoginHOC'
 
-export default class EditScreen extends Component {
+class EditScreen extends Component {
 
 // render containers for each field to be edited 
     render() {
@@ -12,3 +13,5 @@ export default class EditScreen extends Component {
     }
 }
 
+
+export default LoginHOC(EditScreen)

@@ -7,14 +7,16 @@ import PortfolioScreen from './screens/PortfolioScreen'
 import './App.css';
 
 
-class App extends Component {
+class App extends React.Component {
 
   constructor(props) {
     super(props)
   
     this.state = {
       loggedIn: false,
-      user: {},
+      user: {
+        email_address: ""
+      },
       skills: [],
       projects: [],
       education: [],
@@ -38,7 +40,7 @@ class App extends Component {
    
           <Route 
             exact path="/" 
-            render={()=> <LoginScreen submitLogin={this.loginHandler}/>}
+            render={()=> <LoginScreen submitLogin={this.loginHandler} user={this.state.user}/>}
           />
           <Route
             path="/edit"
