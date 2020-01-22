@@ -3,11 +3,18 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import LoginScreen from './screens/LoginScreen'
 import EditScreen from './screens/EditScreen'
 import PortfolioScreen from './screens/PortfolioScreen'
-
+import Adapter from './services/Adapter'
 
 import './App.css';
 
-const USERSURL = 'http://localhost:3000/users'
+
+// const USERSURL = 'http://localhost:3000/users'
+// const SKILLSURL = 'http://localhost:3000/skills'
+// const PROJECTSURL = 'http://localhost:3000/projects'
+// const EDUCATIONURL = 'http://localhost:3000/education'
+// const EXPERIENCESURL = 'http://localhost:3000/experiences'
+// const ACCOLADESURL = 'http://localhost:3000/accolades'
+
 
 class App extends React.Component {
 
@@ -53,23 +60,13 @@ class App extends React.Component {
     let body = {
       email_address: this.state.email
     }
-    this.fetchUser(body)
+    let userPromise = Adapter.fetchUser(body)
+    userPromise.then(data => this.updateState(data))
+
     this.toggleLogin()
     
   }
 
-  fetchUser=(body) => {
-    fetch(`${USERSURL}`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      },
-      body: JSON.stringify(body)
-      })
-      .then(res => res.json())
-      .then(data => this.updateState(data))
-  }
 
   updateState = (data) => {
     console.log(data)
@@ -90,7 +87,30 @@ class App extends React.Component {
       email: temp
     })
   }
-  
+
+  addUserInfoHandler =(obj) => {
+    console.log('add user info')
+  }
+
+  addSkillHandler =(obj) => {
+    console.log('add skill')
+  }
+
+  addProjectHandler =(obj) => {
+    console.log('add Project')
+  }
+
+  addEducationHandler =(obj) => {
+    console.log('add Education')
+  }
+
+  addExperienceHandler =(obj) => {
+    console.log('add Experience')
+  }
+
+  addAccoladeHandler =(obj) => {
+    console.log('add Accolade')
+  }
 
 
   render() {
@@ -118,7 +138,13 @@ class App extends React.Component {
                             education={this.state.education}
                             experiences={this.state.experiences}
                             accolades={this.state.accolades}
-                            alternate="/"   
+                            alternate="/"  
+                            addUserInfo={this.addUserInfoHandler}
+                            addSkill={this.addSkillHandler}
+                            addProject={this.addProjectHandler}
+                            addEducation={this.addEducationHandler}
+                            addExperience={this.addExperienceHandler}
+                            addAccolade={this.addAccoladeHandler} 
                           />}
           />
           <Route 
