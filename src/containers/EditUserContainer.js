@@ -29,7 +29,7 @@ export default class EditUserContainer extends Component {
                 Username: {name}<br />
                 Email: {email_address}<br />
                 Portfolio template: {template}<br />
-                background image: <img src={background_url} width='100%'></img>
+                background image: <img src={background_url} width='90%'></img>
                 {console.log("here's what's passed into User container", this.props)}
             </div>
         )
