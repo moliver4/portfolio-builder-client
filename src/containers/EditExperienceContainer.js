@@ -72,7 +72,7 @@ class EditExperienceContainer extends Component {
                 </div>
                 <div>
                     {
-                        isEditing ? <EditExperienceForm experience={this.state.newExperience} onEditForm={this.onEditForm} handleChange={this.handleChange} /> : null 
+                        isEditing ? <EditExperienceForm experience={this.state.newExperience} onEditForm={this.onEditForm} handleChange={this.handleChange} submitNewInfo={this.submitNewInfo} /> : null 
                     }
                 </div>
                 <div>
