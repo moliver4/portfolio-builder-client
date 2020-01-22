@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 
 const EditExperienceForm = props => {
 
@@ -30,7 +30,7 @@ const EditExperienceForm = props => {
             <input type="text" name="end_date" value={end_date}/><br></br>
           </div>
           <div>
-              <button type="submit" onClick={console.log}>Submit</button>
+              <button type="submit" onClick={console.log('submit button clicked')}>Submit</button>
           </div>
         </div>
   
