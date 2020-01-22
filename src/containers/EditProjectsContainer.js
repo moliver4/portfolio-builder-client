@@ -18,9 +18,6 @@ export default class EditProjectsContainer extends Component {
                 languages_used: "",
                 order: 0
         }
-        // this.getThoseCards()
-        // console.log(this.props.userInfo.id)
-        // console.log(this.props.projects)
     }
 
     handleSubmit = (e, id) => {
@@ -75,7 +72,7 @@ export default class EditProjectsContainer extends Component {
     }
 
     handleFormChange = (e) => {
-        console.log(e.target.name)
+        // console.log(e.target.name)
        
         this.setState({
             [e.target.name]: e.target.value
@@ -83,7 +80,7 @@ export default class EditProjectsContainer extends Component {
     }
 
     componentDidUpdate(){
-        console.log(this.state)
+        // console.log(this.state)
     }
 
     changeEditing = (e, cardDetails) => {
