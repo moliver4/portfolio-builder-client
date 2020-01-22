@@ -175,6 +175,10 @@ class App extends React.Component {
         temp = Adapter.editAccolade(obj)
         temp.then(data => this.editObjStateHandler('accolade', data))
         break
+      case 'user':
+        temp = Adapter.editUser(obj)
+        temp.then(data => this.editObjStateHandler('user', data))
+        break
       default:
         console.log('i got nothing, nothing was edited and i cry')
         break
@@ -189,38 +193,46 @@ class App extends React.Component {
           return {
             skills: this.editHelper(prevState.skills, data)
           }
-        }, () => console.log('skill editd') )
+        }, () => console.log('skill edited') )
         break
       case 'project':
         this.setState(prevState=> {
           return {
             projects: this.editHelper(prevState.projects, data)
           }
-        }, () => console.log('project editd') )
+        }, () => console.log('project edited') )
         break
       case 'education':
         this.setState(prevState=> {
           return {
             education: this.editHelper(prevState.education, data)
           }
-        }, () => console.log('education editd') )
+        }, () => console.log('education edited') )
         break
       case 'experience':
         this.setState(prevState=> {
           return {
             experiences: this.editHelper(prevState.experiences, data)
           }
-        }, () => console.log('experience editd') )
+        }, () => console.log('experience edited') )
         break
       case 'accolade':
         this.setState(prevState=> {
           return {
             accolades: this.editHelper(prevState.accolades, data)
           }
-        }, () => console.log('accolade editd') )
+        }, () => console.log('accolade edited') )
+        break
+      case 'user':
+        console.log('updating state of user. It will become this: ', data)
+        this.setState( 
+           {
+            user: data
+          }
+         )
         break
       default:
-        console.log('nothing was editd and everything is broken')
+        console.log('nothing was edited and everything is broken')
         break
     }
   }

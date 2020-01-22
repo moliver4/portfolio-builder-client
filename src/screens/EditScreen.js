@@ -15,11 +15,11 @@ class EditScreen extends Component {
         {console.log("these are the props in Edit Screen", this.props)}
         return (
             <div>
+                <User user={this.props.user} editUserInfo={this.props.editObj}/>
                 <EditProjectsContainer userInfo={this.props.user} addObj={this.props.addObj} deleteObj={this.props.deleteObj} editObj={this.props.editObj} projects={this.props.projects} ></EditProjectsContainer>
                 <EditEducationContainer userInfo={this.props.user} addObj={this.props.addObj} deleteObj={this.props.deleteObj} editObj={this.props.editObj} education={this.props.education} ></EditEducationContainer>
                 {/* submit button */}
                 {/* portfolio button */}
-                <User user={this.props.user} addUserInfo={this.props.addUserInfo}/>
                 <EditExperienceContainer experiences={this.props.experiences} user={this.props.user} addObj={this.props.addObj} />
             </div>
         )
