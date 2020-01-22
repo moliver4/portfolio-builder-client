@@ -4,7 +4,7 @@ import experienceForm from '../components/EditExperienceForm'
 import EditExperienceForm from '../components/EditExperienceForm'
 
 // send state to App.js in order to update the user's details 
-// --> addExperienceHandler(experience)
+// --> addExperience(experience, id)
 // state will be sent up from EditExperienceForm? 
 
 class EditExperienceContainer extends Component {
@@ -42,8 +42,12 @@ class EditExperienceContainer extends Component {
         })
     }
 
-    onEditForm = newSkillObj => {
-
+    // takes in new values from user & sends new experience to App.js
+    onEditForm = newSkill => {
+        this.setState({
+            newExperience: newSkill
+        })
+        this.props.addExperience(this.state.experience, this.props.user.id)
     }
 
     render() {
