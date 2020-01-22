@@ -30,7 +30,7 @@ class EditExperienceContainer extends Component {
         let value  =event.target.value
         this.setState(prevState => {
             return {
-                newExperience: {...prevState.newExperience, [key]:value}
+                newExperience: {...prevState.newExperience, [key]:value} 
             }
         }, () => console.log('state after user changes', this.state.newExperience))
     }
