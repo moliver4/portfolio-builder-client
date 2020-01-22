@@ -11,7 +11,8 @@ export default class EditUserContainer extends Component {
     render() {
         return (
             <div>
-                
+                Hello from User Container.
+                {console.log("here's what's passed into User container", this.props)}
             </div>
         )
     }
