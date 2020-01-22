@@ -67,7 +67,7 @@ export default class EditProjectsContainer extends Component {
         }
     }
 
-    renderEditProjectCards(){
+    renderCards(){
         let projectCards = this.props.projects
         return projectCards.map((item,index) => {
             return <EditProjectsCard deleteObj={this.props.deleteObj} changeEditing={this.changeEditing} key={index} cardDetails={item}> </EditProjectsCard>
@@ -120,7 +120,7 @@ export default class EditProjectsContainer extends Component {
                 <h1>Projects Container</h1>
                 <button onClick={e => this.newForm(e)}>add</button>
                 {this.checkDisplayForm()}
-                {this.renderEditProjectCards()}
+                {this.renderCards()}
             </div>
         )
     }
