@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import LoginHOC from '../HOCs/LoginHOC'
+import EditExperienceContainer from '../containers/EditExperienceContainer'
 
 class EditScreen extends Component {
 
@@ -9,7 +10,7 @@ class EditScreen extends Component {
     render() {
         return (
             <div>
-                
+                <EditExperienceContainer experiences={this.props.experiences} user={this.props.user} />
             </div>
         )
     }

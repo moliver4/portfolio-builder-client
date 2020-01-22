@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
-import experienceCards from '../components/EditExperienceCard'
-import experienceForm from '../components/EditExperienceForm'
+import EditExperienceCard from '../components/EditExperienceCard'
 import EditExperienceForm from '../components/EditExperienceForm'
 
 // send state to App.js in order to update the user's details 
-// --> addExperience(experience, id)
+// --> addExperience({experience, id}) --> experience needs to be a string
 // state will be sent up from EditExperienceForm? 
 
 class EditExperienceContainer extends Component {
@@ -17,9 +16,10 @@ class EditExperienceContainer extends Component {
         }
     }
 
-    // App.js props --> "experiences"
+    // App.js props --> passed through EditScreen --> "experiences"
     mapThroughExperience = () => {
         return this.props.experiences.map((experience, index) => {
+            console.log(experience)
             return <EditExperienceCard key={index} experience={experience} newExperienceClick={this.newExperienceClick} editExistingExperience={this.editExistingExperience} />
         }) 
     }

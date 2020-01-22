@@ -17,7 +17,7 @@ const EditExperienceForm = props => {
             <input onChange={(e) => handleChange(e)} type="text" name="newExperience" value={experience}/>
           </div>
           <div>
-              <button type="submit" onClick={}>Submit</button>
+              <button type="submit" onClick={console.log}>Submit</button>
           </div>
         </div>
   
