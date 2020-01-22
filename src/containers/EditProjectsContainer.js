@@ -58,8 +58,8 @@ export default class EditProjectsContainer extends Component {
 
     handleSubmit = (e, id) => {
         e.preventDefault()
-        console.log(id)
-        console.log('form submitted')
+        this.setState({editing: false})
+        console.log(this.props.addProject)
     }
 
     checkDisplayForm(){
