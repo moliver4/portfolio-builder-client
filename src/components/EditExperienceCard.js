@@ -1,16 +1,26 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
 //accepts props from parent of 1  obj, renders info for each attribute
-//can be functional component if you want
 
+const EditExperienceCard = props => {
 
-export default class EditExperienceCard extends Component {
+const { experience } = props;
 
-    render() {
-        return (
-            <div>
-                
-            </div>
-        )
-    }
+const handleClick = () => {
+    props.editExistingExperience(props.experience) 
 }
+
+// replace class names
+  return (
+    <div className="ui card"> 
+        <div className="skill">
+            <div>
+                {experience}
+                <button onClick={() => handleClick()}>Edit</button>
+            </div>
+        </div>
+    </div>
+  )
+};
+
+export default EditExperienceCard;

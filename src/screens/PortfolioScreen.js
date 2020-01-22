@@ -12,7 +12,7 @@ export class PortfolioScreen extends Component {
     
     // fetch request pulling all data from user that will populate cards --> setState
 
-    //if user is logged in (prop passed from app.js), show the edit button that redirects to edit/user_id page
+    // if user is logged in (prop passed from app.js), show the edit button that redirects to edit/user_id page
 
     render() {
         return (
