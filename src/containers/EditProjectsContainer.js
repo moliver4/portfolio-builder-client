@@ -23,42 +23,8 @@ export default class EditProjectsContainer extends Component {
         // console.log(this.props.projects)
     }
 
-    // getThoseCards(){
-    //     fetch('http://example.com/movies.json')
-    //         .then((response) => {
-    //             return response.json();
-    //         })
-    //         .then((myJson) => {
-    //             this.setState({
-    //                 cards: myJson
-    //             })
-    //         });
-    // }
-
-    // handleFormSubmit = () => {
-    //     let newEditing = !this.state.editing
-    //     this.setState({
-    //         editing : newEditing
-    //     })
-    //     // at this point the program will make a fetch request to the backend, persisting the data from the form
-    //     // fetch('https://example.com/profile', {
-    //     //     method: 'POST', // or 'PUT'
-    //     //     headers: {
-    //     //         'Content-Type': 'application/json',
-    //     //     },
-    //     //     body: JSON.stringify(this.state.cardForm),
-    //     //     }).then((response) => response.json())
-    //     //     .then((data) => {
-    //     //         console.log(data)
-    //     //     })
-    //         //pessimistically fetch the cards
-    //         // this.getThoseCards()  
-    // }
-
     handleSubmit = (e, id) => {
         e.preventDefault()
-
-
         if(this.state.id === ""){
             this.setState({editing: false}, () => {
                 let objToSend = {
@@ -104,7 +70,7 @@ export default class EditProjectsContainer extends Component {
     renderEditProjectCards(){
         let projectCards = this.props.projects
         return projectCards.map((item,index) => {
-            return <EditProjectsCard changeEditing={this.changeEditing} key={index} cardDetails={item}> </EditProjectsCard>
+            return <EditProjectsCard deleteObj={this.props.deleteObj} changeEditing={this.changeEditing} key={index} cardDetails={item}> </EditProjectsCard>
         })
     }
 
@@ -136,14 +102,16 @@ export default class EditProjectsContainer extends Component {
     newForm(e){
         e.preventDefault()
         this.setState({
-            editing : true,
-            id: ""
-        })
+            editing: true,
+            id: "",
+            project_url: "",
+            name: "",
+            summary: "",
+            img_url: "",
+            languages_used: "",
+            order: ""
+    })
     }
-
-//map through render cards
-//render form conditionally
-//dont forget keys for card components! 
 
 
     render() {
