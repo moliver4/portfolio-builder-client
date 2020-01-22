@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
+import EditProjectsContainer from '../containers/EditProjectsContainer.js'
+import EditEducationContainer from '../containers/EditEducationContainer.js'
 import LoginHOC from '../HOCs/LoginHOC'
+
 
 class EditScreen extends Component {
 
@@ -9,7 +12,10 @@ class EditScreen extends Component {
     render() {
         return (
             <div>
-                
+                <EditProjectsContainer addProject={this.props.addProjectHandler} projects={this.props.projects} ></EditProjectsContainer>
+                <EditEducationContainer addEducation={this.props.addEducationHandler} education={this.props.education} ></EditEducationContainer>
+                {/* submit button */}
+                {/* portfolio button */}
             </div>
         )
     }
