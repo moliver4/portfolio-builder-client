@@ -19,10 +19,6 @@ const USERSURL = 'http://localhost:3000/users'
             .then(res => res.json())
   }
 
-  static fetchAreas(){
-    return fetch(URL + "areas")
-      .then(res => res.json())
-  }
 
 }
 export default Adapter
