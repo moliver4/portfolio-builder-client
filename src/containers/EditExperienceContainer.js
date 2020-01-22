@@ -19,7 +19,6 @@ class EditExperienceContainer extends Component {
     // App.js props --> passed through EditScreen --> "experiences"
     mapThroughExperience = () => {
         return this.props.experiences.map((experience, index) => {
-            console.log(experience)
             return <EditExperienceCard key={index} experience={experience} newExperienceClick={this.newExperienceClick} editExistingExperience={this.editExistingExperience} />
         }) 
     }
@@ -27,10 +26,12 @@ class EditExperienceContainer extends Component {
     // function that will be called when user clicks existing skill's edit button 
     // update state with experience and toggle editing to "true" in order to trigger prepopulated form to render
     editExistingExperience = (experience) => {
+        console.log('user existing skill on edit handler', experience)
         this.setState({
             editing: true,
             newExperience: experience
         })
+        console.log('current state after user clicks on edit', this.state.newExperience)
     }
 
     // function that will be called when user clicks on button that will add a new skill
@@ -47,7 +48,7 @@ class EditExperienceContainer extends Component {
         this.setState({
             newExperience: newSkill
         })
-        this.props.addExperience(this.state.experience, this.props.user.id)
+        // this.props.addExperience(this.state.experience, this.props.user.id)
     }
 
     render() {
@@ -63,6 +64,9 @@ class EditExperienceContainer extends Component {
                     {
                         isEditing ? <EditExperienceForm experience={this.state.newExperience} onEditForm={this.onEditForm} /> : null 
                     }
+                </div>
+                <div>
+                    <button onClick={this.newExperienceClick}>Add Skill</button>
                 </div>
             </div>
         )

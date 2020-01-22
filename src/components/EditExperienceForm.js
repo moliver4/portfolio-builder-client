@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 const EditExperienceForm = props => {
 
-    const { experience } = props;
+    const { company, role, summary, start_date, end_date } = props.experience;
 
     const handleChange = (event) => {
         return props.onEditForm(event.target.value)
@@ -13,8 +13,12 @@ const EditExperienceForm = props => {
 
     return(
         <div className="edit-form">
-          <div>
-            <input onChange={(e) => handleChange(e)} type="text" name="newExperience" value={experience}/>
+          <div onChange={(e) => handleChange(e)}>
+            <input type="text" name="newExperience" value={company}/>
+            <input type="text" name="newExperience" value={role}/>
+            <input type="text" name="newExperience" value={summary}/>
+            <input type="text" name="newExperience" value={start_date}/>
+            <input type="text" name="newExperience" value={end_date}/>
           </div>
           <div>
               <button type="submit" onClick={console.log}>Submit</button>
