@@ -69,7 +69,9 @@ class EditExperienceContainer extends Component {
     // send updated info to App.js to be persisted in database
     submitNewInfo = (event) => {
         event.preventDefault()
-        this.state.experiences.id ? this.props.editObj('experience', this.state.newExperience) : this.props.addObj('experience', this.state.newExperience)
+        let obj = this.state.newExperience
+        console.log('object on submit', obj)
+        this.state.newExperience.id ? this.props.editObj('experience', obj) : this.props.addObj('experience', obj)
     }
 
     render() {
