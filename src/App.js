@@ -238,23 +238,23 @@ class App extends React.Component {
     switch(name){
       case 'skill':
         temp = Adapter.deleteSkill(id)
-        temp.then(data => this.deleteObjStateHandler('skill', data))
+        temp.then(id => this.deleteObjStateHandler('skill', id))
         break
       case 'project':
         temp = Adapter.deleteProject(id)
-        temp.then(data => this.deleteObjStateHandler('project', data))
+        temp.then(data=>this.deleteObjStateHandler('project', data))
         break
       case 'education':
         temp = Adapter.deleteEducation(id)
-        temp.then(data => this.deleteObjStateHandler('education', data))
+        temp.then(id => this.deleteObjStateHandler('education', id))
         break
       case 'experience':
         temp = Adapter.deleteExperience(id)
-        temp.then(data => this.deleteObjStateHandler('experience', data))
+        temp.then(id => this.deleteObjStateHandler('experience', id))
         break
       case 'accolade':
         temp = Adapter.deleteAccolade(id)
-        temp.then(data => this.deleteObjStateHandler('accolade', data))
+        temp.then(id => this.deleteObjStateHandler('accolade', id))
         break
       default:
         console.log('i got nothing, delete fetch broken')
@@ -263,7 +263,7 @@ class App extends React.Component {
   }
 
   deleteObjStateHandler = (name, data) => {
-    console.log(`${name} data: ${data} made it to set state handler for delete`)
+    console.log(`${name} id: ${data.id} made it to set state handler for delete`)
     switch(name){
       case 'skill':
         this.setState(prevState=> {

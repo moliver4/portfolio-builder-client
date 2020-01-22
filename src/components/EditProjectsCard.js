@@ -18,7 +18,7 @@ export default class EditProjectsCard extends Component {
                 languages_used: {this.props.cardDetails.languages_used} <br></br>
                 order: {this.props.cardDetails.order} <br></br>
                 <button onClick={e => this.props.changeEditing(e, this.props.cardDetails)} type="button">edit</button>
-                <button onClick={e => console.log('delete')} type="button">delete</button>
+                <button onClick={e => this.props.deleteObj('project', this.props.cardDetails.id)} type="button">delete</button>
             </div>
         )
     }
