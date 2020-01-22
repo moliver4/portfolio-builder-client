@@ -4,6 +4,7 @@ import EditEducationContainer from '../containers/EditEducationContainer.js'
 import LoginHOC from '../HOCs/LoginHOC'
 import User from '../containers/EditUserContainer'
 
+import EditExperienceContainer from '../containers/EditExperienceContainer'
 
 class EditScreen extends Component {
 
@@ -19,6 +20,7 @@ class EditScreen extends Component {
                 {/* submit button */}
                 {/* portfolio button */}
                 <User user={this.props.user} addUserInfo={this.props.addUserInfo}/>
+                <EditExperienceContainer experiences={this.props.experiences} user={this.props.user} addObj={this.props.addObj} />
             </div>
         )
     }
