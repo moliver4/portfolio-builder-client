@@ -1,10 +1,6 @@
 import React, { Component } from 'react'
-import experienceCards from '../components/EditExperienceCard'
-import experienceForm from '../components/EditExperienceForm'
+import EditExperienceCard from '../components/EditExperienceCard'
 import EditExperienceForm from '../components/EditExperienceForm'
-
-// send state to App.js in order to update the user's details 
-// state will be sent up from EditExperienceForm? 
 
 class EditExperienceContainer extends Component {
     constructor(props) {
@@ -12,18 +8,41 @@ class EditExperienceContainer extends Component {
     
         this.state = {
             editing: false,
-            newExperience: []
+            newExperience: {
+                company: '',
+                role: '',
+                summary: '',
+                start_date: '',
+                end_date: '',
+                user_id: this.props.user_id,
+                id: ''
+            }
         }
     }
 
-    // change name of prop "userExperience" according to name given in App.js
+    handleDelete = event => {
+        event.preventDefault()
+        // console.log('delete button clicked')
+    }
+
+    handleChange = (event) => {
+        let key = event.target.name
+        let value  =event.target.value
+        this.setState(prevState => {
+            return {
+                newExperience: {...prevState.newExperience, [key]:value} 
+            }
+        }, () => console.log('state after user changes', this.state.newExperience))
+    }
+
+    // App.js props --> passed down by EditScreen --> "experiences"
     mapThroughExperience = () => {
-        return this.props.userExperience.map((experience, index) => {
-            return <EditExperienceCard key={index} experience={experience} newExperienceClick={this.newExperienceClick} editExistingExperience={this.editExistingExperience} />
+        return this.props.experiences.map((experience, index) => {
+            return <EditExperienceCard handleDelete={this.handleDelete} key={index} experience={experience} newExperienceClick={this.newExperienceClick} editExistingExperience={this.editExistingExperience} submitNewInfo={this.submitNewInfo} />
         }) 
     }
 
-    // function that will be called when user clicks on edit button on existing skill 
+    // function that will be called when user clicks existing skill's edit button 
     // update state with experience and toggle editing to "true" in order to trigger prepopulated form to render
     editExistingExperience = (experience) => {
         this.setState({
@@ -37,8 +56,22 @@ class EditExperienceContainer extends Component {
     newExperienceClick = () => {
         this.setState({
             editing: true,
-            newExperience: ""
+            newExperience: {
+                company: '',
+                role: '',
+                summary: '',
+                start_date: '',
+                end_date: '',
+                user_id: this.props.user_id,
+                id: ''
+            }
         })
+    }
+
+    // send updated info to App.js to be persisted in database
+    submitNewInfo = (event) => {
+        event.preventDefault()
+        this.state.experiences.id === '' ? this.props.addObj(this.state.newExperience) : this.props.editObj(this.state.newExperience)
     }
 
     render() {
@@ -52,8 +85,11 @@ class EditExperienceContainer extends Component {
                 </div>
                 <div>
                     {
-                        isEditing ? <EditExperienceForm experience={this.state.newExperience} /> : null 
+                        isEditing ? <EditExperienceForm experience={this.state.newExperience} onEditForm={this.onEditForm} handleChange={this.handleChange} submitNewInfo={this.submitNewInfo} /> : null 
                     }
+                </div>
+                <div>
+                    <button onClick={this.newExperienceClick}>Add Skill</button>
                 </div>
             </div>
         )
