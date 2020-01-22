@@ -48,7 +48,11 @@ class EditExperienceContainer extends Component {
         this.setState({
             newExperience: newSkill
         })
-        // this.props.addExperience(this.state.experience, this.props.user.id)
+    }
+
+    // send updated info to App.js to be persisted in database
+    submitNewInfo = () => {
+        this.props.addExperience(this.state.experience, this.props.user.id)
     }
 
     render() {
