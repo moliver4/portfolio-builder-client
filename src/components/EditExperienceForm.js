@@ -5,7 +5,10 @@ const EditExperienceForm = props => {
     const { experience } = props;
 
     const handleChange = (event) => {
-        
+        let newSkill = {
+            [event.target.name]: event.target.value
+        }
+        return props.onEditForm(newSkill)
     }
 
     // udpate className so it matches other edit forms
@@ -15,6 +18,9 @@ const EditExperienceForm = props => {
         <div className="edit-form">
           <div>
             <input onChange={(e) => handleChange(e)} type="text" name="experience" value={experience}/>
+          </div>
+          <div>
+              <button type="submit" onClick={}>Submit</button>
           </div>
         </div>
   

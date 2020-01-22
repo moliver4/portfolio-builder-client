@@ -4,6 +4,7 @@ import experienceForm from '../components/EditExperienceForm'
 import EditExperienceForm from '../components/EditExperienceForm'
 
 // send state to App.js in order to update the user's details 
+// --> addExperienceHandler(experience)
 // state will be sent up from EditExperienceForm? 
 
 class EditExperienceContainer extends Component {
@@ -16,14 +17,14 @@ class EditExperienceContainer extends Component {
         }
     }
 
-    // change name of prop "userExperience" according to name given in App.js
+    // App.js props --> "experiences"
     mapThroughExperience = () => {
-        return this.props.userExperience.map((experience, index) => {
+        return this.props.experiences.map((experience, index) => {
             return <EditExperienceCard key={index} experience={experience} newExperienceClick={this.newExperienceClick} editExistingExperience={this.editExistingExperience} />
         }) 
     }
 
-    // function that will be called when user clicks on edit button on existing skill 
+    // function that will be called when user clicks existing skill's edit button 
     // update state with experience and toggle editing to "true" in order to trigger prepopulated form to render
     editExistingExperience = (experience) => {
         this.setState({
@@ -41,6 +42,10 @@ class EditExperienceContainer extends Component {
         })
     }
 
+    onEditForm = newSkillObj => {
+
+    }
+
     render() {
         let isEditing = this.state.editing
 
@@ -52,7 +57,7 @@ class EditExperienceContainer extends Component {
                 </div>
                 <div>
                     {
-                        isEditing ? <EditExperienceForm experience={this.state.newExperience} /> : null 
+                        isEditing ? <EditExperienceForm experience={this.state.newExperience} onEditForm={this.onEditForm} /> : null 
                     }
                 </div>
             </div>
