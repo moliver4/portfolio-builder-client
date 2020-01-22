@@ -155,10 +155,6 @@ class App extends React.Component {
   editObjFetchHandler = (name, obj) => {
     let temp;
     switch(name){
-      case 'user': 
-        temp = Adapter.editUser(obj)
-        temp.then(data => this.editObjStateHandler('user', data))
-        break
       case 'skill':
         temp = Adapter.editSkill(obj)
         temp.then(data => this.editObjStateHandler('skill', data))
@@ -192,9 +188,6 @@ class App extends React.Component {
   editObjStateHandler = (name, data) => {
     console.log(`${name} data: ${data} made it to set state handler for edit`)
     switch(name){
-      case 'user': 
-        this.setState({user: data}, () => console.log('user edited') )
-        break
       case 'skill':
         this.setState(prevState=> {
           return {
