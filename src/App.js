@@ -65,7 +65,7 @@ class App extends React.Component {
       user: data.user,
       skills: data.skills,
       projects: data.projects,
-      education: data.education,
+      education: data.educations,
       experiences: data.experiences,
       accolades: data.accolades,
       loggedIn: true 

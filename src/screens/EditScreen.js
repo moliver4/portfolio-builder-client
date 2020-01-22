@@ -17,7 +17,7 @@ class EditScreen extends Component {
             <div>
                 <User user={this.props.user} editUserInfo={this.props.editObj}/>
                 <EditProjectsContainer userInfo={this.props.user} addObj={this.props.addObj} deleteObj={this.props.deleteObj} editObj={this.props.editObj} projects={this.props.projects} ></EditProjectsContainer>
-                <EditEducationContainer addEducation={this.props.addEducationHandler} education={this.props.education} ></EditEducationContainer>
+                <EditEducationContainer userInfo={this.props.user} addObj={this.props.addObj} deleteObj={this.props.deleteObj} editObj={this.props.editObj} education={this.props.education} ></EditEducationContainer>
                 {/* submit button */}
                 {/* portfolio button */}
                 <EditExperienceContainer experiences={this.props.experiences} user={this.props.user} addObj={this.props.addObj} />
