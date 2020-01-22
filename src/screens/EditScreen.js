@@ -10,7 +10,7 @@ class EditScreen extends Component {
     render() {
         return (
             <div>
-                <EditExperienceContainer experiences={this.props.experiences} user={this.props.user} />
+                <EditExperienceContainer experiences={this.props.experiences} user={this.props.user} addObj={this.props.addObj} />
             </div>
         )
     }
