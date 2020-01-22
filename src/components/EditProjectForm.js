@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 
 //look at example form
 //deconstruct props 
@@ -6,12 +6,12 @@ const EditProjectForm = (props) => {
 
     const {project_url, name, summary, img_url, languages_used, order} = props.cardDetails
 
-
+    
 
     return(
         <form>
-            {/* {console.log(props)} */}
-            project_url: <input onChange={e => props.handleFormChange(e)} type="text" name="project-url" value={project_url}></input> <br></br>
+            <input onChange={e => props.handleFormChange(e)} type="number" name="id" value={props.cardDetails.id} hidden></input>
+            project_url: <input onChange={e => props.handleFormChange(e)} type="text" name="project_url" value={project_url}></input> <br></br>
             name: <input onChange={e => props.handleFormChange(e)} type="text" name="name" value={name}></input> <br></br>
             summary: <input onChange={e => props.handleFormChange(e)} type="text" name="summary" value={summary}></input> <br></br>
             img_url: <input onChange={e => props.handleFormChange(e)} type="text" name="img_url" value={img_url}></input> <br></br>

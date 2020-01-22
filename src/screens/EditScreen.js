@@ -14,7 +14,7 @@ class EditScreen extends Component {
         {console.log("these are the props in Edit Screen", this.props)}
         return (
             <div>
-                <EditProjectsContainer addProject={this.props.addProjectHandler} projects={this.props.projects} ></EditProjectsContainer>
+                <EditProjectsContainer userInfo={this.props.user} addObj={this.props.addObj} deleteObj={this.props.deleteObj} editObj={this.props.editObj} projects={this.props.projects} ></EditProjectsContainer>
                 <EditEducationContainer addEducation={this.props.addEducationHandler} education={this.props.education} ></EditEducationContainer>
                 {/* submit button */}
                 {/* portfolio button */}
