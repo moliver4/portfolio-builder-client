@@ -90,7 +90,7 @@ const ACCOLADESURL = 'http://localhost:3000/accolades'
   //edits
 
   static editUser(body){
-    return fetch(`${USERSURL}/${id}`, {
+    return fetch(`${USERSURL}/${body.id}`, {
             method: 'PATCH',
             headers: {
             'Content-Type': 'application/json',
