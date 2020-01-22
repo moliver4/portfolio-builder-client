@@ -58,7 +58,7 @@ class App extends React.Component {
     
   }
 
-
+  // DK - keep loggedIn state change in the body of setState so up-to-date state is sent down to components
   updateState = (data) => {
     console.log(data)
     this.setState({
