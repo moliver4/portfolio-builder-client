@@ -48,7 +48,6 @@ class App extends React.Component {
   }
 
   submitLoginHandler = (e) => {
-    console.log(e)
     e.preventDefault()
     console.log(this.state.email)
     let body = {
@@ -56,9 +55,7 @@ class App extends React.Component {
     }
     this.fetchUser(body)
     this.toggleLogin()
-    // const history = useHistory()
-    // // history.push('/edit')
-    // // console.log(history)
+    
   }
 
   fetchUser=(body) => {
@@ -71,11 +68,19 @@ class App extends React.Component {
       body: JSON.stringify(body)
       })
       .then(res => res.json())
-      .then(data => console.log(data))
+      .then(data => this.updateState(data))
   }
 
   updateState = (data) => {
     console.log(data)
+    this.setState({
+      user: data.user,
+      skills: data.skills,
+      projects: data.projects,
+      education: data.education,
+      experiences: data.experiences,
+      accolades: data.accolades
+    }, () => console.log(this.state.skills))
   }
   
 
@@ -86,10 +91,6 @@ class App extends React.Component {
     })
   }
   
-  //callback fx for login screen will trigger: 
-  //toggleLogin
-  //fetchUser => setState
-  //redirect to edit/user_id page
 
 
   render() {
