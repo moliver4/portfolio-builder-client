@@ -9,9 +9,94 @@ export default class EditProjectsContainer extends Component {
         super(props)
     
         this.state = {
-            editing: false
-            //more things here
+            editing: false,
+            cards: [],
+            cardForm : {
+                project_url: "",
+                name: "",
+                summary: "",
+                img_url: "",
+                languages_used: "",
+                order: null
+            }
         }
+        this.getThoseCards()
+    }
+
+    getThoseCards(){
+        fetch('http://example.com/movies.json')
+            .then((response) => {
+                return response.json();
+            })
+            .then((myJson) => {
+                this.setState({
+                    cards: myJson
+                })
+            });
+    }
+
+    handleFormSubmit = () => {
+        newEditing = !this.state.editing
+        this.setState({
+            editing : newEditing
+        })
+        // at this point the program would make a fetch request
+        fetch('https://example.com/profile', {
+            method: 'POST', // or 'PUT'
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(this.state.cardForm),
+            }).then((response) => response.json())
+            .then((data) => {
+                console.log(data)
+            })
+            this.getThoseCards()  
+    }
+
+    checkDisplayForm(){
+        if(this.state.editing === true){
+            return <EditProjectForm handleFormSubmit={this.handleFormSubmit} handleFormChange={this.handleFormChange} cardDetails={this.state.cardForm}></EditProjectForm>
+        } else {
+            return ""
+        }
+    }
+
+    renderEditProjectCards(){
+        return this.state.cards.map((item,index) => {
+            return <EditProjectsCard changeEditing={this.changeEditing} key={index} cardDetails={item}> </EditProjectsCard>
+        })
+    }
+
+    handleFormChange = (e) => {
+        let newOb = {
+            cardForm: {
+                [e.target.name]: e.target.project-url.value,
+                [e.target.name]: e.target.name.value,
+                [e.target.name]: e.target.summary.value,
+                [e.target.name]: e.target.img_url.value,
+                [e.target.name]: e.target.languages_used.value,
+                [e.target.name]: e.target.order.value
+            }
+        }
+        this.setState(newOb)
+    }
+
+    changeEditing = (e, cardDetails) => {
+        this.setState(prevState => {
+            newEditing = !prevState.editing
+            return {
+                editing: newEditing,
+                cardForm: {
+                    project_url: cardDetails.project_url,
+                    name: cardDetails.name,
+                    summary: cardDetails.summary,
+                    img_url: cardDetails.img_url,
+                    languages_used: cardDetails.languages_used,
+                    order: cardDetails.order
+                }
+            }
+        })
     }
 
 //map through render cards
@@ -22,10 +107,8 @@ export default class EditProjectsContainer extends Component {
     render() {
         return (
             <div>
-                METHOD TO RENDER CARDS HERE
-
-                METHOD TO CHECK FOR EDITING TO RENDER FORM HERE
-
+                {this.checkDisplayForm()}
+                {this.renderEditCards()}
             </div>
         )
     }
