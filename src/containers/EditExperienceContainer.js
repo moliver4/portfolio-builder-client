@@ -14,8 +14,7 @@ class EditExperienceContainer extends Component {
                 summary: '',
                 start_date: '',
                 end_date: '',
-                user_id: this.props.user_id,
-                id: ''
+                user_id: this.props.user_id
             }
         }
     }
@@ -62,8 +61,7 @@ class EditExperienceContainer extends Component {
                 summary: '',
                 start_date: '',
                 end_date: '',
-                user_id: this.props.user_id,
-                id: ''
+                user_id: this.props.user_id
             }
         })
     }
@@ -71,7 +69,7 @@ class EditExperienceContainer extends Component {
     // send updated info to App.js to be persisted in database
     submitNewInfo = (event) => {
         event.preventDefault()
-        this.state.experiences.id === '' ? this.props.addObj(this.state.newExperience) : this.props.editObj(this.state.newExperience)
+        this.state.experiences.id ? this.props.editObj('experience', this.state.newExperience) : this.props.addObj('experience', this.state.newExperience)
     }
 
     render() {
