@@ -20,6 +20,11 @@ class EditExperienceContainer extends Component {
         }
     }
 
+    handleDelete = event => {
+        event.preventDefault()
+        // console.log('delete button clicked')
+    }
+
     handleChange = (event) => {
         let key = event.target.name
         let value  =event.target.value
@@ -33,7 +38,7 @@ class EditExperienceContainer extends Component {
     // App.js props --> passed down by EditScreen --> "experiences"
     mapThroughExperience = () => {
         return this.props.experiences.map((experience, index) => {
-            return <EditExperienceCard key={index} experience={experience} newExperienceClick={this.newExperienceClick} editExistingExperience={this.editExistingExperience} submitNewInfo={this.submitNewInfo} />
+            return <EditExperienceCard handleDelete={this.handleDelete} key={index} experience={experience} newExperienceClick={this.newExperienceClick} editExistingExperience={this.editExistingExperience} submitNewInfo={this.submitNewInfo} />
         }) 
     }
 

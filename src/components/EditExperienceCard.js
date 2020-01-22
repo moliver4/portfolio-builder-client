@@ -20,6 +20,7 @@ const handleExperienceEditClick = () => {
                 <p>{end_date}</p>
 
                 <button onClick={() => handleExperienceEditClick()}>Edit</button>
+                <button onClick={props.handleDelete} >Delete</button>
             </div>
         </div>
     </div>
