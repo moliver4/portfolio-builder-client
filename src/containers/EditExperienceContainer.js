@@ -20,13 +20,12 @@ class EditExperienceContainer extends Component {
 
     handleChange = (event) => {
         console.log(event.target.value)
-        let newObj = {
-            [event.target.name]: event.target.value
-        }
+        let key = event.target.name
+        let value  =event.target.value
         // return this.onEditForm(newObj)
         this.setState(prevState => {
             return {
-                newExperience: {...prevState.newExperience, newObj}
+                newExperience: {...prevState.newExperience, [key]:value}
             }
         }, () => console.log('state after user changes', this.state.newExperience))
     }
