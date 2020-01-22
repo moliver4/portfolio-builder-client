@@ -8,14 +8,33 @@ class EditExperienceContainer extends Component {
     
         this.state = {
             editing: false,
-            newExperience: {}
+            newExperience: {
+                company: '',
+                role: '',
+                summary: '',
+                start_date: '',
+                end_date: ''
+            }
         }
+    }
+
+    handleChange = (event) => {
+        console.log(event.target.value)
+        let newObj = {
+            [event.target.name]: event.target.value
+        }
+        // return this.onEditForm(newObj)
+        this.setState(prevState => {
+            return {
+                newExperience: {...prevState.newExperience, newObj}
+            }
+        }, () => console.log('state after user changes', this.state.newExperience))
     }
 
     // App.js props --> passed down by EditScreen --> "experiences"
     mapThroughExperience = () => {
         return this.props.experiences.map((experience, index) => {
-            return <EditExperienceCard key={index} experience={experience} newExperienceClick={this.newExperienceClick} editExistingExperience={this.editExistingExperience} />
+            return <EditExperienceCard key={index} experience={experience} newExperienceClick={this.newExperienceClick} editExistingExperience={this.editExistingExperience} submitNewInfo={this.submitNewInfo} />
         }) 
     }
 
@@ -38,19 +57,20 @@ class EditExperienceContainer extends Component {
     }
 
     // takes in new values from user 
-    onEditForm = newSkill => {
-        console.log(newSkill)
-        this.setState(prevState => {
-            return {
-                newExperience: {...prevState.newExperience, newSkill, user_id: this.props.user.id}
-            }
-        })
-        console.log('state after user changes', this.state.newExperience)
-    }
+    // onEditForm = newSkill => {
+    //     console.log(newSkill)
+    //     this.setState(prevState => {
+    //         return {
+    //             newExperience: {...prevState.newExperience, newSkill}
+    //         }
+    //     }, () => console.log('state after user changes', this.state.newExperience))
+        
+    // }
 
     // send updated info to App.js to be persisted in database
     submitNewInfo = () => {
-        // this.props.addExperience(this.state.experience, this.props.user.id)
+        console.log('submit button clicked')
+        // this.props.addObj(newExperience)
     }
 
     render() {
@@ -64,7 +84,7 @@ class EditExperienceContainer extends Component {
                 </div>
                 <div>
                     {
-                        isEditing ? <EditExperienceForm experience={this.state.newExperience} onEditForm={this.onEditForm} /> : null 
+                        isEditing ? <EditExperienceForm experience={this.state.newExperience} onEditForm={this.onEditForm} handleChange={this.handleChange} /> : null 
                     }
                 </div>
                 <div>
