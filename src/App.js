@@ -80,25 +80,26 @@ class App extends React.Component {
   }
 
   addObjFetchHandler = (name, obj) => {
+    let temp
     switch(name){
       case 'skill':
-        let temp = Adapter.addSkill(obj)
+        temp = Adapter.addSkill(obj)
         temp.then(data => this.addObjStateHandler('skill', data))
         break
       case 'project':
-        let temp = Adapter.addProject(obj)
+        temp = Adapter.addProject(obj)
         temp.then(data => this.addObjStateHandler('project', data))
         break
       case 'education':
-        let temp = Adapter.addEducation(obj)
+        temp = Adapter.addEducation(obj)
         temp.then(data => this.addObjStateHandler('education', data))
         break
       case 'experience':
-        let temp = Adapter.addExperience(obj)
+        temp = Adapter.addExperience(obj)
         temp.then(data => this.addObjStateHandler('experience', data))
         break
       case 'accolade':
-        let temp = Adapter.addAccolade(obj)
+        temp = Adapter.addAccolade(obj)
         temp.then(data => this.addObjStateHandler('accolade', data))
         break
       default:
@@ -151,25 +152,26 @@ class App extends React.Component {
   }
 
   editObjFetchHandler = (name, obj) => {
+    let temp;
     switch(name){
       case 'skill':
-        let temp = Adapter.editSkill(obj)
+        temp = Adapter.editSkill(obj)
         temp.then(data => this.editObjStateHandler('skill', data))
         break
       case 'project':
-        let temp = Adapter.editProject(obj)
+        temp = Adapter.editProject(obj)
         temp.then(data => this.editObjStateHandler('project', data))
         break
       case 'education':
-        let temp = Adapter.editEducation(obj)
+        temp = Adapter.editEducation(obj)
         temp.then(data => this.editObjStateHandler('education', data))
         break
       case 'experience':
-        let temp = Adapter.editExperience(obj)
+        temp = Adapter.editExperience(obj)
         temp.then(data => this.editObjStateHandler('experience', data))
         break
       case 'accolade':
-        let temp = Adapter.editAccolade(obj)
+        temp = Adapter.editAccolade(obj)
         temp.then(data => this.editObjStateHandler('accolade', data))
         break
       default:
@@ -231,25 +233,26 @@ class App extends React.Component {
 
 
   deleteObjFetchHandler = (name, id) => {
+    let temp;
     switch(name){
       case 'skill':
-        let temp = Adapter.deleteSkill(id)
+        temp = Adapter.deleteSkill(id)
         temp.then(data => this.deleteObjStateHandler('skill', data))
         break
       case 'project':
-        let temp = Adapter.deleteProject(id)
+        temp = Adapter.deleteProject(id)
         temp.then(data => this.deleteObjStateHandler('project', data))
         break
       case 'education':
-        let temp = Adapter.deleteEducation(id)
+        temp = Adapter.deleteEducation(id)
         temp.then(data => this.deleteObjStateHandler('education', data))
         break
       case 'experience':
-        let temp = Adapter.deleteExperience(id)
+        temp = Adapter.deleteExperience(id)
         temp.then(data => this.deleteObjStateHandler('experience', data))
         break
       case 'accolade':
-        let temp = Adapter.deleteAccolade(id)
+        temp = Adapter.deleteAccolade(id)
         temp.then(data => this.deleteObjStateHandler('accolade', data))
         break
       default:
