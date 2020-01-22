@@ -55,7 +55,7 @@ class App extends React.Component {
     
     userPromise.then(data => this.updateState(data))
 
-    this.toggleLogin()
+    
   }
 
 
@@ -67,8 +67,9 @@ class App extends React.Component {
       projects: data.projects,
       education: data.education,
       experiences: data.experiences,
-      accolades: data.accolades
-    }, () => console.log(this.state.skills))
+      accolades: data.accolades,
+      loggedIn: true 
+    })
   }
   
 
