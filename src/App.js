@@ -4,16 +4,7 @@ import LoginScreen from './screens/LoginScreen'
 import EditScreen from './screens/EditScreen'
 import PortfolioScreen from './screens/PortfolioScreen'
 import Adapter from './services/Adapter'
-
 import './App.css';
-
-
-// const USERSURL = 'http://localhost:3000/users'
-// const SKILLSURL = 'http://localhost:3000/skills'
-// const PROJECTSURL = 'http://localhost:3000/projects'
-// const EDUCATIONURL = 'http://localhost:3000/education'
-// const EXPERIENCESURL = 'http://localhost:3000/experiences'
-// const ACCOLADESURL = 'http://localhost:3000/accolades'
 
 
 class App extends React.Component {
@@ -61,10 +52,10 @@ class App extends React.Component {
       email_address: this.state.email
     }
     let userPromise = Adapter.fetchUser(body)
+    
     userPromise.then(data => this.updateState(data))
 
     this.toggleLogin()
-    
   }
 
 
