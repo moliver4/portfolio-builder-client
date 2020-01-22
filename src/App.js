@@ -68,8 +68,8 @@ class App extends React.Component {
       },
       body: JSON.stringify(body)
       })
-      .then(res => res.json())
-      .then(data => console.log(data))
+      .then(res => console.log(res))
+      // .then(data => console.log(data))
   }
 
   updateState = (data) => {
