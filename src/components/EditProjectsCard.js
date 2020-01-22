@@ -11,13 +11,13 @@ export default class EditProjectsCard extends Component {
     render() {
         return (
             <div>
+                project_url: {this.props.cardDetails.project_url} <br></br>
+                name: {this.props.cardDetails.name} <br></br>
+                summary: {this.props.cardDetails.summary} <br></br>
+                img_url: {this.props.cardDetails.img_url} <br></br>
+                languages_used: {this.props.cardDetails.languages_used} <br></br>
+                order: {this.props.cardDetails.order} <br></br>
                 <button onClick={e => this.props.changeEditing(e, this.props.cardDetails)} type="button">edit</button>
-                {/* project_url: {this.props.cardDetails.project_url}
-                name: {this.props.cardDetails.name}
-                summary: {this.props.cardDetails.summary}
-                img_url: {this.props.cardDetails.img_url}
-                languages_used: {this.props.cardDetails.languages_used}
-                order: {this.props.cardDetails.order} */}
             </div>
         )
     }

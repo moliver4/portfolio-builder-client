@@ -12,8 +12,10 @@ class EditScreen extends Component {
     render() {
         return (
             <div>
-                <EditProjectsContainer></EditProjectsContainer>
-                <EditEducationContainer></EditEducationContainer>
+                <EditProjectsContainer addProject={this.props.addProjectHandler} projects={this.props.projects} ></EditProjectsContainer>
+                <EditEducationContainer addEducation={this.props.addEducationHandler} education={this.props.education} ></EditEducationContainer>
+                {/* submit button */}
+                {/* portfolio button */}
             </div>
         )
     }
