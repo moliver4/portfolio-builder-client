@@ -6,6 +6,8 @@ import React, { Component } from 'react'
 
 export default class EditProjectsCard extends Component {
 
+    // const {project_url, name, summary, img_url, languages_used, order} = this.props.cardDetails
+
     render() {
         return (
             <div>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-//import projectcard
-//import form
+import EditProjectForm from './src/components/EditProjectForm.js'
+import EditProjectsCard from './src/components/EditProjectsCard.js'
 
 
 
@@ -40,7 +40,7 @@ export default class EditProjectsContainer extends Component {
         this.setState({
             editing : newEditing
         })
-        // at this point the program would make a fetch request
+        // at this point the program will make a fetch request to the backend, persisting the data from the form
         fetch('https://example.com/profile', {
             method: 'POST', // or 'PUT'
             headers: {
@@ -51,6 +51,7 @@ export default class EditProjectsContainer extends Component {
             .then((data) => {
                 console.log(data)
             })
+            //pessimistically fetch the cards
             this.getThoseCards()  
     }
 
