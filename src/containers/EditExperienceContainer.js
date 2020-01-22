@@ -64,7 +64,6 @@ class EditExperienceContainer extends Component {
     }
 
     // send updated info to App.js to be persisted in database
-    // if edit === '' add, else add
     submitNewInfo = (event) => {
         console.log('submit button clicked')
         event.preventDefault()
