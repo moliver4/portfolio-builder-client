@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, useHistory } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import LoginScreen from './screens/LoginScreen'
 import EditScreen from './screens/EditScreen'
 import PortfolioScreen from './screens/PortfolioScreen'
@@ -7,7 +7,7 @@ import PortfolioScreen from './screens/PortfolioScreen'
 
 import './App.css';
 
-const USERSURL = 'https://localhost:3000/users'
+const USERSURL = 'http://localhost:3000/users'
 
 class App extends React.Component {
 
@@ -48,12 +48,14 @@ class App extends React.Component {
   }
 
   submitLoginHandler = (e) => {
+    console.log(e)
     e.preventDefault()
     console.log(this.state.email)
     let body = {
       email_address: this.state.email
     }
     this.fetchUser(body)
+    this.toggleLogin()
     // const history = useHistory()
     // // history.push('/edit')
     // // console.log(history)
@@ -68,8 +70,8 @@ class App extends React.Component {
       },
       body: JSON.stringify(body)
       })
-      .then(res => console.log(res))
-      // .then(data => console.log(data))
+      .then(res => res.json())
+      .then(data => console.log(data))
   }
 
   updateState = (data) => {
@@ -98,9 +100,11 @@ class App extends React.Component {
           <Route 
             exact path="/" 
             render={()=> <LoginScreen 
+              loggedIn={!this.state.loggedIn}
               submitLogin={this.submitLoginHandler} 
               handleInputChange={this.inputEmailChangeHandler} 
               email={this.state.email}
+              alternate="/edit"
             />}
           />
           <Route
@@ -112,7 +116,8 @@ class App extends React.Component {
                             projects={this.state.projects} 
                             education={this.state.education}
                             experiences={this.state.experiences}
-                            accolades={this.state.accolades}   
+                            accolades={this.state.accolades}
+                            alternate="/"   
                           />}
           />
           <Route 

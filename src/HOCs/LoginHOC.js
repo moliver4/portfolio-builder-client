@@ -12,7 +12,7 @@ const LoginHOC = WrappedComponent => {
             return this.authorized() ? (
               <WrappedComponent {...this.props} />
             ) : (
-              <Redirect to="/" />
+              <Redirect to={this.props.alternate} />
             );
         }
     }
