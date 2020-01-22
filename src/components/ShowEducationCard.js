@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
+import React from 'react'
 
 
 
-const ShowEducationCard = ( ) => {
+const ShowEducationCard = (props) => {
 
     // const {project_url, name, summary, img_url, languages_used, order} = props.cardDetails
 

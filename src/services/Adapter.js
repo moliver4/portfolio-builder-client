@@ -27,7 +27,7 @@ const ACCOLADESURL = 'http://localhost:3000/accolades'
 
   //adding field
   static addSkill(body){
-    return fetch(`${USERSURL}`, {
+    return fetch(`${SKILLSURL}`, {
             method: 'POST',
             headers: {
             'Content-Type': 'application/json',
@@ -39,7 +39,7 @@ const ACCOLADESURL = 'http://localhost:3000/accolades'
   }
 
   static addProject(body){
-    return fetch(`${USERSURL}`, {
+    return fetch(`${PROJECTSURL}`, {
             method: 'POST',
             headers: {
             'Content-Type': 'application/json',
@@ -51,7 +51,7 @@ const ACCOLADESURL = 'http://localhost:3000/accolades'
   }
 
   static addEducation(body){
-    return fetch(`${USERSURL}`, {
+    return fetch(`${EDUCATIONURL}`, {
             method: 'POST',
             headers: {
             'Content-Type': 'application/json',
@@ -63,7 +63,7 @@ const ACCOLADESURL = 'http://localhost:3000/accolades'
   }
 
   static addExperience(body){
-    return fetch(`${USERSURL}`, {
+    return fetch(`${EXPERIENCESURL}`, {
             method: 'POST',
             headers: {
             'Content-Type': 'application/json',
@@ -75,7 +75,7 @@ const ACCOLADESURL = 'http://localhost:3000/accolades'
   }
 
   static addAccolade(body){
-    return fetch(`${USERSURL}`, {
+    return fetch(`${ACCOLADESURL}`, {
             method: 'POST',
             headers: {
             'Content-Type': 'application/json',
