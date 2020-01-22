@@ -250,7 +250,7 @@ class App extends React.Component {
     switch(name){
       case 'skill':
         temp = Adapter.deleteSkill(id)
-        temp.then(id => this.deleteObjStateHandler('skill', id))
+        temp.then(data => this.deleteObjStateHandler('skill', data))
         break
       case 'project':
         temp = Adapter.deleteProject(id)
@@ -258,15 +258,15 @@ class App extends React.Component {
         break
       case 'education':
         temp = Adapter.deleteEducation(id)
-        temp.then(id => this.deleteObjStateHandler('education', id))
+        temp.then(data => this.deleteObjStateHandler('education', data))
         break
       case 'experience':
         temp = Adapter.deleteExperience(id)
-        temp.then(id => this.deleteObjStateHandler('experience', id))
+        temp.then(data => this.deleteObjStateHandler('experience', data))
         break
       case 'accolade':
         temp = Adapter.deleteAccolade(id)
-        temp.then(id => this.deleteObjStateHandler('accolade', id))
+        temp.then(data => this.deleteObjStateHandler('accolade', data))
         break
       default:
         console.log('i got nothing, delete fetch broken')
