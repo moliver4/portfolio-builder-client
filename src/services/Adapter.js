@@ -89,7 +89,7 @@ const ACCOLADESURL = 'http://localhost:3000/accolades'
 
   //edits
 
-  static editUser(id, body){
+  static editUser(body){
     return fetch(`${USERSURL}/${id}`, {
             method: 'PATCH',
             headers: {
@@ -101,8 +101,8 @@ const ACCOLADESURL = 'http://localhost:3000/accolades'
             .then(res => res.json())
   }
 
-  static editSkill(id, body){
-    return fetch(`${SKILLSURL}/${id}`, {
+  static editSkill(body){
+    return fetch(`${SKILLSURL}/${body.id}`, {
             method: 'PATCH',
             headers: {
             'Content-Type': 'application/json',
@@ -113,8 +113,8 @@ const ACCOLADESURL = 'http://localhost:3000/accolades'
             .then(res => res.json())
   }
 
-  static editProject(id, body){
-    return fetch(`${PROJECTSURL}/${id}`, {
+  static editProject(body){
+    return fetch(`${PROJECTSURL}/${body.id}`, {
             method: 'PATCH',
             headers: {
             'Content-Type': 'application/json',
@@ -125,8 +125,8 @@ const ACCOLADESURL = 'http://localhost:3000/accolades'
             .then(res => res.json())
   }
 
-  static editEducation(id, body){
-    return fetch(`${EDUCATIONURL}/${id}`, {
+  static editEducation(body){
+    return fetch(`${EDUCATIONURL}/${body.id}`, {
             method: 'PATCH',
             headers: {
             'Content-Type': 'application/json',
@@ -137,8 +137,8 @@ const ACCOLADESURL = 'http://localhost:3000/accolades'
             .then(res => res.json())
   }
 
-  static editExperience(id, body){
-    return fetch(`${EXPERIENCESURL}/${id}`, {
+  static editExperience(body){
+    return fetch(`${EXPERIENCESURL}/${body.id}`, {
             method: 'PATCH',
             headers: {
             'Content-Type': 'application/json',
@@ -149,8 +149,8 @@ const ACCOLADESURL = 'http://localhost:3000/accolades'
             .then(res => res.json())
   }
 
-  static editAccolade(id, body){
-    return fetch(`${ACCOLADESURL}/${id}`, {
+  static editAccolade(body){
+    return fetch(`${ACCOLADESURL}/${body.id}`, {
             method: 'PATCH',
             headers: {
             'Content-Type': 'application/json',

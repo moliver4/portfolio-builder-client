@@ -150,6 +150,85 @@ class App extends React.Component {
     }
   }
 
+  editObjFetchHandler = (name, obj) => {
+    switch(name){
+      case 'skill':
+        let temp = Adapter.editSkill(obj)
+        temp.then(data => this.editObjStateHandler('skill', data))
+        break
+      case 'project':
+        let temp = Adapter.editProject(obj)
+        temp.then(data => this.editObjStateHandler('project', data))
+        break
+      case 'education':
+        let temp = Adapter.editEducation(obj)
+        temp.then(data => this.editObjStateHandler('education', data))
+        break
+      case 'experience':
+        let temp = Adapter.editExperience(obj)
+        temp.then(data => this.editObjStateHandler('experience', data))
+        break
+      case 'accolade':
+        let temp = Adapter.editAccolade(obj)
+        temp.then(data => this.editObjStateHandler('accolade', data))
+        break
+      default:
+        console.log('i got nothing, nothing was edited and i cry')
+        break
+    }
+  }
+
+  editObjStateHandler = (name, data) => {
+    console.log(`${name} data: ${data} made it to set state handler for edit`)
+    switch(name){
+      case 'skill':
+        this.setState(prevState=> {
+          return {
+            skills: this.editHelper(prevState.skills, data)
+          }
+        }, () => console.log('skill editd') )
+        break
+      case 'project':
+        this.setState(prevState=> {
+          return {
+            projects: this.editHelper(prevState.projects, data)
+          }
+        }, () => console.log('project editd') )
+        break
+      case 'education':
+        this.setState(prevState=> {
+          return {
+            education: this.editHelper(prevState.education, data)
+          }
+        }, () => console.log('education editd') )
+        break
+      case 'experience':
+        this.setState(prevState=> {
+          return {
+            experiences: this.editHelper(prevState.experiences, data)
+          }
+        }, () => console.log('experience editd') )
+        break
+      case 'accolade':
+        this.setState(prevState=> {
+          return {
+            accolades: this.editHelper(prevState.accolades, data)
+          }
+        }, () => console.log('accolade editd') )
+        break
+      default:
+        console.log('nothing was editd and everything is broken')
+        break
+    }
+  }
+
+  editHelper = (prev, obj) => {
+    let temp = prev.map(o => {
+      return o.id !== obj.id ? o:  obj
+    })
+    return temp
+  }
+
 
   deleteObjFetchHandler = (name, id) => {
     switch(name){
@@ -185,35 +264,35 @@ class App extends React.Component {
       case 'skill':
         this.setState(prevState=> {
           return {
-            skill: this.deleteHelper(prevState.skills, data.id)
+            skills: this.deleteHelper(prevState.skills, data.id)
           }
         }, () => console.log('skill deleted') )
         break
       case 'project':
         this.setState(prevState=> {
           return {
-            project: this.deleteHelper(prevState.projects, data.id)
+            projects: this.deleteHelper(prevState.projects, data.id)
           }
         }, () => console.log('project deleted') )
         break
       case 'education':
         this.setState(prevState=> {
           return {
-            education: this.deleteHelper(prevState.education, data.id)
+            educations: this.deleteHelper(prevState.education, data.id)
           }
         }, () => console.log('education deleted') )
         break
       case 'experience':
         this.setState(prevState=> {
           return {
-            experience: this.deleteHelper(prevState.experiences, data.id)
+            experiences: this.deleteHelper(prevState.experiences, data.id)
           }
         }, () => console.log('experience deleted') )
         break
       case 'accolade':
         this.setState(prevState=> {
           return {
-            accolade: this.deleteHelper(prevState.accolades, data.id)
+            accolades: this.deleteHelper(prevState.accolades, data.id)
           }
         }, () => console.log('accolade deleted') )
         break
@@ -229,7 +308,7 @@ class App extends React.Component {
   }
 
 
-  
+
   render() {
     return (
       <div>
@@ -256,12 +335,10 @@ class App extends React.Component {
                             experiences={this.state.experiences}
                             accolades={this.state.accolades}
                             alternate="/"  
-                            addUserInfo={this.addUserInfoHandler}
-                            addSkill={this.addSkillHandler}
-                            addProject={this.addProjectHandler}
-                            addEducation={this.addEducationHandler}
-                            addExperience={this.addExperienceHandler}
-                            addAccolade={this.addAccoladeHandler} 
+                            addObj={this.addObjFetchHandler}
+                            editObj={this.editObjFetchHandler}
+                            deleteObj={this.deleteObjFetchHandler}
+                        
                           />}
           />
           <Route 
