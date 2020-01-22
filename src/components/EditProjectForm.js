@@ -24,7 +24,7 @@ const EditProjectForm = (props) => {
                         <option value="4">4</option>
                         <option value="5">5</option>
                     </select> <br></br>
-            <input onClick={e => props.handleFormSubmit(e)} type="submit" value="submit"></input>
+            <input onClick={e => props.handleFormSubmit(e, props.cardDetails.id)} type="submit" value="submit"></input>
         </form>
     )
   }

@@ -11,6 +11,7 @@ export default class EditProjectsContainer extends Component {
         this.state = {
             editing: false,
             cardForm : {
+                id: null,
                 project_url: "",
                 name: "",
                 summary: "",
@@ -55,8 +56,9 @@ export default class EditProjectsContainer extends Component {
     //         // this.getThoseCards()  
     // }
 
-    handleSubmit = (e) => {
+    handleSubmit = (e, id) => {
         e.preventDefault()
+        console.log(id)
         console.log('form submitted')
     }
 
