@@ -175,6 +175,10 @@ class App extends React.Component {
         temp = Adapter.editAccolade(obj)
         temp.then(data => this.editObjStateHandler('accolade', data))
         break
+      case 'user':
+        temp = Adapter.editUser(obj)
+        temp.then(data => this.editObjStateHandler('user', data))
+        break
       default:
         console.log('i got nothing, nothing was edited and i cry')
         break
@@ -218,6 +222,14 @@ class App extends React.Component {
             accolades: this.editHelper(prevState.accolades, data)
           }
         }, () => console.log('accolade editd') )
+        break
+      case 'user':
+        console.log('updating state of user. It will become this: ', data)
+        this.setState( 
+           {
+            user: data
+          }
+         )
         break
       default:
         console.log('nothing was editd and everything is broken')
