@@ -4,18 +4,25 @@ const EditExperienceCard = props => {
 
 const { experience } = props;
 
-const handleClick = () => {
+const handleExperienceEditClick = () => {
     props.editExistingExperience(props.experience) 
+}
+
+const handleAddExperienceClick = () => {
+    props.newExperienceClick()
 }
 
 // replace class names
   return (
     <div className="ui card"> 
-        <div className="skill">
+        <div className="Experience">
             <div>
                 {experience}
-                <button onClick={() => handleClick()}>Edit</button>
+                <button onClick={() => handleExperienceEditClick()}>Edit</button>
             </div>
+        </div>
+        <div>
+            <button onClick={() => handleAddExperienceClick()}>Add Skill</button>
         </div>
     </div>
   )
