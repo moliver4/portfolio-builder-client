@@ -5,7 +5,7 @@ const EditExperienceForm = props => {
     const { experience } = props;
 
     const handleChange = (event) => {
-        props.
+        
     }
 
     // udpate className so it matches other edit forms
