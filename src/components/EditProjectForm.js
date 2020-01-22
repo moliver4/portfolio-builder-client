@@ -21,7 +21,7 @@ const EditProjectForm = ( ) => {
                         <option value="4"></option>
                         <option value="5"></option>
                     </select>
-            <input onClick={} type="submit" value="submit"></input>
+            <input onClick={console.log('hello')} type="submit" value="submit"></input>
         </form>
     )
   }

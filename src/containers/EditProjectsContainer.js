@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import EditProjectForm from './src/components/EditProjectForm.js'
-import EditProjectsCard from './src/components/EditProjectsCard.js'
+import EditProjectForm from '../components/EditProjectForm.js'
+import EditProjectsCard from '../components/EditProjectsCard.js'
 
 
 
@@ -36,7 +36,7 @@ export default class EditProjectsContainer extends Component {
     }
 
     handleFormSubmit = () => {
-        newEditing = !this.state.editing
+        let newEditing = !this.state.editing
         this.setState({
             editing : newEditing
         })
@@ -72,7 +72,7 @@ export default class EditProjectsContainer extends Component {
     handleFormChange = (e) => {
         let newOb = {
             cardForm: {
-                [e.target.name]: e.target.project-url.value,
+                [e.target.name]: e.target.project_url.value,
                 [e.target.name]: e.target.name.value,
                 [e.target.name]: e.target.summary.value,
                 [e.target.name]: e.target.img_url.value,
@@ -85,7 +85,7 @@ export default class EditProjectsContainer extends Component {
 
     changeEditing = (e, cardDetails) => {
         this.setState(prevState => {
-            newEditing = !prevState.editing
+            let newEditing = !prevState.editing
             return {
                 editing: newEditing,
                 cardForm: {
@@ -109,7 +109,7 @@ export default class EditProjectsContainer extends Component {
         return (
             <div>
                 {this.checkDisplayForm()}
-                {this.renderEditCards()}
+                {this.renderEditProjectCards()}
             </div>
         )
     }

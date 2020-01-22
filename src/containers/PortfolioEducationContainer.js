@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import ShowEducationCard from 'src/components/ShowEducationCard.js'
+import ShowEducationCard from '../components/ShowEducationCard.js'
 
 export class PortfolioEducationContainer extends Component {
 

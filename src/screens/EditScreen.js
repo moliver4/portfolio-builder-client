@@ -1,10 +1,14 @@
 import React, { Component } from 'react'
-import EditProjectsContainer from './src/containers/EditProjectsContainer.js'
-import EditEducationContainer from './src/containers/EditEducationContainer.js'
+import EditProjectsContainer from '../containers/EditProjectsContainer.js'
+import EditEducationContainer from '../containers/EditEducationContainer.js'
+import LoginHOC from '../HOCs/LoginHOC'
 
-export default class EditScreen extends Component {
+
+class EditScreen extends Component {
 
 // render containers for each field to be edited 
+
+// 2 buttons at bottom!!! 1 will be button to SAVE the data(although we are already saving it) and other must be a 'Link' to '/portoflio/:id'
     render() {
         return (
             <div>
@@ -15,3 +19,5 @@ export default class EditScreen extends Component {
     }
 }
 
+
+export default LoginHOC(EditScreen)

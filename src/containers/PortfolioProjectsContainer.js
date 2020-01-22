@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import ShowProjectsCard from './src/components/ShowProjectsCard.js'
+import ShowProjectsCard from '../components/ShowProjectsCard.js'
 
 export class PortfolioProjectsContainer extends Component {
 

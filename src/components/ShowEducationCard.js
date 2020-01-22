@@ -19,6 +19,6 @@ const ShowEducationCard = ( ) => {
   
     )
   }
-  }
+  
   
   export default ShowEducationCard
