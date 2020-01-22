@@ -1,18 +1,17 @@
 import React, { Component } from 'react'
 import experienceCards from '../components/EditExperienceCard'
 import experienceForm from '../components/EditExperienceForm'
+import EditExperienceForm from '../components/EditExperienceForm'
 
 //render form conditionally
 
-export default class EditExperienceContainer extends Component {
+class EditExperienceContainer extends Component {
     constructor(props) {
         super(props)
     
-        //editing
         //newexperience
         this.state = {
             editing: false,
-            experience: [],
             newExperience: []
         }
     }
@@ -25,22 +24,37 @@ export default class EditExperienceContainer extends Component {
     }
 
     // function that will be called when user clicks on edit button on existing skill 
-    // update state with experience
-    // prepopulate with current information
+    // update state with experience and toggle editing to "true" in order to trigger prepopulated form to render
+
     editExistingExperience = (experience) => {
         this.setState({
-            
+            editing: true,
+            newExperience: experience
         })
     }
 
     // function that will be called when user clicks on button that will add a new skill
 
+
+    // prepopulate form with current information (this.state.newExperience)
+
     render() {
+        let isEditing = this.state.editing
+
         return (
             <div>
-                <h3>Experience</h3>
-                {this.mapThroughExperience()}
+                <div>
+                    <h3>Experience</h3>
+                    {this.mapThroughExperience()}
+                </div>
+                <div>
+                    {
+                        isEditing ? <EditExperienceForm experience={this.state.newExperience} /> : null 
+                    }
+                </div>
             </div>
         )
     }
 }
+
+export default EditExperienceContainer;

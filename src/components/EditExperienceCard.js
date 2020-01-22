@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 
-//accepts props from parent of 1  obj, renders info for each attribute
-
 const EditExperienceCard = props => {
 
 const { experience } = props;
