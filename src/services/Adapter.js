@@ -1,7 +1,7 @@
 const USERSURL = 'http://localhost:3000/users'
 const SKILLSURL = 'http://localhost:3000/skills'
 const PROJECTSURL = 'http://localhost:3000/projects'
-const EDUCATIONURL = 'http://localhost:3000/education'
+const EDUCATIONSURL = 'http://localhost:3000/educations'
 const EXPERIENCESURL = 'http://localhost:3000/experiences'
 const ACCOLADESURL = 'http://localhost:3000/accolades'
 //to use this class, import into the page as Adapter.
@@ -51,7 +51,7 @@ const ACCOLADESURL = 'http://localhost:3000/accolades'
   }
 
   static addEducation(body){
-    return fetch(`${EDUCATIONURL}`, {
+    return fetch(`${EDUCATIONSURL}`, {
             method: 'POST',
             headers: {
             'Content-Type': 'application/json',
@@ -126,7 +126,7 @@ const ACCOLADESURL = 'http://localhost:3000/accolades'
   }
 
   static editEducation(body){
-    return fetch(`${EDUCATIONURL}/${body.id}`, {
+    return fetch(`${EDUCATIONSURL}/${body.id}`, {
             method: 'PATCH',
             headers: {
             'Content-Type': 'application/json',
@@ -194,7 +194,7 @@ const ACCOLADESURL = 'http://localhost:3000/accolades'
   }
 
   static deleteEducation(id){
-    return fetch(`${EDUCATIONURL}/${id}`, {
+    return fetch(`${EDUCATIONSURL}/${id}`, {
             method: 'DELETE',
             headers: {
             'Content-Type': 'application/json',
