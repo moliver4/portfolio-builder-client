@@ -55,10 +55,10 @@ class App extends React.Component {
 
     userPromise.then(data => this.updateState(data))
 
-    this.toggleLogin()
+    
   }
 
-
+  // DK - keep loggedIn state change in the body of setState so up-to-date state is sent down to components
   updateState = (data) => {
     console.log(data)
     this.setState({
@@ -67,8 +67,9 @@ class App extends React.Component {
       projects: data.projects,
       education: data.education,
       experiences: data.experiences,
-      accolades: data.accolades
-    }, () => console.log(this.state.skills))
+      accolades: data.accolades,
+      loggedIn: true 
+    })
   }
   
 
