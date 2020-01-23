@@ -57,8 +57,7 @@ export class PortfolioScreen extends Component {
     render() {
         return (
             <div>
-                <PortfolioProjectsContainer></PortfolioProjectsContainer>
-                <PortfolioEducationContainer></PortfolioEducationContainer>
+            
             </div>
         )
     }
