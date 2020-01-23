@@ -4,15 +4,16 @@ import PortfolioUserContainer from '../containers/PortfolioUserContainer'
 import PortfolioCardContainer from '../containers/PortfolioCardContainer'
 import PortfolioHOC from '../HOCs/PortfolioHOC'
 
+import { unstable_renderSubtreeIntoContainer } from 'react-dom'
+
 
 
 export class PortfolioScreen extends Component {
 
     constructor(props) {
         super(props)
-    
         this.state = {
-            loggedInUser:this.props.user,
+            loggedInUser: props.user,
             user: {},
             skills: [],
             projects: [],
@@ -29,6 +30,7 @@ export class PortfolioScreen extends Component {
 
     getUserInfo = () => {
         const id = this.props.match.params.id;
+
         let body = {
             id: id
         }
@@ -38,7 +40,6 @@ export class PortfolioScreen extends Component {
     }
 
     updatePortfolioState=(data)=> {
-        
         let loggedID
         if (this.state.loggedInUser.id) {
             loggedID=this.state.loggedInUser.id
