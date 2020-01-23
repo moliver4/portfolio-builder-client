@@ -56,9 +56,8 @@ export default class EditUserContainer extends Component {
         // const { id, name, email_address, avatar_url, background_url, template } = this.props.user
         return (
             <div className="card">
-                <div className="card-header bg-transparent"></div>
-                <div className="card-body"></div>
-                    <h5 class="card-title">About You</h5>
+                <div className="card-header bg-transparent">About You</div>
+                <div className="card-body">
                 {/* user avatar: <img src={avatar_url} width='25%' alt='Profile'></img><br />
                 User Id: {id}<br />
                 Username: {name}<br />
@@ -66,7 +65,8 @@ export default class EditUserContainer extends Component {
                 Portfolio template: {template}<br />
                 background image: <img src={background_url} width='90%' alt='background'></img> */}
                 {console.log("here's what's passed into User container", this.props)}
-                <UserForm user={this.state.userForm} handleStateChange={this.handleStateChange} handleFormSubmit={this.handleFormSubmit} />
+                    <UserForm user={this.state.userForm} handleStateChange={this.handleStateChange} handleFormSubmit={this.handleFormSubmit} />
+                </div>
             </div>
         )
     }

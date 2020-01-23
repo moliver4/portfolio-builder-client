@@ -7,28 +7,31 @@ const EditUserForm = (props) => {
     const { name, email_address, avatar_url, background_url, template } = props.user
 
     return(
-          <form className="form-group">
-            <label for="name">Name</label>
-                <input type='text' name='name' value={name} onChange={e => props.handleStateChange(e)}/>
-            <label>
-                Email Address: 
-                <input type='text' name='email_address' value={email_address} onChange={e => props.handleStateChange(e)}/>
-            </label><br/>
-            <label>
-                Profile Picture URL: 
-                <input type='text' name='avatar_url' value={avatar_url} onChange={e => props.handleStateChange(e)}/>
-            </label><br/>
-            <label>
-                Background Image URL: 
-                <input type='text' name='background_url' value={background_url} onChange={e => props.handleStateChange(e)}/>
-            </label><br/>
-            <label>
-                Portfolio Layout: 
-                <input type='text' name='template' value={template} onChange={e => props.handleStateChange(e)}/>
-            </label><br/>
-                <input type='submit' name='submit' value='Update Info' onClick={e => props.handleFormSubmit(e)}/>
-           <br/>
-          </form>
+          <form >
+              <div className="form-group">
+                <label for="name">Name </label>
+                <input className="form-control" type='text' name='name' value={name} onChange={e => props.handleStateChange(e)}/>
+            </div>
+
+            <div className="form-group">
+                <label for="email-address">Email Address </label> 
+                <input className="form-control" type='text' name='email_address' value={email_address} onChange={e => props.handleStateChange(e)}/>
+            </div>
+            <div className="form-group">
+                <label for="picture-url">Profile Picture URL </label>  
+                <input className="form-control" type='text' name='avatar_url' value={avatar_url} onChange={e => props.handleStateChange(e)}/>
+            </div>
+            <div className="form-group">
+                <label for="background-url">Background Image URL </label>  
+                <input className="form-control" type='text' name='background_url' value={background_url} onChange={e => props.handleStateChange(e)}/>
+            </div>
+            <div className="form-group">
+                <label for="portfolio-layout">Template </label>  
+                <input className="form-control" type='text' name='template' value={template} onChange={e => props.handleStateChange(e)}/>
+            </div>
+            
+                <button className="btn btn-primary" type='submit' name='submit' value='Update Info' onClick={e => props.handleFormSubmit(e)}>submit</button>
+        </form>
     )
   }
   
