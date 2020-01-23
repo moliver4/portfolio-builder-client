@@ -25,6 +25,12 @@ const ACCOLADESURL = 'http://localhost:3000/accolades'
             .then(res => res.json())
   }
 
+  //fetches user info based on URL ID
+  static findUserInfo(id, body){
+    return fetch(`${USERSURL}/${id}`)
+            .then(res => res.json())
+  }
+
   //adding field
   static addSkill(body){
     return fetch(`${SKILLSURL}`, {
