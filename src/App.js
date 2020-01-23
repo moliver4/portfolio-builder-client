@@ -366,6 +366,7 @@ class App extends React.Component {
             path="/portfolio/:id" 
             render={(props) => <PortfolioScreen 
                                   {...props} 
+                                  logout={this.logoutHandler}
                                   loggedIn={this.state.loggedIn} 
                                   loggedInUser={this.state.user} 
                                 />}
