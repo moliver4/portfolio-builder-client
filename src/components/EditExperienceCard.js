@@ -13,8 +13,8 @@ const { company, role, summary, start_date, end_date, order } = props.experience
     <div className="ui card"> 
         <div className="Experience">
             <div>
-                <h4>Company: {company}</h4>
-                <h5>Role: {role}</h5>
+                <p>Company: {company}</p>
+                <p>Role: {role}</p>
                 <p>Summary: {summary}</p>
                 <p>Start Date: {start_date}</p>
                 <p>End Date: {end_date}</p>
