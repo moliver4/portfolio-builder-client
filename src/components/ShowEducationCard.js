@@ -9,15 +9,15 @@ const ShowEducationCard = (props) => {
   const { id, institution, major, grad_date, external_link} = props.cardDetails
 
     return(
-        <div>
-          education card<br></br>
-          {id}<br></br>
-          {institution}<br></br>
-          {major}<br></br>
-          {grad_date}<br></br>
-          {external_link}<br></br>
+          <div className="card">
+            <div className="card-body">
+                <h5 className="card-title">{institution}</h5>
+                <h6 className="card-subtitle mb-2 text-muted">{major}</h6>
+                <h7 className="card-subtitle mb-2 text-muted">Graduation date</h7>
+                <p className="card-text">{grad_date}</p>
+                <a href={external_link} className="card-link">Look</a>
+            </div>
         </div>
-  
     )
   }
   
