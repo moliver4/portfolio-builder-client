@@ -53,7 +53,7 @@ export default class EditUserContainer extends Component {
     }
 
     render() {
-        const { id, name, email_address, avatar_url, background_url, template } = this.props.user
+        // const { id, name, email_address, avatar_url, background_url, template } = this.props.user
         return (
             <div>
                 <h1>User Container</h1>
