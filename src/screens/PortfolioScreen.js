@@ -4,6 +4,7 @@ import PortfolioUserContainer from '../containers/PortfolioUserContainer'
 import PortfolioCardContainer from '../containers/PortfolioCardContainer'
 
 
+
 export class PortfolioScreen extends Component {
 
     constructor(props) {
@@ -58,6 +59,7 @@ export class PortfolioScreen extends Component {
     render() {
         return (
             <div>
+
                 <PortfolioUserContainer user={this.state.user} match={this.state.match}/>
 
                 <PortfolioCardContainer skills={this.state.skills}  />
@@ -65,6 +67,7 @@ export class PortfolioScreen extends Component {
                 <PortfolioCardContainer education={this.state.education} />
                 <PortfolioCardContainer experiences={this.state.experiences} />
                 <PortfolioCardContainer accolades={this.state.accolades} />
+
             </div>
         )
     }
