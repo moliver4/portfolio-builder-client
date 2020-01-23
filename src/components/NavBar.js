@@ -37,12 +37,14 @@ export default class NavBar extends Component {
                     <img src={logo} width="35" height="35" alt="" class="d-inline-block align-top"/>
                     <text style={textcolor}> Portfolio Builder Lite </text>
                 </a>
+                <span>
                 {this.viewPortfolio(this.props.user)}
                 <Link to="/">
                     <button type="button" class="btn btn-outline-light" onClick={this.props.logout}>
                         Logout 
                     </button>
                 </Link>
+                </span>
             </nav>
         )
     }
