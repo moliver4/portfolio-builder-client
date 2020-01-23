@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Adapter from '../services/Adapter'
 import PortfolioUserContainer from '../containers/PortfolioUserContainer'
-import PortfolioUserContainer from '../containers/PortfolioUserContainer'
+import PortfolioScreenContainer from '../containers/PortfolioScreenContainer'
 
 
 export class PortfolioScreen extends Component {
