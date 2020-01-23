@@ -26,7 +26,7 @@ const LoginScreen = ({ email, submitLogin, handleInputChange}) => {
                                     name='email_address'
                                     onChange={(e) => handleInputChange(e)}
                                 /> <br></br>
-                        <input type='button' class="btn btn-primary" value='Login' />
+                        <input onClick={(e) => submitLogin(e)} type='button' class="btn btn-primary" value='Login' />
                     </form>
 
                     <div class="p-3 mb-2 bg-info text-white">
