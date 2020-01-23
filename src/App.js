@@ -49,13 +49,13 @@ class App extends React.Component {
     e.preventDefault()
     console.log(this.state.email)
     if (this.state.email.length < 6) {
+      window.alert('Please enter a valid email address.')
       return
     }
     let body = {
       email_address: this.state.email
     }
     let userPromise = Adapter.fetchUser(body)
-
     userPromise.then(data => this.updateState(data))
 
     
