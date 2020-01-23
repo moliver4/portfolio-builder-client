@@ -9,7 +9,7 @@ const ShowAccoladeCard = (props) => {
     const {id, name, summary, link} = props.cardDetails
 
     return(
-          <div className="card">
+          <div className="card text-left">
             <div className="card-body">
                 <h5 className="card-title">{name}</h5>
                 <h6 className="card-subtitle mb-2 text-muted">{summary}</h6>
