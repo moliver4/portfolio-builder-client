@@ -21,6 +21,7 @@ const EditExperienceForm = props => {
                     <input type="text" name="end_date" value={end_date} onChange={(e) => props.handleChange(e)}/><br></br>
                     <p>order:</p> 
                     <select onChange={e => props.handleChange(e)} name="order" value={order}>
+                        <option value="">Make A Selection</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>

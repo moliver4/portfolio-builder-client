@@ -115,9 +115,9 @@ export default class EditProjectsContainer extends Component {
         return (
             <div>
                 <h1>Projects Container</h1>
-                <button onClick={e => this.newForm(e)}>add</button>
                 {this.checkDisplayForm()}
                 {this.renderCards()}
+                <button onClick={e => this.newForm(e)}>Add A Project</button>
             </div>
         )
     }

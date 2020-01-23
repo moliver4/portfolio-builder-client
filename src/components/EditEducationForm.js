@@ -17,7 +17,8 @@ const EditEducationForm = (props) => {
     grad_date: <input onChange={e => props.handleFormChange(e)} type="text" name="grad_date" value={grad_date}></input> <br></br>
     external_link: <input onChange={e => props.handleFormChange(e)} type="text" name="external_link" value={external_link}></input> <br></br>
     order: 
-            <select onChange={e => props.handleFormChange(e)} name="order">
+            <select onChange={e => props.handleFormChange(e)} name="order" value={order}>
+                <option value="">Make A Selection</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>

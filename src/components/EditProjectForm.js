@@ -18,6 +18,7 @@ const EditProjectForm = (props) => {
             languages_used: <input onChange={e => props.handleFormChange(e)} type="text" name="languages_used" value={languages_used}></input> <br></br>
             order: 
                     <select onChange={e => props.handleFormChange(e)} name="order" value={order}>
+                        <option value="">Make A Selection</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
