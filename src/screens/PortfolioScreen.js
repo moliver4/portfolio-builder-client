@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import PortfolioEducationContainer from '../containers/PortfolioEducationContainer.js'
-import PortfolioProjectsContainer from '../containers/PortfolioProjectsContainer.js'
+
 
 export class PortfolioScreen extends Component {
 
@@ -19,8 +18,7 @@ export class PortfolioScreen extends Component {
     render() {
         return (
             <div>
-                <PortfolioProjectsContainer></PortfolioProjectsContainer>
-                <PortfolioEducationContainer></PortfolioEducationContainer>
+               
             </div>
         )
     }
