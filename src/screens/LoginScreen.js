@@ -7,23 +7,25 @@ import logo from '../images/logo1.png'
 const LoginScreen = ({ email, submitLogin, handleInputChange}) => {
 
     return (
-        <div>
+        <div class="container">
             <img src={logo} ></img>
-            <form id="login-form" onSubmit={submitLogin}>
-                <h4>Login or SignUp to Get Started</h4>
-                <div>
-                    <label htmlFor='email_address'>Email: </label> 
-                    <input 
-                        type='text' 
-                        value={email} 
-                        name='email_address'
-                        onChange={(e) => handleInputChange(e)}
-                    /> 
-                </div>
 
-                <input type='submit' value='Login' />
-                    
-            </form>
+            <div class=".flex-row">
+                <h4>Login or SignUp to Get Started</h4>
+            </div>
+
+            <div class=".flex-row">
+                <form id="login-form" onSubmit={submitLogin}>
+                            <label htmlFor='email_address'> </label> 
+                            <input placeholder="Enter email"
+                                type='text' 
+                                value={email} 
+                                name='email_address'
+                                onChange={(e) => handleInputChange(e)}
+                            /> <br></br>
+                    <input type='submit' value='Login' />
+                </form>
+            </div>
             
         </div>
     )
