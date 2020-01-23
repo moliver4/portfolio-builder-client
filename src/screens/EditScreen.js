@@ -20,7 +20,7 @@ class EditScreen extends Component {
                 {/* submit button */}
                 {/* portfolio button */}
                 <User user={this.props.user} addUserInfo={this.props.addUserInfo}/>
-                <EditExperienceContainer experiences={this.props.experiences} user={this.props.user} addObj={this.props.addObj} editObj={this.props.editObj} />
+                <EditExperienceContainer experiences={this.props.experiences} user={this.props.user} addObj={this.props.addObj} editObj={this.props.editObj} deleteObj={this.props.deleteObj} />
             </div>
         )
     }

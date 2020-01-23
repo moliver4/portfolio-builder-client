@@ -20,7 +20,7 @@ const { company, role, summary, start_date, end_date } = props.experience;
                 <p>{end_date}</p>
 
                 <button onClick={() => props.editExistingExperience(props.experience)}>Edit</button>
-                <button onClick={props.handleDelete} >Delete</button>
+                <button onClick={() => props.deleteObj('experience', props.experience.id)} >Delete</button>
             </div>
         </div>
     </div>
