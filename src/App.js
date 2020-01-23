@@ -294,7 +294,7 @@ class App extends React.Component {
       case 'education':
         this.setState(prevState=> {
           return {
-            educations: this.deleteHelper(prevState.education, data.id)
+            education: this.deleteHelper(prevState.education, data.id)
           }
         }, () => console.log('education deleted') )
         break
