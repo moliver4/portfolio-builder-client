@@ -9,14 +9,15 @@ const ShowProjectsCard = (props) => {
   const {id, name, summary, img_url, languages_used} = props.cardDetails
 
   return(
-      <div>
-        project card<br></br>
-        {id}<br></br>
-        {name}<br></br>
-        {summary}<br></br>
-        {img_url}<br></br>
-        {languages_used}<br></br>
-      </div>
+
+        <div className="card">
+          <div className="card-body">
+            <h5 className="card-title">{name}</h5>
+            <p className="card-text">{summary}</p>
+            <p className="card-text">{languages_used}</p>
+          </div>
+        </div>
+     
 
   )
   }
