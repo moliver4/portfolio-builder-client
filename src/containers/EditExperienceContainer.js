@@ -76,7 +76,7 @@ class EditExperienceContainer extends Component {
         return (
             <div>
                 <div>
-                    <h3>Experience</h3>
+                    <h1>Experience Container</h1>
                     {this.mapThroughExperience()} 
                 </div>
                 <div>
