@@ -3,6 +3,7 @@ import Adapter from '../services/Adapter'
 import PortfolioUserContainer from '../containers/PortfolioUserContainer'
 import PortfolioCardContainer from '../containers/PortfolioCardContainer'
 import NavBar from '../components/NavBar'
+import {Redirect} from 'react-router-dom'
 
 
 import { unstable_renderSubtreeIntoContainer } from 'react-dom'
@@ -38,6 +39,7 @@ export class PortfolioScreen extends Component {
         let userPromise = Adapter.findUserInfo(id, body)
 
         userPromise.then(data => this.updatePortfolioState(data))
+        .catch(error => console.log('fetch portfolio of non-existent user: ', error))
     }
 
     updatePortfolioState=(data)=> {
@@ -81,7 +83,7 @@ export class PortfolioScreen extends Component {
                 </div>
             </div>
         )} else {
-            return <div> nothing </div>
+            return <Redirect to='/'/>
         }
     }
 }
