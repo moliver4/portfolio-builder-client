@@ -47,7 +47,7 @@ class EditExperienceContainer extends Component {
         this.setState({
             editing: true,
             newExperience: experience
-        })
+        }, () => console.log(this.state.newExperience))
     }
 
     // function that will be called when user clicks on button that will add a new skill
