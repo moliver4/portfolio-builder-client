@@ -15,7 +15,7 @@ export default class EditSkillsContainer extends Component {
                 link_url: "",
                 order: 0
         }
-        console.log(this.props.skills)
+        // console.log(this.props.skills)
     }
 
     handleSubmit = (e, id) => {
