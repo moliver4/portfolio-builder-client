@@ -4,17 +4,18 @@ import React from 'react'
 
 const ShowEducationCard = (props) => {
 
-    // const {project_url, name, summary, img_url, languages_used, order} = props.cardDetails
+  console.log(props.cardDetails)
 
-    //will need to update with education data
+  const { id, institution, major, grad_date, external_link} = props.cardDetails
+
     return(
         <div>
-          {/* project_url {project_url}
-          name {name}
-          summary {summary}
-          img_url {img_url}
-          languages_used {languages_used}
-          order {order} */}
+          education card<br></br>
+          {id}<br></br>
+          {institution}<br></br>
+          {major}<br></br>
+          {grad_date}<br></br>
+          {external_link}<br></br>
         </div>
   
     )

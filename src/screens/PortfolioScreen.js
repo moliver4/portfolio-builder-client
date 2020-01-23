@@ -1,10 +1,14 @@
 import React, { Component, Fragment } from 'react'
 import Adapter from '../services/Adapter'
 import PortfolioUserContainer from '../containers/PortfolioUserContainer'
+<<<<<<< HEAD
+import PortfolioCardContainer from '../containers/PortfolioCardContainer.js'
+=======
 import PortfolioCardContainer from '../containers/PortfolioCardContainer'
 import PortfolioHOC from '../HOCs/PortfolioHOC'
 import { unstable_renderSubtreeIntoContainer } from 'react-dom'
 
+>>>>>>> 632c06de4e754aaf2809ff4d542e61ce248cd180
 
 
 export class PortfolioScreen extends Component {
