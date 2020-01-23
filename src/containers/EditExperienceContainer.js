@@ -14,7 +14,8 @@ class EditExperienceContainer extends Component {
                 summary: '',
                 start_date: '',
                 end_date: '',
-                user_id: this.props.user_id
+                user_id: this.props.user_id,
+                order: 0
             }
         }
     }

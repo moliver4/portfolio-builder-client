@@ -2,7 +2,7 @@ import React from "react";
 
 const EditExperienceCard = props => {
 
-const { company, role, summary, start_date, end_date } = props.experience;
+const { company, role, summary, start_date, end_date, order } = props.experience;
 
 // const handleExperienceEditClick = () => {
 //     props.editExistingExperience(props.experience) 
@@ -18,6 +18,7 @@ const { company, role, summary, start_date, end_date } = props.experience;
                 <p>{summary}</p>
                 <p>{start_date}</p>
                 <p>{end_date}</p>
+                order: {order} <br></br>
 
                 <button onClick={() => props.editExistingExperience(props.experience)}>Edit</button>
                 <button onClick={() => props.deleteObj('experience', props.experience.id)} >Delete</button>
