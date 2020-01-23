@@ -7,12 +7,9 @@ const EditUserForm = (props) => {
     const { name, email_address, avatar_url, background_url, template } = props.user
 
     return(
-        <div className="form-row">
-          <form>
-            <label>
-                Name: 
+          <form className="form-group">
+            <label for="name">Name</label>
                 <input type='text' name='name' value={name} onChange={e => props.handleStateChange(e)}/>
-            </label><br/>
             <label>
                 Email Address: 
                 <input type='text' name='email_address' value={email_address} onChange={e => props.handleStateChange(e)}/>
@@ -32,8 +29,6 @@ const EditUserForm = (props) => {
                 <input type='submit' name='submit' value='Update Info' onClick={e => props.handleFormSubmit(e)}/>
            <br/>
           </form>
-        </div>
-  
     )
   }
   

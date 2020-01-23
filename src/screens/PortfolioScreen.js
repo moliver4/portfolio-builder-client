@@ -22,7 +22,8 @@ export class PortfolioScreen extends Component {
             education: [],
             experiences: [],
             accolades: [], 
-            match: false 
+            match: false,
+            error: false
         }
     }
     
@@ -39,7 +40,12 @@ export class PortfolioScreen extends Component {
         let userPromise = Adapter.findUserInfo(id, body)
 
         userPromise.then(data => this.updatePortfolioState(data))
-        .catch(error => console.log('fetch portfolio of non-existent user: ', error))
+        .catch(error => this.setError(error))
+    }
+
+    setError = (error) => {
+        console.log(error)
+        this.setState({error: true})
     }
 
     updatePortfolioState=(data)=> {
@@ -82,8 +88,10 @@ export class PortfolioScreen extends Component {
                     </div>
                 </div>
             </div>
-        )} else {
-            return <Redirect to='/'/>
+        )} else if (this.state.error) {
+            return <Redirect to='/' />
+        } else {
+            return <div></div>
         }
     }
 }
