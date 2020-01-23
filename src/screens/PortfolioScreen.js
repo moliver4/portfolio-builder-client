@@ -58,7 +58,7 @@ export class PortfolioScreen extends Component {
     // if user is logged in (prop passed from app.js), show the edit button that redirects to edit/user_id page
 
     render() {
-        if (this.state.skills.length > 1) {
+        if (this.state.skills.length > 0) {
         return (
             <div className="container">
                 <div className="row">
