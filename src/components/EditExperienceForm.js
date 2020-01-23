@@ -9,17 +9,28 @@ const EditExperienceForm = props => {
 
           <div>
               <form >
-                    <h3>Company</h3>
+                    <label>
+                        <h5>Company: </h5>
                     <input type="text" name="company" value={company} onChange={(e) => props.handleChange(e)} /><br></br>
-                    <h3>Role</h3>
+                    </label>
+                    <label>
+                    <h5>Role: </h5>
                     <input type="text" name="role" value={role} onChange={(e) => props.handleChange(e)}/><br></br>
-                    <p>Summary</p>
+                    </label>
+                    <label>
+                    <h5>Summary: </h5>
                     <input type="textarea" name="summary" value={summary} onChange={(e) => props.handleChange(e)}/><br></br>
-                    <p>Start Date</p>
+                    </label>
+                    <label>
+                    <h5>Start Date: </h5>
                     <input type="text" name="start_date" value={start_date} onChange={(e) => props.handleChange(e)}/><br></br>
-                    <p>End Date</p>
+                    </label>
+                    <label>
+                    <h5>End Date: </h5>
                     <input type="text" name="end_date" value={end_date} onChange={(e) => props.handleChange(e)}/><br></br>
-                    <p>order:</p> 
+                    </label>
+                    <label>
+                    <h5>Order: </h5> 
                     <select onChange={e => props.handleChange(e)} name="order" value={order}>
                         <option value="">Make A Selection</option>
                         <option value="1">1</option>
@@ -28,6 +39,7 @@ const EditExperienceForm = props => {
                         <option value="4">4</option>
                         <option value="5">5</option>
                     </select> <br></br>
+                    </label>
                     <input type="submit" value="Submit" onClick={props.submitNewInfo} />
               </form>
           </div>
