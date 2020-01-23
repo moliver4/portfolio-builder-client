@@ -4,21 +4,21 @@ import React from 'react'
 
 const ShowProjectsCard = (props) => {
 
-    // render each attribute
+  console.log(props.cardDetails)
 
-    const {project_url, name, summary, img_url, languages_used, order} = props.cardDetails
+  const {id, name, summary, img_url, languages_used} = props.cardDetails
 
-    return(
-        <div>
-          project_url {project_url}
-          name {name}
-          summary {summary}
-          img_url {img_url}
-          languages_used {languages_used}
-          order {order}
-        </div>
-  
-    )
+  return(
+      <div>
+        project card<br></br>
+        {id}<br></br>
+        {name}<br></br>
+        {summary}<br></br>
+        {img_url}<br></br>
+        {languages_used}<br></br>
+      </div>
+
+  )
   }
   
   export default ShowProjectsCard
