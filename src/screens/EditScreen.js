@@ -5,6 +5,7 @@ import EditSkillsContainer from '../containers/EditSkillsContainer.js'
 import LoginHOC from '../HOCs/LoginHOC'
 import User from '../containers/EditUserContainer'
 import EditExperienceContainer from '../containers/EditExperienceContainer'
+import NavBar from '../components/NavBar'
 import { Link } from 'react-router-dom'
 
 class EditScreen extends Component {
@@ -19,6 +20,7 @@ class EditScreen extends Component {
         console.log("these are the props in Edit Screen", this.props)
         return (
             <div>
+                <NavBar logout={this.props.logout}/>
                 <User user={this.props.user} editUserInfo={this.props.editObj}/>
                 <EditProjectsContainer userInfo={this.props.user} addObj={this.props.addObj} deleteObj={this.props.deleteObj} editObj={this.props.editObj} projects={this.props.projects} ></EditProjectsContainer>
                 <EditEducationContainer userInfo={this.props.user} addObj={this.props.addObj} deleteObj={this.props.deleteObj} editObj={this.props.editObj} education={this.props.education} ></EditEducationContainer>
@@ -27,7 +29,7 @@ class EditScreen extends Component {
                 <div>
                     <br/>
                     <Link to={this.portfolioLink}>
-                    <button><h4>Build Portfolio!</h4></button>
+                        <button><h4>Build Portfolio!</h4></button>
                     </Link>
                     <br/>
                 </div>

@@ -24,20 +24,6 @@ class App extends React.Component {
     }
   }
 
-  //reset state to default if needed 
-  resetState=() => {
-    this.setState({
-      loggedIn: false,
-      email: "",
-      user: {},
-      skills: [],
-      projects: [],
-      education: [],
-      experiences: [],
-      accolades: []  
-    })
-  }
-
   //toggles logIn and logout (optional)
   toggleLogin = () => {
     this.setState(prevState => {
@@ -325,6 +311,25 @@ class App extends React.Component {
   }
 
 
+  //reset state to default if needed 
+  resetState=() => {
+    this.setState({
+      loggedIn: false,
+      email: "",
+      user: {},
+      skills: [],
+      projects: [],
+      education: [],
+      experiences: [],
+      accolades: []  
+    })
+  }
+
+  logoutHandler = () => {
+    this.resetState()
+  }
+
+
 
   render() {
     return (
@@ -344,6 +349,7 @@ class App extends React.Component {
           <Route
             path="/edit"
             render={() => <EditScreen 
+                            logout={this.logoutHandler}
                             loggedIn={this.state.loggedIn}
                             user={this.state.user} 
                             skills={this.state.skills} 

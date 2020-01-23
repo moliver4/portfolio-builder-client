@@ -3,6 +3,7 @@ import Adapter from '../services/Adapter'
 import PortfolioUserContainer from '../containers/PortfolioUserContainer'
 import PortfolioCardContainer from '../containers/PortfolioCardContainer'
 import PortfolioHOC from '../HOCs/PortfolioHOC'
+
 import { unstable_renderSubtreeIntoContainer } from 'react-dom'
 
 
@@ -13,7 +14,7 @@ export class PortfolioScreen extends Component {
         super(props)
     
         this.state = {
-            loggedInUser:this.props.user,
+            loggedInUser: this.props.user,
             user: {},
             skills: [],
             projects: [],
@@ -25,11 +26,13 @@ export class PortfolioScreen extends Component {
     }
     
     componentDidMount() {
+        console.log(this.props.match.params.id)
         this.getUserInfo()
     }
 
     getUserInfo = () => {
         const id = this.props.match.params.id;
+
         let body = {
             id: id
         }
@@ -39,7 +42,6 @@ export class PortfolioScreen extends Component {
     }
 
     updatePortfolioState=(data)=> {
-        
         let loggedID
         if (this.state.loggedInUser.id) {
             loggedID=this.state.loggedInUser.id
@@ -60,6 +62,7 @@ export class PortfolioScreen extends Component {
     render() {
         return (
             <div>
+        
                 <PortfolioUserContainer user={this.state.user} match={this.state.match}/>
                 <PortfolioCardContainer user={this.state.user} skills={this.state.skills}  />
                 <PortfolioCardContainer user={this.state.user} projects={this.state.projects} />
