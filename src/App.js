@@ -57,8 +57,6 @@ class App extends React.Component {
     let userPromise = Adapter.fetchUser(body)
 
     userPromise.then(data => this.updateState(data))
-
-    
   }
 
   // DK - keep loggedIn state change in the body of setState so up-to-date state is sent down to components
