@@ -13,7 +13,9 @@ const LoginScreen = ({ email, submitLogin, handleInputChange}) => {
         <div className="container text-center" >
 
             <div className='row py-5'>
-                <div className='col '>
+
+                <div className='col' width='25'>
+
                     <img className='py-5' width="150px" src={logo} ></img>
                     <h4>Login or SignUp to Get Started</h4>
                     <form className='py-3' id="login-form" onSubmit={submitLogin}>
@@ -26,7 +28,11 @@ const LoginScreen = ({ email, submitLogin, handleInputChange}) => {
                                 /> <br></br>
                         <input type='submit' value='Login' />
                     </form>
+                    <h2>Welcome to the MVP porfolio builder!</h2>
+                    <h4>Where you can create your own portfolio and share it with the world.</h4>
+                    
                 </div>
+
             </div>
             
         </div>
