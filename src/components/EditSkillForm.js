@@ -15,12 +15,12 @@ const EditSkillForm = (props) => {
       link_url: <input onChange={e => props.handleFormChange(e)} type="text" name="link_url" value={link_url}></input> <br></br>
                 proficiency : 
                         <select onChange={e => props.handleFormChange(e)} name="proficiency" value={proficiency}>
-                            <option value="">Make a Selection</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
+                            <option value="">No Preference</option>
+                            <option value="1">Novice</option>
+                            <option value="2">Intermediate</option>
+                            <option value="3">Expert</option>
+                            {/* <option value="4">4</option>
+                            <option value="5">5</option> */}
                         </select> <br></br>
                 order: 
                         <select onChange={e => props.handleFormChange(e)} name="order" value={order}>
