@@ -16,9 +16,9 @@ export default class EditProjectsCard extends Component {
                 <p><strong>Project URL</strong> {this.props.cardDetails.project_url} </p>
                 <p><strong>Languages Used</strong> {this.props.cardDetails.languages_used} </p>
                 <p><strong>Image URL</strong> {this.props.cardDetails.img_url} </p>
-                <p><strong>Project Display Order</strong> {this.props.cardDetails.order} </p>
-                <button onClick={e => this.props.changeEditing(e, this.props.cardDetails)} type="button">edit</button>
-                <button onClick={e => this.props.deleteObj('project', this.props.cardDetails.id)} type="button">delete</button>
+                <p><strong>Display Order</strong> {this.props.cardDetails.order} </p>
+                <button onClick={e => this.props.changeEditing(e, this.props.cardDetails)} type="button">Edit</button>
+                <button onClick={e => this.props.deleteObj('project', this.props.cardDetails.id)} type="button">Delete</button>
                 <br/>
                 <br/>
             </div>

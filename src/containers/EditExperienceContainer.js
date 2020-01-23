@@ -88,7 +88,7 @@ class EditExperienceContainer extends Component {
                     }
                 </div>
                 <div>
-                    <button onClick={this.newExperienceClick}>Add Skill</button>
+                    <button onClick={this.newExperienceClick}>Add Experience</button>
                 </div>
             </div>
         )

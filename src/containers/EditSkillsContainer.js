@@ -111,7 +111,7 @@ export default class EditSkillsContainer extends Component {
                 <h1>Skills Container</h1>
                 {this.checkDisplayForm()}
                 {this.renderCards()}
-                <button onClick={e => this.newForm(e)}>Add A Skill</button>
+                <button onClick={e => this.newForm(e)}>Add Skill</button>
             </div>
         )
     }
