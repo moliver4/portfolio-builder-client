@@ -2,7 +2,10 @@ import React, { Component, Fragment } from 'react'
 import Adapter from '../services/Adapter'
 import PortfolioUserContainer from '../containers/PortfolioUserContainer'
 import PortfolioCardContainer from '../containers/PortfolioCardContainer'
-import PortfolioHOC from '../HOCs/PortfolioHOC'
+import NavBar from '../components/NavBar'
+import {Redirect} from 'react-router-dom'
+
+
 import { unstable_renderSubtreeIntoContainer } from 'react-dom'
 
 
@@ -11,9 +14,8 @@ export class PortfolioScreen extends Component {
 
     constructor(props) {
         super(props)
-    
         this.state = {
-            loggedInUser:this.props.user,
+            loggedInUser: props.loggedInUser,
             user: {},
             skills: [],
             projects: [],
@@ -30,16 +32,17 @@ export class PortfolioScreen extends Component {
 
     getUserInfo = () => {
         const id = this.props.match.params.id;
+
         let body = {
             id: id
         }
         let userPromise = Adapter.findUserInfo(id, body)
 
         userPromise.then(data => this.updatePortfolioState(data))
+        .catch(error => console.log('fetch portfolio of non-existent user: ', error))
     }
 
     updatePortfolioState=(data)=> {
-        
         let loggedID
         if (this.state.loggedInUser.id) {
             loggedID=this.state.loggedInUser.id
@@ -58,18 +61,31 @@ export class PortfolioScreen extends Component {
     // if user is logged in (prop passed from app.js), show the edit button that redirects to edit/user_id page
 
     render() {
+        if (this.state.skills.length > 0) {
         return (
-            <div>
-                <PortfolioUserContainer user={this.state.user} match={this.state.match}/>
-                <PortfolioCardContainer user={this.state.user} skills={this.state.skills}  />
-                <PortfolioCardContainer user={this.state.user} projects={this.state.projects} />
-                <PortfolioCardContainer user={this.state.user} education={this.state.education} />
-                <PortfolioCardContainer user={this.state.user} experiences={this.state.experiences} />
-                <PortfolioCardContainer user={this.state.user} accolades={this.state.accolades} />
+            <div> 
+                {this.props.loggedIn && this.state.match ? <NavBar logout={this.props.logout}/> : null} 
+                <div className="container">
+                    <div className="row">
+                        <PortfolioUserContainer user={this.state.user} match={this.state.match}/>
+                    </div>
+                    <div className="row">
+                        <div className="col">
+                            <PortfolioCardContainer user={this.state.user} skills={this.state.skills}  />
+                            <PortfolioCardContainer user={this.state.user} education={this.state.education} />
+                            <PortfolioCardContainer user={this.state.user} accolades={this.state.accolades} />
+                        </div>
+                        <div className="col">
+                            <PortfolioCardContainer user={this.state.user} experiences={this.state.experiences} />
+                            <PortfolioCardContainer user={this.state.user} projects={this.state.projects} />
+                        </div>
+                    </div>
+                </div>
             </div>
-            
-        )
+        )} else {
+            return <Redirect to='/'/>
+        }
     }
 }
 
-export default PortfolioHOC(PortfolioScreen)
+export default PortfolioScreen

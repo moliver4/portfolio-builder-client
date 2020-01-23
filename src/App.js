@@ -24,20 +24,6 @@ class App extends React.Component {
     }
   }
 
-  //reset state to default if needed 
-  resetState=() => {
-    this.setState({
-      loggedIn: false,
-      email: "",
-      user: {},
-      skills: [],
-      projects: [],
-      education: [],
-      experiences: [],
-      accolades: []  
-    })
-  }
-
   //toggles logIn and logout (optional)
   toggleLogin = () => {
     this.setState(prevState => {
@@ -47,7 +33,6 @@ class App extends React.Component {
 
   submitLoginHandler = (e) => {
     e.preventDefault()
-    console.log(this.state.email)
     if (this.state.email.length < 6) {
       window.alert('Please enter a valid email address.')
       return
@@ -61,7 +46,6 @@ class App extends React.Component {
 
   // DK - keep loggedIn state change in the body of setState so up-to-date state is sent down to components
   updateState = (data) => {
-    console.log(data)
     this.setState({
       user: data.user,
       skills: data.skills,
@@ -325,6 +309,25 @@ class App extends React.Component {
   }
 
 
+  //reset state to default if needed 
+  resetState=() => {
+    this.setState({
+      loggedIn: false,
+      email: "",
+      user: {},
+      skills: [],
+      projects: [],
+      education: [],
+      experiences: [],
+      accolades: []  
+    })
+  }
+
+  logoutHandler = () => {
+    this.resetState()
+  }
+
+
 
   render() {
     return (
@@ -344,6 +347,7 @@ class App extends React.Component {
           <Route
             path="/edit"
             render={() => <EditScreen 
+                            logout={this.logoutHandler}
                             loggedIn={this.state.loggedIn}
                             user={this.state.user} 
                             skills={this.state.skills} 
@@ -362,8 +366,9 @@ class App extends React.Component {
             path="/portfolio/:id" 
             render={(props) => <PortfolioScreen 
                                   {...props} 
+                                  logout={this.logoutHandler}
                                   loggedIn={this.state.loggedIn} 
-                                  user={this.state.user} 
+                                  loggedInUser={this.state.user} 
                                 />}
           />
         </Router>

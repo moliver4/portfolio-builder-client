@@ -73,10 +73,12 @@ export class PortfolioCardContainer extends Component {
     
     render() {
         return (
-            <div>
-                <h1>{this.state.containerName}</h1>
-                    {this.displayCorrectCards()}
-            </div>
+                    <div class="card text-center border-light">
+                        <div class="card-body">
+                            <h6 class="card-subtitle mb-2 text-muted">{this.state.containerName}</h6>
+                            {this.displayCorrectCards()}
+                        </div>
+                    </div>
         )
     }
 }

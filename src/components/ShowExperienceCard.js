@@ -9,16 +9,18 @@ const ShowExperienceCard = (props) => {
     const {id, company, role, summary, start_date, end_date, external_link} = props.cardDetails
 
     return(
-        <div>
-            experience card <br></br>
-          {id} <br></br>
-          {company} <br></br>
-          {role} <br></br>
-          {summary} <br></br>
-          {start_date} <br></br>
-          {start_date} <br></br>
-          {end_date} <br></br>
-          {external_link} <br></br>
+  
+          <div className="card text-left">
+            <div className="card-body">
+                <h5 className="card-title">{company}</h5>
+                <h6 className="card-subtitle mb-2 text-muted">{role}</h6>
+                <p className="card-text">{summary}</p>
+                <h7 className="card-subtitle mb-2 text-muted">Start</h7>
+                <p className="card-text">{start_date}</p>
+                <h7 className="card-subtitle mb-2 text-muted">End</h7>
+                <p className="card-text">{end_date}</p>
+                <a href={external_link} className="card-link">Look</a>
+            </div>
         </div>
   
     )
