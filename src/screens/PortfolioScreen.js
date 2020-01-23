@@ -3,7 +3,6 @@ import Adapter from '../services/Adapter'
 import PortfolioUserContainer from '../containers/PortfolioUserContainer'
 import PortfolioCardContainer from '../containers/PortfolioCardContainer'
 import PortfolioHOC from '../HOCs/PortfolioHOC'
-import { unstable_renderSubtreeIntoContainer } from 'react-dom'
 
 
 
@@ -59,13 +58,21 @@ export class PortfolioScreen extends Component {
 
     render() {
         return (
-            <div>
-                <PortfolioUserContainer user={this.state.user} match={this.state.match}/>
-                <PortfolioCardContainer user={this.state.user} skills={this.state.skills}  />
-                <PortfolioCardContainer user={this.state.user} projects={this.state.projects} />
-                <PortfolioCardContainer user={this.state.user} education={this.state.education} />
-                <PortfolioCardContainer user={this.state.user} experiences={this.state.experiences} />
-                <PortfolioCardContainer user={this.state.user} accolades={this.state.accolades} />
+            <div className="container">
+                <div className="row">
+                    <PortfolioUserContainer user={this.state.user} match={this.state.match}/>
+                </div>
+                <div className="row">
+                    <div className="col">
+                        <PortfolioCardContainer user={this.state.user} skills={this.state.skills}  />
+                        <PortfolioCardContainer user={this.state.user} education={this.state.education} />
+                        <PortfolioCardContainer user={this.state.user} accolades={this.state.accolades} />
+                    </div>
+                    <div className="col">
+                        <PortfolioCardContainer user={this.state.user} experiences={this.state.experiences} />
+                        <PortfolioCardContainer user={this.state.user} projects={this.state.projects} />
+                    </div>
+                </div>
             </div>
             
         )
