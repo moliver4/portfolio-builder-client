@@ -13,12 +13,12 @@ const { company, role, summary, start_date, end_date, order } = props.experience
     <div className="ui card"> 
         <div className="Experience">
             <div>
-                <h4>{company}</h4>
-                <h5>{role}</h5>
-                <p>{summary}</p>
-                <p>{start_date}</p>
-                <p>{end_date}</p>
-                order: {order} <br></br>
+                <p>Company: {company}</p>
+                <p>Role: {role}</p>
+                <p>Summary: {summary}</p>
+                <p>Start Date: {start_date}</p>
+                <p>End Date: {end_date}</p>
+                Order: {order} <br></br>
 
                 <button onClick={() => props.editExistingExperience(props.experience)}>Edit</button>
                 <button onClick={() => props.deleteObj('experience', props.experience.id)} >Delete</button>
