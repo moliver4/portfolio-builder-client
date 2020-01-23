@@ -68,6 +68,9 @@ class EditExperienceContainer extends Component {
         let obj = this.state.newExperience
         console.log('object on submit', obj)
         this.state.newExperience.id ? this.props.editObj('experience', obj) : this.props.addObj('experience', obj)
+        this.setState(prevState => ({
+            editing: !prevState.editing
+        }))
     }
 
     render() {
@@ -85,7 +88,7 @@ class EditExperienceContainer extends Component {
                     }
                 </div>
                 <div>
-                    <button onClick={this.newExperienceClick}>Add Skill</button>
+                    <button onClick={this.newExperienceClick}>Add Experience</button>
                 </div>
             </div>
         )

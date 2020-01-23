@@ -9,13 +9,15 @@ export default class EditEducationCard extends Component {
     render() {
         return (
             <div>
-            institution: {this.props.cardDetails.institution} <br></br>
-            major: {this.props.cardDetails.major} <br></br>
-            grad_date: {this.props.cardDetails.grad_date} <br></br>
-            external_link: {this.props.cardDetails.external_link} <br></br>
-            order: {this.props.cardDetails.order} <br></br>
-            <button onClick={e => this.props.changeEditing(e, this.props.cardDetails)} type="button">edit</button>
-            <button onClick={e => this.props.deleteObj('education', this.props.cardDetails.id)} type="button">delete</button>
+            <p><strong>Institution</strong> {this.props.cardDetails.institution}</p> 
+            <p><strong>Major / Field of Study</strong> {this.props.cardDetails.major}</p> 
+            <p><strong>Graduation Date</strong> {this.props.cardDetails.grad_date}</p> 
+            <p><strong>External Link</strong> {this.props.cardDetails.external_link}</p> 
+            <p><strong>Display Order</strong> {this.props.cardDetails.order}</p> 
+            <button onClick={e => this.props.changeEditing(e, this.props.cardDetails)} type="button">Edit</button>
+            <button onClick={e => this.props.deleteObj('education', this.props.cardDetails.id)} type="button">Delete</button>
+            <br/>
+            <br/>
         </div>
         )
     }

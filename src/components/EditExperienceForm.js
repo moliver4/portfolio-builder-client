@@ -9,24 +9,37 @@ const EditExperienceForm = props => {
 
           <div>
               <form >
-                    <h3>Company</h3>
-                    <input type="text" name="company" value={company} onChange={(e) => props.handleChange(e)} /><br></br>
-                    <h3>Role</h3>
-                    <input type="text" name="role" value={role} onChange={(e) => props.handleChange(e)}/><br></br>
-                    <p>Summary</p>
-                    <input type="textarea" name="summary" value={summary} onChange={(e) => props.handleChange(e)}/><br></br>
-                    <p>Start Date</p>
-                    <input type="text" name="start_date" value={start_date} onChange={(e) => props.handleChange(e)}/><br></br>
-                    <p>End Date</p>
-                    <input type="text" name="end_date" value={end_date} onChange={(e) => props.handleChange(e)}/><br></br>
-                    <p>order:</p> 
+                    <label>
+                        <h5>Company: </h5>
+                    <input type="text" name="company" value={company} onChange={(e) => props.handleChange(e)} />
+                    </label><br></br>
+                    <label>
+                    <h5>Role: </h5>
+                    <input type="text" name="role" value={role} onChange={(e) => props.handleChange(e)}/>
+                    </label><br></br>
+                    <label>
+                    <h5>Summary: </h5>
+                    <input type="textarea" name="summary" value={summary} onChange={(e) => props.handleChange(e)}/>
+                    </label><br></br>
+                    <label>
+                    <h5>Start Date: </h5>
+                    <input type="text" name="start_date" value={start_date} onChange={(e) => props.handleChange(e)}/>
+                    </label><br></br>
+                    <label>
+                    <h5>End Date: </h5>
+                    <input type="text" name="end_date" value={end_date} onChange={(e) => props.handleChange(e)}/>
+                    </label><br></br>
+                    <label>
+                    <h5>Order: </h5> 
                     <select onChange={e => props.handleChange(e)} name="order" value={order}>
+                        <option value="">Make A Selection</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
                         <option value="4">4</option>
                         <option value="5">5</option>
-                    </select> <br></br>
+                    </select> 
+                    </label><br></br>
                     <input type="submit" value="Submit" onClick={props.submitNewInfo} />
               </form>
           </div>

@@ -11,14 +11,16 @@ export default class EditProjectsCard extends Component {
     render() {
         return (
             <div>
-                project_url: {this.props.cardDetails.project_url} <br></br>
-                name: {this.props.cardDetails.name} <br></br>
-                summary: {this.props.cardDetails.summary} <br></br>
-                img_url: {this.props.cardDetails.img_url} <br></br>
-                languages_used: {this.props.cardDetails.languages_used} <br></br>
-                order: {this.props.cardDetails.order} <br></br>
-                <button onClick={e => this.props.changeEditing(e, this.props.cardDetails)} type="button">edit</button>
-                <button onClick={e => this.props.deleteObj('project', this.props.cardDetails.id)} type="button">delete</button>
+                <p><strong>Name</strong> {this.props.cardDetails.name}</p>
+                <p><strong>Summary</strong> {this.props.cardDetails.summary}</p>
+                <p><strong>Project URL</strong> {this.props.cardDetails.project_url} </p>
+                <p><strong>Languages Used</strong> {this.props.cardDetails.languages_used} </p>
+                <p><strong>Image URL</strong> {this.props.cardDetails.img_url} </p>
+                <p><strong>Display Order</strong> {this.props.cardDetails.order} </p>
+                <button onClick={e => this.props.changeEditing(e, this.props.cardDetails)} type="button">Edit</button>
+                <button onClick={e => this.props.deleteObj('project', this.props.cardDetails.id)} type="button">Delete</button>
+                <br/>
+                <br/>
             </div>
         )
     }
