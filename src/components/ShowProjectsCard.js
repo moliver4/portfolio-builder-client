@@ -10,7 +10,7 @@ const ShowProjectsCard = (props) => {
 
   return(
 
-        <div className="card">
+        <div className="card text-left">
           <div className="card-body">
             <h5 className="card-title">{name}</h5>
             <p className="card-text">{summary}</p>

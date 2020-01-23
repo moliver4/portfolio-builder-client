@@ -9,7 +9,7 @@ const ShowEducationCard = (props) => {
   const { id, institution, major, grad_date, external_link} = props.cardDetails
 
     return(
-          <div className="card">
+          <div className="card text-left">
             <div className="card-body">
                 <h5 className="card-title">{institution}</h5>
                 <h6 className="card-subtitle mb-2 text-muted">{major}</h6>
