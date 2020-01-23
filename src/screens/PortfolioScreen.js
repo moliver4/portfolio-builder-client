@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import Adapter from '../services/Adapter'
+import PortfolioUserContainer from '../containers/PortfolioUserContainer'
+import PortfolioCardContainer from '../containers/PortfolioCardContainer'
 
 
 
@@ -57,7 +59,15 @@ export class PortfolioScreen extends Component {
     render() {
         return (
             <div>
-        
+
+                <PortfolioUserContainer user={this.state.user} match={this.state.match}/>
+
+                <PortfolioCardContainer skills={this.state.skills}  />
+                <PortfolioCardContainer projects={this.state.projects} />
+                <PortfolioCardContainer education={this.state.education} />
+                <PortfolioCardContainer experiences={this.state.experiences} />
+                <PortfolioCardContainer accolades={this.state.accolades} />
+
             </div>
         )
     }
