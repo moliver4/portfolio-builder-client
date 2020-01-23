@@ -1,7 +1,9 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import Adapter from '../services/Adapter'
 import PortfolioUserContainer from '../containers/PortfolioUserContainer'
 import PortfolioCardContainer from '../containers/PortfolioCardContainer'
+import PortfolioHOC from '../HOCs/PortfolioHOC'
+import { unstable_renderSubtreeIntoContainer } from 'react-dom'
 
 
 
@@ -37,7 +39,7 @@ export class PortfolioScreen extends Component {
     }
 
     updatePortfolioState=(data)=> {
-        console.log(data)
+        
         let loggedID
         if (this.state.loggedInUser.id) {
             loggedID=this.state.loggedInUser.id
@@ -50,27 +52,24 @@ export class PortfolioScreen extends Component {
             experiences: data.experiences,
             accolades: data.accolades,
             match: data.user.id === loggedID ? true : false
-        }, () => console.log('state updated to', this.state))
+        })
     }
  
-
     // if user is logged in (prop passed from app.js), show the edit button that redirects to edit/user_id page
 
     render() {
         return (
             <div>
-
                 <PortfolioUserContainer user={this.state.user} match={this.state.match}/>
-
-                <PortfolioCardContainer skills={this.state.skills}  />
-                <PortfolioCardContainer projects={this.state.projects} />
-                <PortfolioCardContainer education={this.state.education} />
-                <PortfolioCardContainer experiences={this.state.experiences} />
-                <PortfolioCardContainer accolades={this.state.accolades} />
-
+                <PortfolioCardContainer user={this.state.user} skills={this.state.skills}  />
+                <PortfolioCardContainer user={this.state.user} projects={this.state.projects} />
+                <PortfolioCardContainer user={this.state.user} education={this.state.education} />
+                <PortfolioCardContainer user={this.state.user} experiences={this.state.experiences} />
+                <PortfolioCardContainer user={this.state.user} accolades={this.state.accolades} />
             </div>
+            
         )
     }
 }
 
-export default PortfolioScreen
+export default PortfolioHOC(PortfolioScreen)
