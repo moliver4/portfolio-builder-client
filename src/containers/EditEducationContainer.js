@@ -17,7 +17,7 @@ export default class EditEducationContainer extends Component {
                 external_link: "",
                 order: 0
         }
-        console.log(this.props.education)
+        // console.log(this.props.education)
     }
 
     handleSubmit = (e, id) => {
@@ -110,7 +110,7 @@ export default class EditEducationContainer extends Component {
     render() {
         return (
             <div>
-                <h1>Education container</h1>
+                <h1>Education Container</h1>
                 <button onClick={e => this.newForm(e)}>add</button>
                 {this.checkDisplayForm()}
                 {this.renderCards()}
