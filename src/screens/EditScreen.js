@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import EditProjectsContainer from '../containers/EditProjectsContainer.js'
 import EditEducationContainer from '../containers/EditEducationContainer.js'
+import EditSkillsContainer from '../containers/EditSkillsContainer.js'
 import LoginHOC from '../HOCs/LoginHOC'
 import User from '../containers/EditUserContainer'
 
@@ -18,6 +19,7 @@ class EditScreen extends Component {
                 <User user={this.props.user} editUserInfo={this.props.editObj}/>
                 <EditProjectsContainer userInfo={this.props.user} addObj={this.props.addObj} deleteObj={this.props.deleteObj} editObj={this.props.editObj} projects={this.props.projects} ></EditProjectsContainer>
                 <EditEducationContainer userInfo={this.props.user} addObj={this.props.addObj} deleteObj={this.props.deleteObj} editObj={this.props.editObj} education={this.props.education} ></EditEducationContainer>
+                <EditSkillsContainer userInfo={this.props.user} addObj={this.props.addObj} deleteObj={this.props.deleteObj} editObj={this.props.editObj} skills={this.props.skills} ></EditSkillsContainer>
                 {/* submit button */}
                 {/* portfolio button */}
                 <EditExperienceContainer experiences={this.props.experiences} user={this.props.user} addObj={this.props.addObj} />
