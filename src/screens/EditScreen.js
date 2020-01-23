@@ -16,7 +16,7 @@ class EditScreen extends Component {
     portfolioLink = `/portfolio/${this.props.user.id}`
 
     render() {
-        {console.log("these are the props in Edit Screen", this.props)}
+        console.log("these are the props in Edit Screen", this.props)
         return (
             <div>
                 <User user={this.props.user} editUserInfo={this.props.editObj}/>
