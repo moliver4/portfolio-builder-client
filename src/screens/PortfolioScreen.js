@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react'
 import Adapter from '../services/Adapter'
 import PortfolioUserContainer from '../containers/PortfolioUserContainer'
 import PortfolioCardContainer from '../containers/PortfolioCardContainer'
-import PortfolioHOC from '../HOCs/PortfolioHOC'
+
 
 import { unstable_renderSubtreeIntoContainer } from 'react-dom'
 
@@ -13,7 +13,7 @@ export class PortfolioScreen extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            loggedInUser: props.user,
+            loggedInUser: props.loggedInUser,
             user: {},
             skills: [],
             projects: [],
@@ -58,6 +58,7 @@ export class PortfolioScreen extends Component {
     // if user is logged in (prop passed from app.js), show the edit button that redirects to edit/user_id page
 
     render() {
+        if (this.state.skills.length > 1) {
         return (
             <div className="container">
                 <div className="row">
@@ -75,9 +76,10 @@ export class PortfolioScreen extends Component {
                     </div>
                 </div>
             </div>
-            
-        )
+        )} else {
+            return <div> nothing </div>
+        }
     }
 }
 
-export default PortfolioHOC(PortfolioScreen)
+export default PortfolioScreen
