@@ -9,13 +9,15 @@ export default class EditSkillCard extends Component {
     render() {
         return (
             <div>
-            name: {this.props.cardDetails.name} <br></br>
-            category: {this.props.cardDetails.category} <br></br>
-            link_url: {this.props.cardDetails.link_url} <br></br>
-            proficiency: {this.props.cardDetails.proficiency} <br></br>
-            order: {this.props.cardDetails.order} <br></br>
-            <button onClick={e => this.props.changeEditing(e, this.props.cardDetails)} type="button">edit</button>
-            <button onClick={e => this.props.deleteObj('skill', this.props.cardDetails.id)} type="button">delete</button>
+            <p><strong>Name</strong> {this.props.cardDetails.name}</p> 
+            <p><strong>Category</strong> {this.props.cardDetails.category}</p> 
+            <p><strong>External Link</strong> {this.props.cardDetails.link_url}</p> 
+            <p><strong>Proficiency</strong> {this.props.cardDetails.proficiency}</p> 
+            <p><strong>Display Order</strong> {this.props.cardDetails.order}</p> 
+            <button onClick={e => this.props.changeEditing(e, this.props.cardDetails)} type="button">Edit</button>
+            <button onClick={e => this.props.deleteObj('skill', this.props.cardDetails.id)} type="button">Delete</button>
+            <br/>            
+            <br/>            
         </div>
         )
     }

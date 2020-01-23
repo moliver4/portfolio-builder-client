@@ -111,9 +111,9 @@ export default class EditEducationContainer extends Component {
         return (
             <div>
                 <h1>Education Container</h1>
-                <button onClick={e => this.newForm(e)}>add</button>
                 {this.checkDisplayForm()}
                 {this.renderCards()}
+                <button onClick={e => this.newForm(e)}>Add Education</button>
             </div>
         )
     }
