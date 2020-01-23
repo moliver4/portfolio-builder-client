@@ -48,6 +48,9 @@ class App extends React.Component {
   submitLoginHandler = (e) => {
     e.preventDefault()
     console.log(this.state.email)
+    if (this.state.email.length < 6) {
+      return
+    }
     let body = {
       email_address: this.state.email
     }
