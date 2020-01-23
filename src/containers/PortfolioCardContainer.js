@@ -5,16 +5,23 @@ import ShowSkillsCard from '../components/ShowSkillsCard.js'
 import ShowUserCard from '../components/ShowUserCard.js'
 import ShowExperienceCard from '../components/ShowExperienceCard.js'
 
-export class PortfolioEducationContainer extends Component {
+export class PortfolioCardContainer extends Component {
+
+ 
+    displayCards(){
+        
+    }
+
+
 
     
     render() {
         return (
             <div>
-                {this.displayCards()}
+                
             </div>
         )
     }
 }
 
-export default PortfolioEducationContainer
+export default PortfolioCardContainer

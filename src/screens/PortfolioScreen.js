@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Adapter from '../services/Adapter'
 
 
+
 export class PortfolioScreen extends Component {
 
     constructor(props) {
@@ -56,7 +57,7 @@ export class PortfolioScreen extends Component {
     render() {
         return (
             <div>
-
+        
             </div>
         )
     }
