@@ -15,10 +15,6 @@ export default class EditUserContainer extends Component {
         }
     }
 
-    //User is form only
-    //EditUserForm is in components folder if you want to render the component separately
-    //on submit, callback to App to save user info
-
 
     loadState = () => {
         this.setState({
@@ -33,12 +29,13 @@ export default class EditUserContainer extends Component {
         })
     }
 
+    // loads the user object passed down into the state to be used in the EditUserForm
     componentDidMount(){
         this.loadState()
     }
 
+    // this replaces individual keys within state.userForm as they are being edited in the controlled form
     handleStateChange = (event) => {
-
         let name = event.target.name
         let value = event.target.value
 
@@ -47,11 +44,12 @@ export default class EditUserContainer extends Component {
         }))
     }
 
+    // upon EditUserForm Submission, this function passes the userForm object from state up to App to update the User object on the front and backend.
     handleFormSubmit = (event) => {
         event.preventDefault()
-        console.log('submitting form...', event)
+        console.log('submitting form...', event, 'and here is the userForm from state.', this.state.userForm)
         // need object to pass up.
-        // this.props.editUserInfo('user', obj)
+        this.props.editUserInfo('user', this.state.userForm)
     }
 
     render() {
@@ -66,7 +64,7 @@ export default class EditUserContainer extends Component {
                 Portfolio template: {template}<br />
                 background image: <img src={background_url} width='90%' alt='background'></img> */}
                 {console.log("here's what's passed into User container", this.props)}
-                <UserForm user={this.state.userForm} handleStateChange={this.handleStateChange} handleFormSubmit={this.handleFormSubmit} editUserInfo={this.props.editUserInfo}/>
+                <UserForm user={this.state.userForm} handleStateChange={this.handleStateChange} handleFormSubmit={this.handleFormSubmit} />
             </div>
         )
     }
