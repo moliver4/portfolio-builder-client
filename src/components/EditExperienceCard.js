@@ -4,9 +4,9 @@ const EditExperienceCard = props => {
 
 const { company, role, summary, start_date, end_date } = props.experience;
 
-const handleExperienceEditClick = () => {
-    props.editExistingExperience(props.experience) 
-}
+// const handleExperienceEditClick = () => {
+//     props.editExistingExperience(props.experience) 
+// }
 
 // replace class names
   return (
@@ -19,8 +19,8 @@ const handleExperienceEditClick = () => {
                 <p>{start_date}</p>
                 <p>{end_date}</p>
 
-                <button onClick={() => handleExperienceEditClick()}>Edit</button>
-                <button onClick={props.handleDelete} >Delete</button>
+                <button onClick={() => props.editExistingExperience(props.experience)}>Edit</button>
+                <button onClick={() => props.deleteObj('experience', props.experience.id)} >Delete</button>
             </div>
         </div>
     </div>

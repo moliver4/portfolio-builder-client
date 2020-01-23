@@ -14,15 +14,9 @@ class EditExperienceContainer extends Component {
                 summary: '',
                 start_date: '',
                 end_date: '',
-                user_id: this.props.user_id,
-                id: ''
+                user_id: this.props.user_id
             }
         }
-    }
-
-    handleDelete = event => {
-        event.preventDefault()
-        // console.log('delete button clicked')
     }
 
     handleChange = (event) => {
@@ -38,7 +32,7 @@ class EditExperienceContainer extends Component {
     // App.js props --> passed down by EditScreen --> "experiences"
     mapThroughExperience = () => {
         return this.props.experiences.map((experience, index) => {
-            return <EditExperienceCard handleDelete={this.handleDelete} key={index} experience={experience} newExperienceClick={this.newExperienceClick} editExistingExperience={this.editExistingExperience} submitNewInfo={this.submitNewInfo} />
+            return <EditExperienceCard handleDelete={this.handleDelete} key={index} experience={experience} newExperienceClick={this.newExperienceClick} editExistingExperience={this.editExistingExperience} submitNewInfo={this.submitNewInfo} deleteObj={this.props.deleteObj} />
         }) 
     }
 
@@ -48,7 +42,7 @@ class EditExperienceContainer extends Component {
         this.setState({
             editing: true,
             newExperience: experience
-        })
+        }, () => console.log(this.state.newExperience))
     }
 
     // function that will be called when user clicks on button that will add a new skill
@@ -62,8 +56,7 @@ class EditExperienceContainer extends Component {
                 summary: '',
                 start_date: '',
                 end_date: '',
-                user_id: this.props.user_id,
-                id: ''
+                user_id: this.props.user.id
             }
         })
     }
@@ -71,7 +64,9 @@ class EditExperienceContainer extends Component {
     // send updated info to App.js to be persisted in database
     submitNewInfo = (event) => {
         event.preventDefault()
-        this.state.experiences.id === '' ? this.props.addObj(this.state.newExperience) : this.props.editObj(this.state.newExperience)
+        let obj = this.state.newExperience
+        console.log('object on submit', obj)
+        this.state.newExperience.id ? this.props.editObj('experience', obj) : this.props.addObj('experience', obj)
     }
 
     render() {

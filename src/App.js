@@ -186,7 +186,7 @@ class App extends React.Component {
   }
 
   editObjStateHandler = (name, data) => {
-    console.log(`${name} data: ${data} made it to set state handler for edit`)
+    console.log(`${name} data: ${data} made it to set state handler for edit`) 
     switch(name){
       case 'skill':
         this.setState(prevState=> {
