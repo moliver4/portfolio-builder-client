@@ -7,8 +7,8 @@ import ShowExperienceCard from '../components/ShowExperienceCard.js'
 
 export class PortfolioCardContainer extends Component {
 
-    constructor(){
-        super()
+    constructor(props){
+        super(props)
 
 
         console.log(this.props)
