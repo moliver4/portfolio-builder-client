@@ -2,7 +2,7 @@ import React from 'react'
 
 const EditExperienceForm = props => {
 
-    const { company, role, summary, start_date, end_date } = props.experience;
+    const { company, role, summary, start_date, end_date, order } = props.experience;
 
     return(
         <div className="edit-form">
@@ -19,6 +19,14 @@ const EditExperienceForm = props => {
                     <input type="text" name="start_date" value={start_date} onChange={(e) => props.handleChange(e)}/><br></br>
                     <p>End Date</p>
                     <input type="text" name="end_date" value={end_date} onChange={(e) => props.handleChange(e)}/><br></br>
+                    <p>order:</p> 
+                    <select onChange={e => props.handleChange(e)} name="order" value={order}>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select> <br></br>
                     <input type="submit" value="Submit" onClick={props.submitNewInfo} />
               </form>
           </div>
