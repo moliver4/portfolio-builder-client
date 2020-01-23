@@ -15,6 +15,7 @@ const textcolor = {
 export default class NavBar extends Component {
 
     
+    portfolioLink = `/portfolio/${this.props.user.id}`
 //FIX PORTFOLIO SHIT
     render() {
         return (
@@ -24,8 +25,8 @@ export default class NavBar extends Component {
                     <img src={logo} width="35" height="35" alt="" class="d-inline-block align-top"/>
                     <text style={textcolor}> Portfolio Builder Lite </text>
                 </a>
-                <Link to="/portfolio/2">
-                    <button type="button" class="btn btn-outline-light">
+                <Link to={this.portfolioLink}>
+                    <button type="button" class="btn btn-outline-light" >
                         View My Portfolio
                     </button>
                 </Link>

@@ -12,9 +12,8 @@ export class PortfolioScreen extends Component {
 
     constructor(props) {
         super(props)
-    
         this.state = {
-            loggedInUser: this.props.user,
+            loggedInUser: props.user,
             user: {},
             skills: [],
             projects: [],
@@ -26,7 +25,6 @@ export class PortfolioScreen extends Component {
     }
     
     componentDidMount() {
-        console.log(this.props.match.params.id)
         this.getUserInfo()
     }
 

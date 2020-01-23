@@ -33,7 +33,6 @@ class App extends React.Component {
 
   submitLoginHandler = (e) => {
     e.preventDefault()
-    console.log(this.state.email)
     if (this.state.email.length < 6) {
       window.alert('Please enter a valid email address.')
       return
@@ -47,7 +46,6 @@ class App extends React.Component {
 
   // DK - keep loggedIn state change in the body of setState so up-to-date state is sent down to components
   updateState = (data) => {
-    console.log(data)
     this.setState({
       user: data.user,
       skills: data.skills,
@@ -369,7 +367,7 @@ class App extends React.Component {
             render={(props) => <PortfolioScreen 
                                   {...props} 
                                   loggedIn={this.state.loggedIn} 
-                                  user={this.state.user} 
+                                  loggedInUser={this.state.user} 
                                 />}
           />
         </Router>
