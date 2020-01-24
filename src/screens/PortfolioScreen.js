@@ -81,12 +81,12 @@ export class PortfolioScreen extends Component {
                         <PortfolioUserContainer user={this.state.user} match={this.state.match}/>
                     </div>
                     <div className="row">
-                        <div className="col">
+                        <div className="col-md-4">
                             <PortfolioCardContainer user={this.state.user} skills={this.state.skills}  />
                             <PortfolioCardContainer user={this.state.user} education={this.state.education} />
                             <PortfolioCardContainer user={this.state.user} accolades={this.state.accolades} />
                         </div>
-                        <div className="col">
+                        <div className="col-md-8">
                             <PortfolioCardContainer user={this.state.user} experiences={this.state.experiences} />
                             <PortfolioCardContainer user={this.state.user} projects={this.state.projects} />
                         </div>
