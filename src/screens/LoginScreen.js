@@ -49,7 +49,6 @@ const LoginScreen = ({ email, submitLogin, handleInputChange}) => {
                 </div>
 
             </div>
-            <Footer />
         </div>
 
     )
