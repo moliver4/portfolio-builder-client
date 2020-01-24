@@ -19,18 +19,20 @@ function Footer() {
                     </div>
                     <div className="col-sm">
                         <p style={styles.textcolor}>Created by</p>
-                                <a className="btn btn-outline-light" style={styles.textcolor} href=''>Tiffany Tang</a>
-                                <a className="btn btn-outline-light" style={styles.textcolor} href=''>Devin Kelly</a>
-                                <a className="btn btn-outline-light" style={styles.textcolor} href=''>Taylor Coon</a>
-                                <a className="btn btn-outline-light" style={styles.textcolor} href=''>Katrina Reinsdorff</a>
+                                <a className="btn btn-outline-light" href=''>Tiffany Tang</a>
+                                <a className="btn btn-outline-light" href=''>Devin Kelly</a>
+                                <a className="btn btn-outline-light" href=''>Taylor Coon</a>
+                                <a className="btn btn-outline-light" href=''>Katrina Reinsdorff</a>
                     </div>
                     <div className="col-sm">
                         <p style={styles.textcolor}>Logo credit</p>
-                        <img src={dinosoftlabs} style={styles.dino} href='https://www.flaticon.com/authors/dinosoftlabs'></img>
+                        <a href='https://www.flaticon.com/authors/dinosoftlabs'>
+                            <img src={dinosoftlabs} style={styles.dino} ></img>
+                        </a>
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col">
+                    <div className="col"> 
                     </div>
                 </div>
             </div>
