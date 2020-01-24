@@ -23,19 +23,21 @@ const EditSkillForm = (props) => {
         </div>
         <div class="form-group">
             <label for="priority">Proficiency </label>
-            <select onChange={e => props.handleFormChange(e)} class="form-control" name="order">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
+            <select onChange={e => props.handleFormChange(e)} class="form-control" name="proficiency">
+            <option selected >Make a selection</option>
+            <option value="3">Expert</option>
+            <option value="2">Intermediate</option>
+            <option value="1">Novice</option>
             </select>
         </div>
         <div class="form-group">
-            <label for="priority">Priority </label>
-            <select onChange={e => props.handleFormChange(e)} class="form-control" name="order">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            </select>
+        <label for="priority">Priority</label>
+                    <select onChange={e => props.handleFormChange(e)} class="form-control" name="order">
+                    <option selected >Make a selection</option>
+                    <option value="3">high</option>
+                    <option value="2">medium</option>
+                    <option value="1">low</option>
+                    </select>
         </div>
             <button className="btn btn-primary" type='submit' name='submit' value='Update Info' onClick={e => props.handleFormSubmit(e)}>submit</button>
             <button className="btn btn-primary" type='submit' name='submit' value='Update Info' onClick={e => props.cancelForm(e)}>Cancel</button>

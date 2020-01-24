@@ -15,7 +15,7 @@ export default class EditAccoladesContainer extends Component {
                 link: "",
                 order: 0
         }
-        console.log(this.props.accolades)
+        // console.log(this.props.accolades)
     }
 
     handleSubmit = (e, id) => {
