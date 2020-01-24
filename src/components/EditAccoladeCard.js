@@ -15,6 +15,7 @@ export default class EditAccoladeCard extends Component {
                         <p class="card-text">Summary : {this.props.cardDetails.summary}</p>
                         <p class="card-text">External link : {this.props.cardDetails.link}</p>
                         <p class="card-text">Priority : {this.props.cardDetails.order}</p>
+                    </div >
                     <div className="card-header">
                         <ul className="nav nav-pills card-header-pills">
                             <li className="nav-item">
