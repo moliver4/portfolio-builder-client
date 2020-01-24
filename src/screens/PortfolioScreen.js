@@ -63,7 +63,12 @@ export class PortfolioScreen extends Component {
             match: data.user.id === loggedID ? true : false
         })
     }
- 
+    
+    // sortData = (field) => {
+    //     return (
+    //         this.state[field].sort((a,b) => a.order - b.order)
+    //     )
+    // }
     // if user is logged in (prop passed from app.js), show the edit button that redirects to edit/user_id page
 
     render() {
