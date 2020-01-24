@@ -11,28 +11,24 @@ function Footer() {
     return (
         <footer style={styles.footer}>
             <div className="container text-center">
-                <div className="row">
-                    <div className="col-sm">
+                <div className="row" style={styles.body}>
+                    <div className="col">
                         <h6 style={styles.projectRepo} style={styles.textcolor}>Download Portfolio Builer Lite</h6>
                         <h5 className="btn btn-outline-light">front-end repo</h5>
                         <h5 className="btn btn-outline-light">back-end repo</h5>
                     </div>
-                    <div className="col-sm">
+                    <div className="col">
                         <p style={styles.textcolor}>Created by</p>
-                                <a className="btn btn-outline-light" href=''>Tiffany Tang</a>
-                                <a className="btn btn-outline-light" href=''>Devin Kelly</a>
-                                <a className="btn btn-outline-light" href=''>Taylor Coon</a>
-                                <a className="btn btn-outline-light" href=''>Katrina Reinsdorff</a>
+                                <a className="btn btn-outline-light" href='https://github.com/moliver4'>Tiffany Tang</a>
+                                <a className="btn btn-outline-light" href='https://github.com/devincloudkelly'>Devin Kelly</a>
+                                <a className="btn btn-outline-light" href='https://github.com/Clashbuster'>Taylor Coon</a>
+                                <a className="btn btn-outline-light" href='https://github.com/learn-co-kat'>Katrina Reinsdorff</a>
                     </div>
-                    <div className="col-sm">
+                    <div className="col">
                         <p style={styles.textcolor}>Logo credit</p>
                         <a href='https://www.flaticon.com/authors/dinosoftlabs'>
                             <img src={dinosoftlabs} style={styles.dino} ></img>
                         </a>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="col"> 
                     </div>
                 </div>
             </div>
@@ -67,5 +63,12 @@ const styles = {
     dino: {
         borderRadius: 15,
         width: 55
+    },
+    body: {
+        justifyContent: 'space-between'
+    },
+    middleCol: {
+        marginLeft: 40,
+        marginRight: 40
     }
 }
