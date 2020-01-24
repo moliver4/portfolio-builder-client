@@ -64,11 +64,12 @@ export class PortfolioScreen extends Component {
         })
     }
     
-    // sortData = (field) => {
-    //     return (
-    //         this.state[field].sort((a,b) => a.order - b.order)
-    //     )
-    // }
+    sortData = (data) => {
+        let sorted = data.sort((a,b) => b.order - a.order)
+        console.log(sorted)
+        return sorted 
+        
+    }
     // if user is logged in (prop passed from app.js), show the edit button that redirects to edit/user_id page
 
     render() {
@@ -82,13 +83,13 @@ export class PortfolioScreen extends Component {
                     </div>
                     <div className="row">
                         <div className="col-md-4">
-                            <PortfolioCardContainer user={this.state.user} skills={this.state.skills}  />
-                            <PortfolioCardContainer user={this.state.user} education={this.state.education} />
-                            <PortfolioCardContainer user={this.state.user} accolades={this.state.accolades} />
+                            <PortfolioCardContainer user={this.state.user} skills={this.sortData(this.state.skills)}  />
+                            <PortfolioCardContainer user={this.state.user} education={this.sortData(this.state.education)} />
+                            <PortfolioCardContainer user={this.state.user} accolades={this.sortData(this.state.accolades)} />
                         </div>
                         <div className="col-md-8">
-                            <PortfolioCardContainer user={this.state.user} experiences={this.state.experiences} />
-                            <PortfolioCardContainer user={this.state.user} projects={this.state.projects} />
+                            <PortfolioCardContainer user={this.state.user} experiences={this.sortData(this.state.experiences)} />
+                            <PortfolioCardContainer user={this.state.user} projects={this.sortData(this.state.projects)} />
                         </div>
                     </div>
                 </div>
@@ -96,7 +97,19 @@ export class PortfolioScreen extends Component {
         )} else if (this.state.error) {
             return <Redirect to='/' />
         } else {
-            return <div></div>
+            return (<div class="preloader-wrapper active">
+            <div class="spinner-layer spinner-blue-only">
+              <div class="circle-clipper left">
+                <div class="circle"></div>
+              </div>
+              <div class="gap-patch">
+                <div class="circle"></div>
+              </div>
+              <div class="circle-clipper right">
+                <div class="circle"></div>
+              </div>
+            </div>
+          </div>)
         }
     }
 }
