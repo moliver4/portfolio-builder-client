@@ -4,11 +4,8 @@ import PortfolioUserContainer from '../containers/PortfolioUserContainer'
 import PortfolioCardContainer from '../containers/PortfolioCardContainer'
 import NavBar from '../components/NavBar'
 import {Redirect} from 'react-router-dom'
-
-
+import Footer from '../components/Footer'
 import { unstable_renderSubtreeIntoContainer } from 'react-dom'
-
-
 
 export class PortfolioScreen extends Component {
 
@@ -93,6 +90,7 @@ export class PortfolioScreen extends Component {
                         </div>
                     </div>
                 </div>
+                <Footer />
             </div>
         )} else if (this.state.error) {
             return <Redirect to='/' />
