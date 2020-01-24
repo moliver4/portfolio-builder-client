@@ -117,8 +117,8 @@ export default class EditProjectsContainer extends Component {
 
     render() {
         return (
-            <div className="card border-light">
-                    <div className="card-header bg-transparent">Projects</div>
+            <div className="card border-light" style={styles.card}>
+                    <div className="card-header text-center" style={styles.about}>Projects</div>
                     <div className="card-body">
                         <button className="btn btn-primary" onClick={e => this.newForm(e)}>Add</button>
                         {this.checkDisplayForm()}
@@ -126,6 +126,17 @@ export default class EditProjectsContainer extends Component {
                 </div>
             </div>
         )
+    }
+}
+
+
+const styles = {
+    card: {
+        marginTop: 20,
+        marginBottom: 20
+    },
+    about: {
+        backgroundColor: '#e4f9ff'
     }
 }
 

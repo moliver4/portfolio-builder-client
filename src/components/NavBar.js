@@ -34,7 +34,6 @@ export default class NavBar extends Component {
 
     render() {
         return (
-
             <nav class="navbar sticky-top navbar-light" style={style}>
                 <a class="navbar-brand" href="#">
                     <img src={logo} width="35" height="35" alt="" class="d-inline-block align-top"/>
