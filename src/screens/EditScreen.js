@@ -33,8 +33,7 @@ class EditScreen extends Component {
                     <EditAccoladesContainer accolades={this.props.accolades} user={this.props.user} addObj={this.props.addObj} editObj={this.props.editObj} deleteObj={this.props.deleteObj} />
                         </div>
                     </div>
-                </div>
-                <div>
+                
                     <br/>
                     <Link to={this.portfolioLink}>
                         <button class="btn btn-outline-info" style={styles.button}>I'm Done! See My Portfolio!</button>
