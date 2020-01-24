@@ -15,7 +15,7 @@ export default class EditSkillCard extends Component {
                         <button onClick={e => this.props.changeEditing(e, this.props.cardDetails)} class="nav-link" >Edit</button>
                     </li>
                     <li className="nav-item">
-                        <button onClick={e => this.props.deleteObj('project', this.props.cardDetails.id)} className="nav-link" >Delete</button>
+                        <button onClick={e => this.props.deleteObj('skill', this.props.cardDetails.id)} className="nav-link" >Delete</button>
                     </li>
                     </ul>
                 </div>
