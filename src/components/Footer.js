@@ -10,7 +10,7 @@ import React from 'react'
 function Footer() {
     return (
         <footer style={styles.footer}>
-            <div className="container">
+            <div className="container text-center">
                 <div className="row">
                     <div className="col-sm">
                         <h6 style={styles.projectRepo} style={styles.textcolor}>Download Portfolio Builer Lite</h6>
@@ -48,7 +48,8 @@ const styles = {
         height: 'auto',
         width: 'auto',
         marginTop: 60,
-        padding: 20
+        padding: 20,
+        text_align: 'center'
     },
     footerLogo: {
         width: 70,
