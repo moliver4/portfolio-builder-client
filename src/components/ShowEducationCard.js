@@ -15,7 +15,11 @@ const ShowEducationCard = (props) => {
                 <h6 className="card-subtitle mb-2 text-muted">{major}</h6>
                 <h7 className="card-subtitle mb-2 text-muted">Graduation date</h7>
                 <p className="card-text">{grad_date}</p>
+                {external_link ?
                 <a href={external_link} className="card-link">Look</a>
+                : 
+                <a></a>
+                }
             </div>
         </div>
     )

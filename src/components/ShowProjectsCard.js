@@ -6,7 +6,7 @@ const ShowProjectsCard = (props) => {
 
   console.log(props.cardDetails)
 
-  const {id, name, summary, img_url, languages_used} = props.cardDetails
+  const {id, name, summary, img_url, languages_used, project_url} = props.cardDetails
 
   return(
 
@@ -15,6 +15,11 @@ const ShowProjectsCard = (props) => {
             <h5 className="card-title">{name}</h5>
             <p className="card-text">{summary}</p>
             <p className="card-text">{languages_used}</p>
+            {project_url ?
+              <a href={project_url} className="card-link">Look</a>
+              : 
+              <a></a>
+            }
           </div>
         </div>
      
