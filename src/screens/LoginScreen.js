@@ -1,7 +1,7 @@
 import React from 'react'
 import LoginHOC from '../HOCs/LoginHOC'
 import logo from '../images/logo2.png'
-
+import Footer from '../components/Footer'
 
 const LoginScreen = ({ email, submitLogin, handleInputChange}) => {
 
@@ -49,8 +49,9 @@ const LoginScreen = ({ email, submitLogin, handleInputChange}) => {
                 </div>
 
             </div>
-            
+            <Footer />
         </div>
+
     )
     
 }
