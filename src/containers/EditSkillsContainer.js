@@ -111,14 +111,30 @@ export default class EditSkillsContainer extends Component {
 
     render() {
         return (
-            <div className="card border-light">
-                    <div className="card-header bg-transparent">Skills</div>
-                    <div className="card-body">
-                        <button className="btn btn-primary" onClick={e => this.newForm(e)}>Add</button>
+            <div className="card border-light" style={styles.card}>
+                    <div className="card-header text-center" style={styles.about}>Skills</div>
+                    <div className="card-body" style={styles.body}>
+                        <button className="btn btn-primary" onClick={e => this.newForm(e)}>Add New Skill</button>
                         {this.checkDisplayForm()}
                         {this.renderCards()}
                     </div>
                 </div>
         )
+    }
+}
+
+
+const styles = {
+
+    card: {
+        marginTop: 20,
+        marginBottom: 20
+    },
+    body: {
+        display: 'flex',
+        flexDirection: 'column'
+    },
+    about: {
+        backgroundColor: '#e4f9ff'
     }
 }

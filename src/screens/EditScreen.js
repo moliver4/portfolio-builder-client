@@ -37,7 +37,7 @@ class EditScreen extends Component {
                 <div>
                     <br/>
                     <Link to={this.portfolioLink}>
-                        <button><h4>Build Portfolio!</h4></button>
+                        <button class="btn btn-outline-info" style={styles.button}>I'm Done! See My Portfolio!</button>
                     </Link>
                     <br/>
                 </div>
@@ -46,5 +46,12 @@ class EditScreen extends Component {
     }
 }
 
+const styles={
+    button: {
+
+        paddingLeft: 50,
+        paddingRight: 50
+    }
+}
 
 export default LoginHOC(EditScreen)

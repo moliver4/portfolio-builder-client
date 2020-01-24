@@ -110,8 +110,8 @@ export default class EditAccoladesContainer extends Component {
         return (
             <div className="card border-light" style={styles.card}>
                     <div className="card-header text-center" style={styles.about}>Accolades</div>
-                    <div className="card-body">
-                        <button className="btn btn-primary" onClick={e => this.newForm(e)}>Add</button>
+                    <div className="card-body" style={styles.body}>
+                        <button className="btn btn-primary" onClick={e => this.newForm(e)}>Add New Accolade</button>
                         {this.checkDisplayForm()}
                         {this.renderCards()}
                     </div>
@@ -121,9 +121,14 @@ export default class EditAccoladesContainer extends Component {
 }
 
 const styles = {
+
     card: {
         marginTop: 20,
         marginBottom: 20
+    },
+    body: {
+        display: 'flex',
+        flexDirection: 'column'
     },
     about: {
         backgroundColor: '#e4f9ff'
