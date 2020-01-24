@@ -22,7 +22,7 @@ export class PortfolioUserContainer extends Component {
                     {/* <div className='card-body row justify-content-center'>
                     </div> */}
                     <div className='card-img-overlay position-relatives align-self-center' style={style.avatar_div}>
-                        <img src={avatar_url} className='mx-auto d-block position-inherit align-self-center' width='350px' style={style.avatar}/>
+                        <img src={avatar_url} className='mx-auto d-block position-inherit align-self-center' width='350px' height='350px' style={style.avatar}/>
                     </div>                 
             </div>
         )
