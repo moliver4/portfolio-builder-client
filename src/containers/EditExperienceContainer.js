@@ -77,8 +77,8 @@ class EditExperienceContainer extends Component {
         let isEditing = this.state.editing
 
         return (
-            <div className="card border-light">
-            <div className="card-header bg-transparent">Experience</div>
+            <div className="card border-light" style={styles.card}>
+            <div className="card-header text-center" style={styles.about}>Experience</div>
             <div className="card-body">
                 <button className="btn btn-primary" onClick={this.newExperienceClick}>Add</button>
                 {
@@ -92,4 +92,13 @@ class EditExperienceContainer extends Component {
     }
 }
 
+const styles = {
+    card: {
+        marginTop: 20,
+        marginBottom: 20
+    },
+    about: {
+        backgroundColor: '#e4f9ff'
+    }
+}
 export default EditExperienceContainer;
