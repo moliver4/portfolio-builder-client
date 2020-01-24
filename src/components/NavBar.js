@@ -1,16 +1,8 @@
 import React, { Component } from 'react'
-import logo from '../images/logo4.png'
+import logo from '../images/logo2.png'
 import { Link } from 'react-router-dom'
 import { whileStatement } from '@babel/types'
 
-
-const style = {
-    backgroundColor: '#12cad6'
-}
-
-const textcolor = {
-    color: '#ffffff'
-}
 
 export default class NavBar extends Component {
 
@@ -28,7 +20,7 @@ export default class NavBar extends Component {
                     </Link>)
         }
     }
-//FIX PORTFOLIO SHIT
+
     render() {
         return (
 
@@ -50,3 +42,10 @@ export default class NavBar extends Component {
     }
 }
 
+const style = {
+    backgroundColor: '#12cad6'
+}
+
+const textcolor = {
+    color: '#ffffff'
+}
