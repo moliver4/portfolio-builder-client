@@ -58,7 +58,7 @@ export default class EditProjectsContainer extends Component {
 
     checkDisplayForm(){
         if(this.state.editing === true){
-            return <EditProjectForm handleFormSubmit={this.handleSubmit} handleFormChange={this.handleFormChange} cardDetails={this.state}></EditProjectForm>
+            return <EditProjectForm cancelForm={this.cancelForm} handleFormSubmit={this.handleSubmit} handleFormChange={this.handleFormChange} cardDetails={this.state}></EditProjectForm>
         } else {
             return ""
         }
@@ -81,6 +81,10 @@ export default class EditProjectsContainer extends Component {
 
     componentDidUpdate(){
         // console.log(this.state)
+    }
+
+    cancelForm = () => {
+        this.setState({editing: false})
     }
 
     changeEditing = (e, cardDetails) => {
