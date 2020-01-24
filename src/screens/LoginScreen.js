@@ -2,8 +2,6 @@ import React from 'react'
 import LoginHOC from '../HOCs/LoginHOC'
 import logo from '../images/logo2.png'
 
-// add form here that will take in user email & submit button
-// submit button will trigger a function in App.js that will retrieve all user details
 
 const LoginScreen = ({ email, submitLogin, handleInputChange}) => {
 
