@@ -2,12 +2,7 @@ import React, { Component } from 'react'
 import logo from '../images/logo2.png'
 import { Link } from 'react-router-dom'
 
-
-
 export default class NavBar extends Component {
-
-    
-    
 
     viewPortfolio = (portfolio) => {
         
