@@ -11,19 +11,19 @@ const EditSkillForm = (props) => {
         <form>
         <div className="form-group">
             <label for="name">Name </label>
-            <input className="form-control" type='text' name='name' value={name} onChange={e => props.handleStateChange(e)}/>
+            <input className="form-control" type='text' name='name' value={name} onChange={e => props.handleFormChange(e)}/>
         </div>
         <div className="form-group">
             <label for="email-address">Category </label> 
-            <input className="form-control" type='text' name='category' value={category} onChange={e => props.handleStateChange(e)}/>
+            <input className="form-control" type='text' name='category' value={category} onChange={e => props.handleFormChange(e)}/>
         </div>
         <div className="form-group">
             <label for="picture-url">External Link </label>  
-            <input className="form-control" type='text' name='link_url' value={link_url} onChange={e => props.handleStateChange(e)}/>
+            <input className="form-control" type='text' name='link_url' value={link_url} onChange={e => props.handleFormChange(e)}/>
         </div>
         <div class="form-group">
             <label for="priority">Proficiency </label>
-            <select class="form-control" name="proficiency">
+            <select onChange={e => props.handleFormChange(e)} class="form-control" name="order">
             <option>1</option>
             <option>2</option>
             <option>3</option>
@@ -31,7 +31,7 @@ const EditSkillForm = (props) => {
         </div>
         <div class="form-group">
             <label for="priority">Priority </label>
-            <select class="form-control" name="order">
+            <select onChange={e => props.handleFormChange(e)} class="form-control" name="order">
             <option>1</option>
             <option>2</option>
             <option>3</option>
