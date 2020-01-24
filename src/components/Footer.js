@@ -13,9 +13,13 @@ function Footer() {
             <div className="container text-center">
                 <div className="row" style={styles.body}>
                     <div className="col">
-                        <h6 style={styles.projectRepo} style={styles.textcolor}>Download Portfolio Builer Lite</h6>
-                        <h5 className="btn btn-outline-light">front-end repo</h5>
-                        <h5 className="btn btn-outline-light">back-end repo</h5>
+                        <h6 style={styles.projectRepo} style={styles.textcolor}>Download Portfolio Builder Lite</h6>
+                        <a href='https://github.com/moliver4/portfolio-builder-client'>
+                            <h5 className="btn btn-outline-light">Client</h5>
+                        </a>
+                        <a href='https://github.com/devincloudkelly/portfolio-builder-backend'>
+                            <h5 className="btn btn-outline-light">Server</h5>
+                        </a>
                     </div>
                     <div className="col">
                         <p style={styles.textcolor}>Created by</p>
