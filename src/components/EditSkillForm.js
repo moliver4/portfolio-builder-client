@@ -1,7 +1,6 @@
 import React from 'react'
 
-//look at example form
-//deconstruct props 
+
 const EditSkillForm = (props) => {
     console.log('skillform details', props.cardDetails)
 
