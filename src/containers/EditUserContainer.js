@@ -51,23 +51,14 @@ export default class EditUserContainer extends Component {
     handleFormSubmit = (event) => {
         event.preventDefault()
         console.log('submitting form...', event, 'and here is the userForm from state.', this.state.userForm)
-        // need object to pass up.
         this.props.editUserInfo('user', this.state.userForm)
     }
 
     render() {
-        // const { id, name, email_address, avatar_url, background_url, template } = this.props.user
         return (
             <div className="card border-light" style={styles.card}>
                 <div className="card-header text-center" style={styles.about}>About You</div>
                 <div className="card-body">
-                {/* user avatar: <img src={avatar_url} width='25%' alt='Profile'></img><br />
-                User Id: {id}<br />
-                Username: {name}<br />
-                Email: {email_address}<br />
-                Portfolio template: {template}<br />
-                background image: <img src={background_url} width='90%' alt='background'></img> */}
-                {console.log("here's what's passed into User container", this.props)}
                     <UserForm user={this.state.userForm} handleStateChange={this.handleStateChange} handleFormSubmit={this.handleFormSubmit} />
                 </div>
             </div>
