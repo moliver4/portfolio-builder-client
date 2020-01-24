@@ -11,10 +11,6 @@ import { Link } from 'react-router-dom'
 
 class EditScreen extends Component {
 
-
-// 2 buttons at bottom!!! 1 will be button to SAVE the data(although we are already saving it) and other must be a 'Link' to '/portoflio/:id'
-// Do we still need two buttons? Components look like they are saving data independently so all should be updated?
-
     portfolioLink = `/portfolio/${this.props.user.id}`
 
     render() {
@@ -33,8 +29,7 @@ class EditScreen extends Component {
                     <EditAccoladesContainer accolades={this.props.accolades} userInfo={this.props.user} addObj={this.props.addObj} editObj={this.props.editObj} deleteObj={this.props.deleteObj} />
                         </div>
                     </div>
-                </div>
-                <div>
+                
                     <br/>
                     <Link to={this.portfolioLink}>
                         <button class="btn btn-outline-info" style={styles.button}>I'm Done! See My Portfolio!</button>
