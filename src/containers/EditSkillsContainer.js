@@ -88,7 +88,7 @@ export default class EditSkillsContainer extends Component {
             proficiency: cardDetails.proficiency,
             link_url: cardDetails.link_url,
             order: cardDetails.order
-    })
+        })
     }
 
     newForm(e){
@@ -114,7 +114,7 @@ export default class EditSkillsContainer extends Component {
             <div className="card border-light" style={styles.card}>
                     <div className="card-header text-center" style={styles.about}>Skills</div>
                     <div className="card-body" style={styles.body}>
-                        <button className="btn btn-primary" onClick={e => this.newForm(e)}>Add New Skill</button>
+                        <button className="btn btn-sm"  style={styles.addButton} onClick={e => this.newForm(e)}>Add New Skill</button>
                         {this.checkDisplayForm()}
                         {this.renderCards()}
                     </div>
@@ -125,7 +125,13 @@ export default class EditSkillsContainer extends Component {
 
 
 const styles = {
-
+    addButton: {
+        color: '#ffffff',
+        backgroundColor: '#12cad6',
+        marginBottom: 20,
+        marginLeft: '30%',
+        marginRight: '30%'
+    },
     card: {
         marginTop: 20,
         marginBottom: 20
@@ -135,6 +141,7 @@ const styles = {
         flexDirection: 'column'
     },
     about: {
+        color: '#0fabbc',
         backgroundColor: '#e4f9ff'
     }
 }
