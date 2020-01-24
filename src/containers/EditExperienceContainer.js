@@ -73,26 +73,42 @@ class EditExperienceContainer extends Component {
         }))
     }
 
+    cancelForm = (e) => {
+        e.preventDefault()
+        this.setState({editing: false})
+    }
+
     render() {
         let isEditing = this.state.editing
 
         return (
-            <div>
-                <div>
-                    <h1>Experience Container</h1>
-                    {this.mapThroughExperience()} 
-                </div>
-                <div>
-                    {
-                        isEditing ? <EditExperienceForm experience={this.state.newExperience} onEditForm={this.onEditForm} handleChange={this.handleChange} submitNewInfo={this.submitNewInfo} /> : null 
+            <div className="card border-light" style={styles.card}>
+            <div className="card-header text-center" style={styles.about}>Experience</div>
+            <div className="card-body" style={styles.body}>
+                <button className="btn btn-primary" onClick={this.newExperienceClick}>Add New Experience</button>
+                {
+                        isEditing ? <EditExperienceForm cancelForm={this.cancelForm}experience={this.state.newExperience} onEditForm={this.onEditForm} handleChange={this.handleChange} submitNewInfo={this.submitNewInfo} /> : null 
                     }
-                </div>
-                <div>
-                    <button onClick={this.newExperienceClick}>Add Experience</button>
-                </div>
+                {this.mapThroughExperience()}
             </div>
+            </div>
+
         )
     }
 }
 
+const styles = {
+
+    card: {
+        marginTop: 20,
+        marginBottom: 20
+    },
+    body: {
+        display: 'flex',
+        flexDirection: 'column'
+    },
+    about: {
+        backgroundColor: '#e4f9ff'
+    }
+}
 export default EditExperienceContainer;

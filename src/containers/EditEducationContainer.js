@@ -109,12 +109,29 @@ export default class EditEducationContainer extends Component {
 
     render() {
         return (
-            <div>
-                <h1>Education Container</h1>
-                {this.checkDisplayForm()}
-                {this.renderCards()}
-                <button onClick={e => this.newForm(e)}>Add Education</button>
-            </div>
+                <div className="card border-light" style={styles.card}>
+                    <div className="card-header text-center" style={styles.about}>Education</div>
+                    <div className="card-body" style={styles.body}>
+                        <button className="btn btn-primary" onClick={e => this.newForm(e)}>Add New Education</button>
+                        {this.checkDisplayForm()}
+                        {this.renderCards()}
+                    </div>
+                </div>
         )
+    }
+}
+
+const styles = {
+
+    card: {
+        marginTop: 20,
+        marginBottom: 20
+    },
+    body: {
+        display: 'flex',
+        flexDirection: 'column'
+    },
+    about: {
+        backgroundColor: '#e4f9ff'
     }
 }

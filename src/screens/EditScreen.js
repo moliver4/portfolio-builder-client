@@ -21,19 +21,19 @@ class EditScreen extends Component {
                 <div className="container">
                     <div className="row">
                         <div className="col">
-                <User user={this.props.user} editUserInfo={this.props.editObj}/>
-                <EditProjectsContainer userInfo={this.props.user} addObj={this.props.addObj} deleteObj={this.props.deleteObj} editObj={this.props.editObj} projects={this.props.projects} ></EditProjectsContainer>
-                <EditEducationContainer userInfo={this.props.user} addObj={this.props.addObj} deleteObj={this.props.deleteObj} editObj={this.props.editObj} education={this.props.education} ></EditEducationContainer>
-                <EditSkillsContainer userInfo={this.props.user} addObj={this.props.addObj} deleteObj={this.props.deleteObj} editObj={this.props.editObj} skills={this.props.skills} ></EditSkillsContainer>
-                <EditExperienceContainer experiences={this.props.experiences} user={this.props.user} addObj={this.props.addObj} editObj={this.props.editObj} deleteObj={this.props.deleteObj} />
-                <EditAccoladesContainer accolades={this.props.accolades} user={this.props.user} addObj={this.props.addObj} editObj={this.props.editObj} deleteObj={this.props.deleteObj} />
+                    <User user={this.props.user} editUserInfo={this.props.editObj}/>
+                    <EditProjectsContainer userInfo={this.props.user} addObj={this.props.addObj} deleteObj={this.props.deleteObj} editObj={this.props.editObj} projects={this.props.projects} ></EditProjectsContainer>
+                    <EditEducationContainer userInfo={this.props.user} addObj={this.props.addObj} deleteObj={this.props.deleteObj} editObj={this.props.editObj} education={this.props.education} ></EditEducationContainer>
+                    <EditSkillsContainer userInfo={this.props.user} addObj={this.props.addObj} deleteObj={this.props.deleteObj} editObj={this.props.editObj} skills={this.props.skills} ></EditSkillsContainer>
+                    <EditExperienceContainer experiences={this.props.experiences} user={this.props.user} addObj={this.props.addObj} editObj={this.props.editObj} deleteObj={this.props.deleteObj} />
+                    <EditAccoladesContainer accolades={this.props.accolades} user={this.props.user} addObj={this.props.addObj} editObj={this.props.editObj} deleteObj={this.props.deleteObj} />
                         </div>
                     </div>
                 </div>
                 <div>
                     <br/>
                     <Link to={this.portfolioLink}>
-                        <button><h4>Build Portfolio!</h4></button>
+                        <button class="btn btn-outline-info" style={styles.button}>I'm Done! See My Portfolio!</button>
                     </Link>
                     <br/>
                 </div>
@@ -42,5 +42,12 @@ class EditScreen extends Component {
     }
 }
 
+const styles={
+    button: {
+
+        paddingLeft: 50,
+        paddingRight: 50
+    }
+}
 
 export default LoginHOC(EditScreen)

@@ -14,7 +14,7 @@ export default class NavBar extends Component {
         if (portfolio) {
             return (
                 <Link to='/edit'>
-                    <button type="button" class="btn btn-outline-light" >
+                    <button type="button" className="btn btn-outline-light" style={styles.button}  >
                     Edit Portfolio
                     </button>
                 </Link>
@@ -24,7 +24,7 @@ export default class NavBar extends Component {
             let portfolioLink = `/portfolio/${this.props.user.id}`
             return (
                     <Link to={portfolioLink}>
-                        <button type="button" class="btn btn-outline-light" >
+                        <button type="button" className="btn btn-outline-light" style={styles.button} >
                         View My Portfolio
                         </button>
                     </Link>
@@ -34,16 +34,15 @@ export default class NavBar extends Component {
 
     render() {
         return (
-
-            <nav class="navbar sticky-top navbar-light" style={style}>
-                <a class="navbar-brand" href="#">
-                    <img src={logo} width="35" height="35" alt="" class="d-inline-block align-top"/>
-                    <text style={textcolor}> Portfolio Builder Lite </text>
+            <nav className="navbar sticky-top navbar-light" style={styles.navbar}>
+                <a className="navbar-brand" href="#">
+                    <img src={logo} width="35" height="35" alt="logo" className="d-inline-block align-top"/>
+                    <text style={styles.textcolor}> Portfolio Builder Lite </text>
                 </a>
                 <span>
                 {this.viewPortfolio(this.props.portfolio)}
-                <Link to="/">
-                    <button type="button" class="btn btn-outline-light" onClick={this.props.logout}>
+                <Link to="/" href="#home">
+                    <button type="button" className="btn btn-outline-light" style={styles.button} onClick={this.props.logout}>
                         Logout 
                     </button>
                 </Link>
@@ -53,10 +52,17 @@ export default class NavBar extends Component {
     }
 }
 
-const style = {
-    backgroundColor: '#12cad6'
-}
-
-const textcolor = {
-    color: '#ffffff'
+const styles = {
+    navbar: {
+        backgroundColor: '#0fabbc'
+    },
+    textcolor: {
+        color: '#ffffff'
+    },
+    button: {
+        marginTop: 10,
+        marginBottom: 10,
+        marginLeft: 5,
+        marginRIght: 5
+    }
 }
