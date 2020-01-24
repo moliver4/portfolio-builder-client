@@ -70,7 +70,7 @@ export class PortfolioScreen extends Component {
         if (this.state.skills.length > 0) {
         return (
             <div> 
-                {this.props.loggedIn && this.state.match ? <NavBar logout={this.props.logout}/> : null} 
+                {this.props.loggedIn && this.state.match ? <NavBar portfolio={true} logout={this.props.logout}/> : null} 
                 <div className="container">
                     <div className="row">
                         <PortfolioUserContainer user={this.state.user} match={this.state.match}/>
