@@ -38,7 +38,7 @@ const LoginScreen = ({ email, submitLogin, handleInputChange}) => {
                         </div>
 
                         <div style={styles.video}>
-                            <iframe src='https://www.youtube.com/embed/EcEMX-63PKY'
+                            <iframe src='https://www.youtube.com/embed/LLfgOdKEudE'
                             frameBorder='0'
                             allow='autoplay;'
                             allowFullScreen
