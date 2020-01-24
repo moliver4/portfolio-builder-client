@@ -8,17 +8,17 @@ export class PortfolioUserContainer extends Component {
         const {id, name, email_address, avatar_url, background_url, template} = this.props.user
         return (
             <div className='card'>
-                <div className='row'>/
-                <img className='card-img' src={background_url} alt='Card Image'/>
+                {/* <div className='row'>/ */}
+                <img className='card-img' src={background_url} alt='Card Image' style={style.background_img}/>
                 <div className='card-body'>
-                        <h3>{name}</h3>
+                        <h3 className='align-self-center'>{name}</h3>
                         <a href={email_address} alt='email address'>{email_address}</a>
                 </div>
                     <div className='card-img-overlay position-relatives align-self-center' style={style.avatar_div}>
-                        <img src={avatar_url} className='mx-auto d-block position-inherit align-self-center' width='300px' style={style.avatar}/>
+                        <img src={avatar_url} className='mx-auto d-block position-inherit align-self-center' width='350px' style={style.avatar}/>
                     </div>                 
 
-                </div>
+                {/* </div> */}
             </div>
         )
     }
@@ -26,14 +26,15 @@ export class PortfolioUserContainer extends Component {
 
 const style = {
     avatar: {
-        maxHeight: '300px',
+        maxHeight: '350px',
         borderRadius: 500,
-        maxWidth: '300px'
+        maxWidth: '350px'
     },
     avatar_div: {
-        // paddingTop: '28%',
-        // paddingBottom: '20%',
-        // bottom: '50px'
+        paddingTop: '100px'
+    },
+    background_img: {
+        maxHeight: '400px'
     }
 }
 
