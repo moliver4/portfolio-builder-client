@@ -8,6 +8,7 @@ import EditExperienceContainer from '../containers/EditExperienceContainer'
 import EditAccoladesContainer from '../containers/EditAccoladesContainer'
 import NavBar from '../components/NavBar'
 import { Link } from 'react-router-dom'
+import Footer from '../components/Footer'
 
 class EditScreen extends Component {
 
@@ -36,6 +37,7 @@ class EditScreen extends Component {
                     </Link>
                     <br/>
                 </div>
+                <Footer />
             </div>
         )
     }
