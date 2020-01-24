@@ -53,7 +53,7 @@ export default class NavBar extends Component {
 }
 
 const style = {
-    backgroundColor: '#12cad6'
+    backgroundColor: '#0fabbc'
 }
 
 const textcolor = {
