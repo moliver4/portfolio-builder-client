@@ -55,7 +55,7 @@ export default class EditUserContainer extends Component {
     render() {
         // const { id, name, email_address, avatar_url, background_url, template } = this.props.user
         return (
-            <div className="card">
+            <div className="card border-light">
                 <div className="card-header bg-transparent">About You</div>
                 <div className="card-body">
                 {/* user avatar: <img src={avatar_url} width='25%' alt='Profile'></img><br />
