@@ -25,7 +25,7 @@ const EditAccoladeForm = (props) => {
                     <input className="form-control" type='text' name='link' value={link} onChange={e => props.handleFormChange(e)}/>
                 </div>
                 <div class="form-group">
-                    <label for="priority">Piority : </label>
+                    <label for="priority">Priority : </label>
                     <select onChange={e => props.handleFormChange(e)} class="form-control" name="order">
                     <option>high</option>
                     <option>medium</option>
