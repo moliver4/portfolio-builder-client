@@ -24,7 +24,10 @@ export default class EditUserContainer extends Component {
                 email_address: this.props.user.email_address,
                 avatar_url: this.props.user.avatar_url,
                 background_url: this.props.user.background_url,
-                template: this.props.user.template
+                template: this.props.user.template,
+                snippet: this.props.user.snippet,
+                bio: this.props.user.bio,
+                personal_url: this.props.user.personal_url
             }
         })
     }
