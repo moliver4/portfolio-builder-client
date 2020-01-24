@@ -73,6 +73,11 @@ class EditExperienceContainer extends Component {
         }))
     }
 
+    cancelForm = (e) => {
+        e.preventDefault()
+        this.setState({editing: false})
+    }
+
     render() {
         let isEditing = this.state.editing
 
@@ -82,7 +87,7 @@ class EditExperienceContainer extends Component {
             <div className="card-body" style={styles.body}>
                 <button className="btn btn-primary" onClick={this.newExperienceClick}>Add New Experience</button>
                 {
-                        isEditing ? <EditExperienceForm experience={this.state.newExperience} onEditForm={this.onEditForm} handleChange={this.handleChange} submitNewInfo={this.submitNewInfo} /> : null 
+                        isEditing ? <EditExperienceForm cancelForm={this.cancelForm}experience={this.state.newExperience} onEditForm={this.onEditForm} handleChange={this.handleChange} submitNewInfo={this.submitNewInfo} /> : null 
                     }
                 {this.mapThroughExperience()}
             </div>

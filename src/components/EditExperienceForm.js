@@ -5,46 +5,38 @@ const EditExperienceForm = props => {
     const { company, role, summary, start_date, end_date, order } = props.experience;
 
     return(
-        <div className="edit-form">
-
-          <div>
-              <form >
-                    <label>
-                        <h5>Company: </h5>
-                    <input type="text" name="company" value={company} onChange={(e) => props.handleChange(e)} />
-                    </label><br></br>
-                    <label>
-                    <h5>Role: </h5>
-                    <input type="text" name="role" value={role} onChange={(e) => props.handleChange(e)}/>
-                    </label><br></br>
-                    <label>
-                    <h5>Summary: </h5>
-                    <input type="textarea" name="summary" value={summary} onChange={(e) => props.handleChange(e)}/>
-                    </label><br></br>
-                    <label>
-                    <h5>Start Date: </h5>
-                    <input type="text" name="start_date" value={start_date} onChange={(e) => props.handleChange(e)}/>
-                    </label><br></br>
-                    <label>
-                    <h5>End Date: </h5>
-                    <input type="text" name="end_date" value={end_date} onChange={(e) => props.handleChange(e)}/>
-                    </label><br></br>
-                    <label>
-                    <h5>Order: </h5> 
-                    <select onChange={e => props.handleChange(e)} name="order" value={order}>
-                        <option value="">Make A Selection</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                    </select> 
-                    </label><br></br>
-                    <input type="submit" value="Submit" onClick={props.submitNewInfo} />
-              </form>
-          </div>
-
-        </div>
+         <form>
+         <div className="form-group">
+             <label for="name">Company </label>
+             <input className="form-control" type='text' name='company' value={company} onChange={e => props.handleChange(e)}/>
+         </div>
+         <div className="form-group">
+             <label for="email-address">Role </label> 
+             <input className="form-control" type='text' name='role' value={role} onChange={e => props.handleChange(e)}/>
+         </div>
+         <div className="form-group">
+             <label for="picture-url">summary </label>  
+             <input className="form-control" type='text' name='summary' value={summary} onChange={e => props.handleChange(e)}/>
+         </div>
+         <div className="form-group">
+             <label for="background-url">Start Date </label>  
+             <input className="form-control" type='text' name='start_date' value={start_date} onChange={e => props.handleChange(e)}/>
+         </div>
+         <div className="form-group">
+             <label for="portfolio-layout">End Date </label>  
+             <input className="form-control" type='text' name='end_date' value={end_date} onChange={e => props.handleChange(e)}/>
+         </div>
+         <div class="form-group">
+             <label for="priority">priority</label>
+             <select onChange={e => props.handleChange(e)} class="form-control" name="order">
+             <option>high</option>
+             <option>medium</option>
+             <option>low</option>
+             </select>
+         </div>
+             <button className="btn btn-primary" type='submit' name='submit' value='Update Info' onClick={props.submitNewInfo}>Submit</button>
+             <button className="btn btn-primary" type='submit' name='submit' value='Update Info' onClick={e => props.cancelForm(e)}>Cancel</button>
+     </form>
   
     )
   }
