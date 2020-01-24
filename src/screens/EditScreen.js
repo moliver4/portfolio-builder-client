@@ -11,10 +11,6 @@ import { Link } from 'react-router-dom'
 
 class EditScreen extends Component {
 
-
-// 2 buttons at bottom!!! 1 will be button to SAVE the data(although we are already saving it) and other must be a 'Link' to '/portoflio/:id'
-// Do we still need two buttons? Components look like they are saving data independently so all should be updated?
-
     portfolioLink = `/portfolio/${this.props.user.id}`
 
     render() {
@@ -30,7 +26,7 @@ class EditScreen extends Component {
                     <EditEducationContainer userInfo={this.props.user} addObj={this.props.addObj} deleteObj={this.props.deleteObj} editObj={this.props.editObj} education={this.props.education} ></EditEducationContainer>
                     <EditSkillsContainer userInfo={this.props.user} addObj={this.props.addObj} deleteObj={this.props.deleteObj} editObj={this.props.editObj} skills={this.props.skills} ></EditSkillsContainer>
                     <EditExperienceContainer experiences={this.props.experiences} user={this.props.user} addObj={this.props.addObj} editObj={this.props.editObj} deleteObj={this.props.deleteObj} />
-                    <EditAccoladesContainer accolades={this.props.accolades} user={this.props.user} addObj={this.props.addObj} editObj={this.props.editObj} deleteObj={this.props.deleteObj} />
+                    <EditAccoladesContainer accolades={this.props.accolades} userInfo={this.props.user} addObj={this.props.addObj} editObj={this.props.editObj} deleteObj={this.props.deleteObj} />
                         </div>
                     </div>
                 
