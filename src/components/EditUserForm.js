@@ -4,7 +4,7 @@ import React from 'react'
 
 const EditUserForm = (props) => {
 
-    const { name, email_address, avatar_url, background_url, template } = props.user
+    const { name, email_address, avatar_url, background_url, template, snippet, bio, personal_url} = props.user
 
     return(
           <form >
@@ -20,6 +20,18 @@ const EditUserForm = (props) => {
             <div className="form-group">
                 <label for="picture-url">Profile Picture URL </label>  
                 <input className="form-control" type='text' name='avatar_url' value={avatar_url} onChange={e => props.handleStateChange(e)}/>
+            </div>
+            <div className="form-group">
+                <label for="picture-url">Snippet </label>  
+                <input className="form-control" type='text' name='snippet' value={snippet} onChange={e => props.handleStateChange(e)}/>
+            </div>
+            <div className="form-group">
+                <label for="picture-url">Bio </label>  
+                <input className="form-control" type='text' name='bio' value={bio} onChange={e => props.handleStateChange(e)}/>
+            </div>
+            <div className="form-group">
+                <label for="picture-url">Personal Site </label>  
+                <input className="form-control" type='text' name='personal_url' value={personal_url} onChange={e => props.handleStateChange(e)}/>
             </div>
             <div className="form-group">
                 <label for="background-url">Background Image URL </label>  
