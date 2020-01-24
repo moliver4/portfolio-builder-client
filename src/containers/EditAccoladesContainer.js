@@ -10,10 +10,9 @@ export default class EditAccoladesContainer extends Component {
         this.state = {
                 editing: false,
                 id: 0,
-                institution: "",
-                major: "",
-                grad_date: "",
-                external_link: "",
+                name: "",
+                summary: "",
+                link: "",
                 order: 0
         }
         console.log(this.props.accolades)
@@ -26,36 +25,34 @@ export default class EditAccoladesContainer extends Component {
                 let objToSend = {
                     user_id: this.props.userInfo.id,
                     id: this.state.id,
-                    institution: this.state.institution,
-                    major: this.state.major,
-                    grad_date: this.state.grad_date,
-                    external_link: this.state.external_link,
+                    name: this.state.name,
+                    summary: this.state.summary,
+                    link: this.state.link,
                     order: this.state.order
             }
             delete objToSend['id']
             console.log('%c This is the object being sent to add', 'color: #deff8b;', objToSend)
-                this.props.addObj('education', objToSend )
+                this.props.addObj('accolade', objToSend )
             })
         } else {
             this.setState({editing: false}, () => {
                 let objToSend = {
                     user_id: this.props.userInfo.id,
                     id: this.state.id,
-                    institution: this.state.institution,
-                    major: this.state.major,
-                    grad_date: this.state.grad_date,
-                    external_link: this.state.external_link,
+                    name: this.state.name,
+                    summary: this.state.summary,
+                    link: this.state.link,
                     order: this.state.order
             }
             console.log('%c This is the object being sent to edit', 'color: #deff8b;', objToSend)
-                this.props.editObj('education', objToSend )
+                this.props.editObj('accolade', objToSend )
             })
         }
     }
 
     checkDisplayForm(){
         if(this.state.editing === true){
-            return <EditAccoladeForm handleFormSubmit={this.handleSubmit} handleFormChange={this.handleFormChange} cardDetails={this.state}></EditAccoladeForm>
+            return <EditAccoladeForm cancelForm={this.cancelForm} handleFormSubmit={this.handleSubmit} handleFormChange={this.handleFormChange} cardDetails={this.state}></EditAccoladeForm>
         } else {
             return ""
         }
@@ -84,10 +81,9 @@ export default class EditAccoladesContainer extends Component {
         this.setState({
             editing: true,
             id: cardDetails.id,
-            institution: cardDetails.institution,
-            major: cardDetails.major,
-            grad_date: cardDetails.grad_date,
-            external_link: cardDetails.external_link,
+            name: cardDetails.name,
+            summary: cardDetails.summary,
+            link: cardDetails.link,
             order: cardDetails.order
     })
     }
@@ -97,12 +93,16 @@ export default class EditAccoladesContainer extends Component {
         this.setState({
             editing: true,
             id: "",
-            institution: "",
-            major: "",
-            grad_date: "",
-            external_link: "",
+            name: "",
+            summary: "",
+            link: "",
             order: 0
     })
+    }
+
+    cancelForm = (e) => {
+        e.preventDefault()
+        this.setState({editing: false})
     }
 
 

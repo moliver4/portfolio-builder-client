@@ -26,11 +26,10 @@ class EditScreen extends Component {
                     <EditEducationContainer userInfo={this.props.user} addObj={this.props.addObj} deleteObj={this.props.deleteObj} editObj={this.props.editObj} education={this.props.education} ></EditEducationContainer>
                     <EditSkillsContainer userInfo={this.props.user} addObj={this.props.addObj} deleteObj={this.props.deleteObj} editObj={this.props.editObj} skills={this.props.skills} ></EditSkillsContainer>
                     <EditExperienceContainer experiences={this.props.experiences} user={this.props.user} addObj={this.props.addObj} editObj={this.props.editObj} deleteObj={this.props.deleteObj} />
-                    <EditAccoladesContainer accolades={this.props.accolades} user={this.props.user} addObj={this.props.addObj} editObj={this.props.editObj} deleteObj={this.props.deleteObj} />
+                    <EditAccoladesContainer accolades={this.props.accolades} userInfo={this.props.user} addObj={this.props.addObj} editObj={this.props.editObj} deleteObj={this.props.deleteObj} />
                         </div>
                     </div>
-                </div>
-                <div>
+                
                     <br/>
                     <Link to={this.portfolioLink}>
                         <button class="btn btn-outline-info" style={styles.button}>I'm Done! See My Portfolio!</button>
