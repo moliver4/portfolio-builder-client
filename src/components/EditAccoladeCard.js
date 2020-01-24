@@ -5,6 +5,17 @@ import React, { Component } from 'react'
 
 
 export default class EditAccoladeCard extends Component {
+    
+    displayCorrectOrder(){
+        switch(this.props.cardDetails.order){
+            case 3:
+                return "High"
+                case 2:
+                    return "Medium"
+                    default:
+                        return "Low"
+        }
+    }
 
     render() {
         return (
@@ -14,7 +25,7 @@ export default class EditAccoladeCard extends Component {
                         <h5 className="card-title">Institution : {this.props.cardDetails.name}</h5>
                         <p className="card-text">Graduation date : {this.props.cardDetails.summary}</p>
                         <p className="card-text">External link : {this.props.cardDetails.link}</p>
-                        <p className="card-text">priority : {this.props.cardDetails.order}</p>
+                        <p className="card-text">priority : {this.displayCorrectOrder()}</p>
                     </div>
                     <div className="card-header">
                         <ul className="nav nav-pills card-header-pills">
