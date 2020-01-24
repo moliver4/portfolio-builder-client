@@ -29,17 +29,23 @@ const EditExperienceForm = props => {
          <div class="form-group">
          <label for="priority">Priority</label>
                     <select onChange={e => props.handleChange(e)} class="form-control" name="order">
-                    <option selected >Make a selection</option>
+                    <option selected >Make a Selection</option>
                     <option value="3">High</option>
                     <option value="2">Medium</option>
                     <option value="1">Low</option>
                     </select>
          </div>
-             <button className="btn btn-primary" type='submit' name='submit' value='Update Info' onClick={props.submitNewInfo}>Submit</button>
-             <button className="btn btn-primary" type='submit' name='submit' value='Update Info' onClick={e => props.cancelForm(e)}>Cancel</button>
+             <button className="btn btn-info btn-sm" type='submit' name='submit' style={styles.button} value='Update Info' onClick={props.submitNewInfo}>Submit</button>
+             <button className="btn btn-outline-danger btn-sm"  type='submit' name='submit' value='Update Info' onClick={e => props.cancelForm(e)}>Cancel</button>
      </form>
   
     )
   }
+
+  const styles = {
+    button: {
+        marginRight: 20
+    }
+}
   
   export default EditExperienceForm 

@@ -39,10 +39,17 @@ const EditSkillForm = (props) => {
                     <option value="1">Low</option>
                     </select>
         </div>
-            <button className="btn btn-primary" type='submit' name='submit' value='Update Info' onClick={e => props.handleFormSubmit(e)}>submit</button>
-            <button className="btn btn-primary" type='submit' name='submit' value='Update Info' onClick={e => props.cancelForm(e)}>Cancel</button>
+            <button className="btn btn-info btn-sm" type='submit' name='submit' style={styles.button} value='Update Info' onClick={e => props.handleFormSubmit(e)}>Submit</button>
+            <button className="btn btn-outline-danger btn-sm"  type='submit' name='submit' value='Update Info' onClick={e => props.cancelForm(e)}>Cancel</button>
         </form>
     )
   }
   
+
+  const styles = {
+    button: {
+        marginRight: 20
+    }
+}
+
   export default EditSkillForm

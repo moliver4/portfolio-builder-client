@@ -20,13 +20,12 @@ export default class EditAccoladeCard extends Component {
     render() {
         return (
                 <div className="card">
-
                     <div className="card-body">
-                        <h5 className="card-title">Institution : {this.props.cardDetails.name}</h5>
-                        <p className="card-text">Graduation date : {this.props.cardDetails.summary}</p>
+                        <h5 className="card-title">Name : {this.props.cardDetails.name}</h5>
+                        <p className="card-text">Summary : {this.props.cardDetails.summary}</p>
                         <p className="card-text">External link : {this.props.cardDetails.link}</p>
-                        <p className="card-text">priority : {this.displayCorrectOrder()}</p>
-                    </div>
+                        <p className="card-text">Priority : {this.props.cardDetails.order}</p>
+                    </div >
                     <div className="card-header">
                         <ul className="nav nav-pills card-header-pills">
                             <li className="nav-item">
