@@ -28,8 +28,7 @@ const EditUserForm = (props) => {
             <div className="form-group">
                 <label for="portfolio-layout">Template </label>  
                 <input className="form-control" type='text' name='template' value={template} onChange={e => props.handleStateChange(e)}/>
-            </div>
-            
+            </div>        
                 <button className="nav-link btn btn-info btn-sm" type='submit' name='submit' value='Update Info' onClick={e => props.handleFormSubmit(e)}>Save Info</button>
         </form>
     )

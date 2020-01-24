@@ -73,13 +73,22 @@ export class PortfolioCardContainer extends Component {
     
     render() {
         return (
-                    <div class="card text-center border-light">
-                        <div class="card-body">
-                            <h6 class="card-subtitle mb-2 text-muted">{this.state.containerName}</h6>
+                    <div className="card text-center border-light">
+                        <div className="card-body">
+                            <h6 className="card-header text-muted" style={styles.about}>{this.state.containerName}</h6>
                             {this.displayCorrectCards()}
                         </div>
                     </div>
         )
+    }
+}
+
+
+const styles = {
+    about: {
+        color: '#0fabbc',
+        backgroundColor: '#e4f9ff',
+        marginBottom: 2
     }
 }
 
