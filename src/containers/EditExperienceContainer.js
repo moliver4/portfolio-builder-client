@@ -77,20 +77,17 @@ class EditExperienceContainer extends Component {
         let isEditing = this.state.editing
 
         return (
-            <div>
-                <div>
-                    <h1>Experience Container</h1>
-                    {this.mapThroughExperience()} 
-                </div>
-                <div>
-                    {
+            <div className="card border-light">
+            <div className="card-header bg-transparent">Experience</div>
+            <div className="card-body">
+                <button className="btn btn-primary" onClick={this.newExperienceClick}>Add</button>
+                {
                         isEditing ? <EditExperienceForm experience={this.state.newExperience} onEditForm={this.onEditForm} handleChange={this.handleChange} submitNewInfo={this.submitNewInfo} /> : null 
                     }
-                </div>
-                <div>
-                    <button onClick={this.newExperienceClick}>Add Experience</button>
-                </div>
+                {this.mapThroughExperience()}
             </div>
+            </div>
+
         )
     }
 }
