@@ -85,7 +85,7 @@ class EditExperienceContainer extends Component {
             <div className="card border-light" style={styles.card}>
             <div className="card-header text-center" style={styles.about}>Experience</div>
             <div className="card-body" style={styles.body}>
-                <button className="btn btn-primary" onClick={this.newExperienceClick}>Add New Experience</button>
+                <button className="btn btn-sm"  style={styles.addButton} onClick={this.newExperienceClick}>Add New Experience</button>
                 {
                         isEditing ? <EditExperienceForm cancelForm={this.cancelForm}experience={this.state.newExperience} onEditForm={this.onEditForm} handleChange={this.handleChange} submitNewInfo={this.submitNewInfo} /> : null 
                     }
@@ -98,7 +98,13 @@ class EditExperienceContainer extends Component {
 }
 
 const styles = {
-
+    addButton: {
+        color: '#ffffff',
+        backgroundColor: '#12cad6',
+        marginBottom: 20,
+        marginLeft: '30%',
+        marginRight: '30%'
+    },
     card: {
         marginTop: 20,
         marginBottom: 20
@@ -108,6 +114,7 @@ const styles = {
         flexDirection: 'column'
     },
     about: {
+        color: '#0fabbc',
         backgroundColor: '#e4f9ff'
     }
 }

@@ -25,11 +25,12 @@ const EditAccoladeForm = (props) => {
                     <input className="form-control" type='text' name='link' value={link} onChange={e => props.handleFormChange(e)}/>
                 </div>
                 <div class="form-group">
-                    <label for="priority">Priority : </label>
+                <label for="priority">Priority</label>
                     <select onChange={e => props.handleFormChange(e)} class="form-control" name="order">
-                    <option>high</option>
-                    <option>medium</option>
-                    <option>low</option>
+                    <option selected >Make a selection</option>
+                    <option value="3">high</option>
+                    <option value="2">medium</option>
+                    <option value="1">low</option>
                     </select>
                 </div>
                     <button className="btn btn-primary" type='submit' name='submit' value='Update Info' onClick={e => props.handleFormSubmit(e)}>submit</button>

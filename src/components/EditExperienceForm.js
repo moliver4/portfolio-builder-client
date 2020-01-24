@@ -27,12 +27,13 @@ const EditExperienceForm = props => {
              <input className="form-control" type='text' name='end_date' value={end_date} onChange={e => props.handleChange(e)}/>
          </div>
          <div class="form-group">
-             <label for="priority">priority</label>
-             <select onChange={e => props.handleChange(e)} class="form-control" name="order">
-             <option>high</option>
-             <option>medium</option>
-             <option>low</option>
-             </select>
+         <label for="priority">Priority</label>
+                    <select onChange={e => props.handleChange(e)} class="form-control" name="order">
+                    <option selected >Make a selection</option>
+                    <option value="3">high</option>
+                    <option value="2">medium</option>
+                    <option value="1">low</option>
+                    </select>
          </div>
              <button className="btn btn-primary" type='submit' name='submit' value='Update Info' onClick={props.submitNewInfo}>Submit</button>
              <button className="btn btn-primary" type='submit' name='submit' value='Update Info' onClick={e => props.cancelForm(e)}>Cancel</button>
