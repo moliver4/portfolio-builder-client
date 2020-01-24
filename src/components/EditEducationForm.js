@@ -32,6 +32,7 @@ const EditEducationForm = (props) => {
                 <label for="priority">Priority</label>
                     <select onChange={e => props.handleFormChange(e)} class="form-control" name="order">
                     <option selected >Make a Selection</option>
+
                     <option value="3">High</option>
                     <option value="2">Medium</option>
                     <option value="1">Low</option>

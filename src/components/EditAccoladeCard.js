@@ -5,16 +5,26 @@ import React, { Component } from 'react'
 
 
 export default class EditAccoladeCard extends Component {
+    
+    displayCorrectOrder(){
+        switch(this.props.cardDetails.order){
+            case 3:
+                return "High"
+                case 2:
+                    return "Medium"
+                    default:
+                        return "Low"
+        }
+    }
 
     render() {
         return (
                 <div className="card">
-
-                    <div class="card-body">
-                        <h5 class="card-title">Name : {this.props.cardDetails.name}</h5>
-                        <p class="card-text">Summary : {this.props.cardDetails.summary}</p>
-                        <p class="card-text">External link : {this.props.cardDetails.link}</p>
-                        <p class="card-text">Priority : {this.props.cardDetails.order}</p>
+                    <div className="card-body">
+                        <h5 className="card-title">Name : {this.props.cardDetails.name}</h5>
+                        <p className="card-text">Summary : {this.props.cardDetails.summary}</p>
+                        <p className="card-text">External link : {this.props.cardDetails.link}</p>
+                        <p className="card-text">Priority : {this.props.cardDetails.order}</p>
                     </div >
                     <div className="card-header">
                         <ul className="nav nav-pills card-header-pills">

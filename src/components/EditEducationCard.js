@@ -6,6 +6,17 @@ import React, { Component } from 'react'
 
 export default class EditEducationCard extends Component {
 
+    displayCorrectOrder(){
+        switch(this.props.cardDetails.order){
+            case 3:
+                return "High"
+                case 2:
+                    return "Medium"
+                    default:
+                        return "Low"
+        }
+    }
+
     render() {
         return (
             <div className="card">
@@ -13,8 +24,8 @@ export default class EditEducationCard extends Component {
                         <h5 className="card-title">Institution : {this.props.cardDetails.institution}</h5>
                         <h6 className="card-subtitle mb-2 text-muted">Major : {this.props.cardDetails.major}</h6>
                         <p className="card-text">Graduation date : {this.props.cardDetails.grad_date}</p>
-                        <p className="card-text">External link : {this.props.cardDetails.project_url}</p>
-                        <p className="card-text">priority : {this.props.cardDetails.order}</p>
+                        <p className="card-text">External link : {this.props.cardDetails.external_link}</p>
+                        <p className="card-text">priority : {this.displayCorrectOrder()}</p>
                     </div>
                     <div className="card-header">
                         <ul className="nav nav-pills card-header-pills">

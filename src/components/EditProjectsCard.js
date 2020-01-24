@@ -7,6 +7,16 @@ import React, { Component } from 'react'
 export default class EditProjectsCard extends Component {
 
     // const {project_url, name, summary, img_url, languages_used, order} = this.props.cardDetails
+    displayCorrectOrder(){
+        switch(this.props.cardDetails.order){
+            case 3:
+                return "High"
+                case 2:
+                    return "Medium"
+                    default:
+                        return "Low"
+        }
+    }
 
     render() {
         return (
@@ -17,7 +27,7 @@ export default class EditProjectsCard extends Component {
                         <p className="card-text">Summary : {this.props.cardDetails.summary}</p>
                         <p className="card-text">Img url : {this.props.cardDetails.img_url}</p>
                         <p className="card-text">External link : {this.props.cardDetails.project_url}</p>
-                        <p className="card-text">priority : {this.props.cardDetails.order}</p>
+                        <p className="card-text">priority : {this.displayCorrectOrder()}</p>
                     </div>
                     <div className="card-header">
                         <ul className="nav nav-pills card-header-pills">

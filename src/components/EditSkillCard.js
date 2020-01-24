@@ -6,6 +6,28 @@ import React, { Component } from 'react'
 
 export default class EditSkillCard extends Component {
 
+    displayCorrectOrder(){
+        switch(this.props.cardDetails.order){
+            case 3:
+                return "High"
+                case 2:
+                    return "Medium"
+                    default:
+                        return "Low"
+        }
+    }
+
+    displayCorrectProficiency(){
+        switch(this.props.cardDetails.proficiency){
+            case 3:
+                return "Expert"
+                case 2:
+                    return "Intermediate"
+                    default:
+                        return "Novice"
+        }
+    }
+
     render() {
         return (
             <div className="card">
@@ -13,8 +35,8 @@ export default class EditSkillCard extends Component {
                         <h5 className="card-title">Name : {this.props.cardDetails.name}</h5>
                         <h6 className="card-subtitle mb-2 text-muted">Category : {this.props.cardDetails.category}</h6>
                         <p className="card-text">External Link : {this.props.cardDetails.link_url}</p>
-                        <p className="card-text">Proficiency : {this.props.cardDetails.proficiency}</p>
-                        <p className="card-text">Priority : {this.props.cardDetails.order}</p>
+                        <p className="card-text">Proficiency : {this.displayCorrectProficiency()}</p>
+                        <p className="card-text">Priority : {this.displayCorrectOrder()}</p>
                     </div>
                     <div className="card-header">
                         <ul className="nav nav-pills card-header-pills">
