@@ -20,6 +20,7 @@ const LoginScreen = ({ email, submitLogin, handleInputChange}) => {
                         <div className='form-group' >
                                 <label htmlFor='email_address'> </label> 
                                 <input 
+                                    width='50%'
                                     className='form-control'
                                     placeholder="Enter email"
                                     type='text' 
