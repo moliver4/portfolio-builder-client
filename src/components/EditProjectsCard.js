@@ -10,18 +10,26 @@ export default class EditProjectsCard extends Component {
 
     render() {
         return (
-            <div>
-                <p><strong>Name</strong> {this.props.cardDetails.name}</p>
-                <p><strong>Summary</strong> {this.props.cardDetails.summary}</p>
-                <p><strong>Project URL</strong> {this.props.cardDetails.project_url} </p>
-                <p><strong>Languages Used</strong> {this.props.cardDetails.languages_used} </p>
-                <p><strong>Image URL</strong> {this.props.cardDetails.img_url} </p>
-                <p><strong>Display Order</strong> {this.props.cardDetails.order} </p>
-                <button onClick={e => this.props.changeEditing(e, this.props.cardDetails)} type="button">Edit</button>
-                <button onClick={e => this.props.deleteObj('project', this.props.cardDetails.id)} type="button">Delete</button>
-                <br/>
-                <br/>
-            </div>
+                <div className="card">
+                    <div className="card-header">
+                    <ul className="nav nav-pills card-header-pills">
+                    <li className="nav-item">
+                        <button onClick={e => this.props.changeEditing(e, this.props.cardDetails)} class="nav-link" >Edit</button>
+                    </li>
+                    <li className="nav-item">
+                        <button onClick={e => this.props.deleteObj('project', this.props.cardDetails.id)} className="nav-link" >Delete</button>
+                    </li>
+                    </ul>
+                </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Name : {this.props.cardDetails.name}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Stack : {this.props.cardDetails.languages_used}</h6>
+                        <p class="card-text">Summary : {this.props.cardDetails.summary}</p>
+                        <p class="card-text">Img url : {this.props.cardDetails.img_url}</p>
+                        <p class="card-text">External link : {this.props.cardDetails.project_url}</p>
+                        <p class="card-text">priority : {this.props.cardDetails.order}</p>
+                    </div>
+                </div>
         )
     }
 }

@@ -113,11 +113,13 @@ export default class EditProjectsContainer extends Component {
 
     render() {
         return (
-            <div>
-                <h1>Projects Container</h1>
-                {this.checkDisplayForm()}
-                {this.renderCards()}
-                <button onClick={e => this.newForm(e)}>Add Project</button>
+            <div className="card border-light">
+                    <div className="card-header bg-transparent">Projects</div>
+                    <div className="card-body">
+                        <button className="btn btn-primary" onClick={e => this.newForm(e)}>Add</button>
+                        {this.checkDisplayForm()}
+                        {this.renderCards()}
+                </div>
             </div>
         )
     }
