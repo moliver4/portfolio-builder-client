@@ -10,7 +10,6 @@ const EditProjectForm = (props) => {
     return(
     
             <form>
-
                 <div className="form-group">
                     <label for="name">Name </label>
                     <input className="form-control" type='text' name='name' value={name} onChange={e => props.handleStateChange(e)}/>

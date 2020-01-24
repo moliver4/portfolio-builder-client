@@ -54,7 +54,7 @@ export default class EditSkillsContainer extends Component {
 
     checkDisplayForm(){
         if(this.state.editing === true){
-            return <EditSkillForm handleFormSubmit={this.handleSubmit} handleFormChange={this.handleFormChange} cardDetails={this.state}></EditSkillForm>
+            return <EditSkillForm cancelForm={this.cancelForm}handleFormSubmit={this.handleSubmit} handleFormChange={this.handleFormChange} cardDetails={this.state}></EditSkillForm>
         } else {
             return ""
         }
@@ -104,15 +104,21 @@ export default class EditSkillsContainer extends Component {
     })
     }
 
+    cancelForm = () => {
+        this.setState({editing: false})
+    }
+
 
     render() {
         return (
-            <div>
-                <h1>Skills Container</h1>
-                {this.checkDisplayForm()}
-                {this.renderCards()}
-                <button onClick={e => this.newForm(e)}>Add Skill</button>
-            </div>
+            <div className="card border-light">
+                    <div className="card-header bg-transparent">Skills</div>
+                    <div className="card-body">
+                        <button className="btn btn-primary" onClick={e => this.newForm(e)}>Add</button>
+                        {this.checkDisplayForm()}
+                        {this.renderCards()}
+                    </div>
+                </div>
         )
     }
 }
