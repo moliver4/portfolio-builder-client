@@ -108,12 +108,14 @@ export default class EditAccoladesContainer extends Component {
 
     render() {
         return (
-            <div>
-                <h1>Accolades Container</h1>
-                {this.checkDisplayForm()}
-                {this.renderCards()}
-                <button onClick={e => this.newForm(e)}>Add Education</button>
-            </div>
+            <div className="card border-light">
+                    <div className="card-header bg-transparent">Accolades</div>
+                    <div className="card-body">
+                        <button className="btn btn-primary" onClick={e => this.newForm(e)}>Add</button>
+                        {this.checkDisplayForm()}
+                        {this.renderCards()}
+                    </div>
+                </div>
         )
     }
 }
