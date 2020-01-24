@@ -8,18 +8,24 @@ export default class EditAccoladeCard extends Component {
 
     render() {
         return (
-            <div>
-                Accolade
-            <p><strong>Institution</strong> {this.props.cardDetails.institution}</p> 
-            <p><strong>Major / Field of Study</strong> {this.props.cardDetails.major}</p> 
-            <p><strong>Graduation Date</strong> {this.props.cardDetails.grad_date}</p> 
-            <p><strong>External Link</strong> {this.props.cardDetails.external_link}</p> 
-            <p><strong>Display Order</strong> {this.props.cardDetails.order}</p> 
-            <button onClick={e => this.props.changeEditing(e, this.props.cardDetails)} type="button">Edit</button>
-            <button onClick={e => this.props.deleteObj('education', this.props.cardDetails.id)} type="button">Delete</button>
-            <br/>
-            <br/>
-        </div>
+                <div className="card">
+                    <div className="card-header">
+                    <ul className="nav nav-pills card-header-pills">
+                    <li className="nav-item">
+                        <button onClick={e => this.props.changeEditing(e, this.props.cardDetails)} class="nav-link" >Edit</button>
+                    </li>
+                    <li className="nav-item">
+                        <button onClick={e => this.props.deleteObj('accolade', this.props.cardDetails.id)} className="nav-link" >Delete</button>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Institution : {this.props.cardDetails.name}</h5>
+                        <p class="card-text">Graduation date : {this.props.cardDetails.summary}</p>
+                        <p class="card-text">External link : {this.props.cardDetails.link}</p>
+                        <p class="card-text">priority : {this.props.cardDetails.order}</p>
+                    </div>
+                </div>
         )
     }
 }
