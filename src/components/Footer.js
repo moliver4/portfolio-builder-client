@@ -1,11 +1,7 @@
 import logo from '../images/logo2.png'
 import dinosoftlabs from '../images/dinosoftlabs.jpg'
 import React from 'react'
-
-// Created by: names... (links to github )
-// front-end & back repo links
-// credit to logo peeps
-// <img className="d-inline-block align-left" src={logo} style={styles.footerLogo} ></img>
+import { Link } from 'react-router-dom'
 
 function Footer() {
     return (
@@ -21,18 +17,28 @@ function Footer() {
                             <h5 className="btn btn-outline-light">Server</h5>
                         </a>
                     </div>
+
                     <div className="col">
                         <p style={styles.textcolor}>Created by</p>
                                 <a className="btn btn-outline-light" href='https://github.com/moliver4'>Tiffany Tang</a>
                                 <a className="btn btn-outline-light" href='https://github.com/devincloudkelly'>Devin Kelly</a>
                                 <a className="btn btn-outline-light" href='https://github.com/Clashbuster'>Taylor Coon</a>
                                 <a className="btn btn-outline-light" href='https://github.com/learn-co-kat'>Katrina Reinsdorff</a>
+
                     </div>
                     <div className="col">
-                        <p style={styles.textcolor}>Logo credit</p>
-                        <a href='https://www.flaticon.com/authors/dinosoftlabs'>
-                            <img src={dinosoftlabs} style={styles.dino} ></img>
-                        </a>
+                    <Link to="/" href="#home">
+                        <button type="button" className="btn btn-outline-light">
+                            Build your own portfolio 
+                        </button>
+                    </Link>
+                    </div>
+
+                </div>
+                <div className="row">
+                    <div className='col-md'> 
+                        <br></br>
+                        Icons made by <a href="https://www.flaticon.com/authors/dinosoftlabs" title="DinosoftLabs">DinosoftLabs</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
                     </div>
                 </div>
             </div>
@@ -66,7 +72,7 @@ const styles = {
     },
     dino: {
         borderRadius: 15,
-        width: 55
+        width: 30
     },
     body: {
         justifyContent: 'space-between'
@@ -74,5 +80,8 @@ const styles = {
     middleCol: {
         marginLeft: 40,
         marginRight: 40
+    },
+    dinomargin: {
+        marginTop: 15
     }
 }
