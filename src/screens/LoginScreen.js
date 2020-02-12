@@ -27,7 +27,7 @@ const LoginScreen = ({ email, submitLogin, handleInputChange}) => {
                                         name='email_address'
                                         onChange={(e) => handleInputChange(e)}
                                     />
-                                    <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
+                                    <small id="emailHelp" className="form-text text-muted">Please enter a username or email for this portfolio.</small>
                             </div>
                             <input onClick={(e) => submitLogin(e)} type='button' style={styles.logIn} className="btn btn-outline-info" value='Login' />
                         </form>
