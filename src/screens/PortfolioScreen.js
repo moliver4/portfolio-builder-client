@@ -46,6 +46,7 @@ export class PortfolioScreen extends Component {
     }
 
     updatePortfolioState=(data)=> {
+        console.log('hello did i make it here with my data?', data)
         let loggedID
         if (this.state.loggedInUser.id) {
             loggedID=this.state.loggedInUser.id

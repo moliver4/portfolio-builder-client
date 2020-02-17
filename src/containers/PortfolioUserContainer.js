@@ -6,7 +6,7 @@ export class PortfolioUserContainer extends Component {
     
     render() {
         const {name, email_address, avatar_url, background_url, template, snippet, bio, personal_url} = this.props.user
-        console.log('hello from User container', this.props.user)
+ 
         return (
             <div className='card row' style={style.bio_card}>
                 <img className='card-img' src={background_url} alt='Card Image' style={style.background_img}/>

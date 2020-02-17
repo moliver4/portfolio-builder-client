@@ -32,7 +32,7 @@ export default class EditSkillsContainer extends Component {
                     order: this.state.order
             }
             delete objToSend['id']
-            console.log('%c This is the object being sent to add', 'color: #deff8b;', objToSend)
+            // console.log('%c This is the object being sent to add', 'color: #deff8b;', objToSend)
                 this.props.addObj('skill', objToSend )
             })
         } else {
@@ -46,7 +46,7 @@ export default class EditSkillsContainer extends Component {
                     proficiency: this.state.proficiency,
                     order: this.state.order
             }
-            console.log('%c This is the object being sent to edit', 'color: #deff8b;', objToSend)
+            // console.log('%c This is the object being sent to edit', 'color: #deff8b;', objToSend)
                 this.props.editObj('skill', objToSend )
             })
         }
@@ -68,16 +68,16 @@ export default class EditSkillsContainer extends Component {
     }
 
     handleFormChange = (e) => {
-        console.log(e.target.name)
+        // console.log(e.target.name)
        
         this.setState({
             [e.target.name]: e.target.value
         })
     }
 
-    componentDidUpdate(){
-        console.log(this.state)
-    }
+    // componentDidUpdate(){
+    //     console.log(this.state)
+    // }
 
     changeEditing = (e, cardDetails) => {
         this.setState({

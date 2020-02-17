@@ -50,7 +50,7 @@ export default class EditUserContainer extends Component {
     // upon EditUserForm Submission, this function passes the userForm object from state up to App to update the User object on the front and backend.
     handleFormSubmit = (event) => {
         event.preventDefault()
-        console.log('submitting form...', event, 'and here is the userForm from state.', this.state.userForm)
+        // console.log('submitting form...', event, 'and here is the userForm from state.', this.state.userForm)
         this.props.editUserInfo('user', this.state.userForm)
     }
 

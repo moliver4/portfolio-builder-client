@@ -65,9 +65,9 @@ export class PortfolioCardContainer extends Component {
         }
     }
 
-    componentDidUpdate(){
-        console.log(this.state)
-    }
+    // componentDidUpdate(){
+    //     console.log(this.state)
+    // }
 
 
     

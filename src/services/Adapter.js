@@ -25,7 +25,7 @@ const ACCOLADESURL = `${ROOT}/accolades`
 }
 
 static login = (email, pass) => {
-    console.log('credentials being passed in the fetch to login', email, pass)
+
     return fetch(LOGIN, {
             method: 'POST',
             headers: {

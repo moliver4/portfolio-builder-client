@@ -35,7 +35,6 @@ export default class EditProjectsContainer extends Component {
                     order: this.state.order
             }
             delete objToSend['id']
-            console.log('%c This is the object being sent to add', 'color: #deff8b;', objToSend)
                 this.props.addObj('project', objToSend )
             })
         } else {
@@ -50,7 +49,6 @@ export default class EditProjectsContainer extends Component {
                     languages_used: this.state.languages_used,
                     order: this.state.order
             }
-            console.log('%c This is the object being sent to edit', 'color: #deff8b;', objToSend)
                 this.props.editObj('project', objToSend )
             })
         }
@@ -77,10 +75,6 @@ export default class EditProjectsContainer extends Component {
         this.setState({
             [e.target.name]: e.target.value
         })
-    }
-
-    componentDidUpdate(){
-        console.log(this.state)
     }
 
     cancelForm = () => {

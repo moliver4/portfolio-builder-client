@@ -27,7 +27,7 @@ const LoginScreen = ({ newUser, toggleSignIn, loggedIn, updateState }) => {
         // .then(console.log)
         .then(data => {
             localStorage.setItem('jwt', data.jwt)
-            updateState(data)
+            updateState(data.user)
             setEmail('')
             setPassword('')
         })
@@ -65,8 +65,9 @@ const LoginScreen = ({ newUser, toggleSignIn, loggedIn, updateState }) => {
                                     
                             </div>
                             <input onClick={(e) => handleLogin(e)} type='button' style={styles.logIn} className="btn btn-outline-info" value='Login' />
-                            <button style={styles.logIn} className="btn btn-outline-info" onClick={toggleSignIn}>Don't have an account? Sign Up Here</button>
+                            
                         </form>
+                        <button style={styles.logIn} className="btn btn-outline-info" onClick={toggleSignIn}>Don't have an account? Sign Up Here</button>
                         
                 </>
             )
@@ -100,8 +101,9 @@ const LoginScreen = ({ newUser, toggleSignIn, loggedIn, updateState }) => {
                                     
                             </div>
                             <input onClick={(e) => handleSignup(e)} type='button' style={styles.logIn} className="btn btn-outline-info" value='SignUp' />
-                            <button style={styles.logIn} className="btn btn-outline-info" onClick={toggleSignIn}>Have an account? Log In Here</button>
+                            
                         </form>
+                        <button style={styles.logIn} className="btn btn-outline-info" onClick={toggleSignIn}>Have an account? Log In Here</button>
                         
                 </>
              )

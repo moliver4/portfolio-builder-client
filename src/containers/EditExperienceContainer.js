@@ -27,7 +27,7 @@ class EditExperienceContainer extends Component {
             return {
                 newExperience: {...prevState.newExperience, [key]:value} 
             }
-        }, () => console.log('state after user changes', this.state.newExperience))
+        })
     }
 
     // App.js props --> passed down by EditScreen --> "experiences"
@@ -43,7 +43,7 @@ class EditExperienceContainer extends Component {
         this.setState({
             editing: true,
             newExperience: experience
-        }, () => console.log(this.state.newExperience))
+        })
     }
 
     // function that will be called when user clicks on button that will add a new skill
@@ -66,7 +66,7 @@ class EditExperienceContainer extends Component {
     submitNewInfo = (event) => {
         event.preventDefault()
         let obj = this.state.newExperience
-        console.log('object on submit', obj)
+   
         this.state.newExperience.id ? this.props.editObj('experience', obj) : this.props.addObj('experience', obj)
         this.setState(prevState => ({
             editing: !prevState.editing

@@ -15,7 +15,7 @@ class EditScreen extends Component {
     portfolioLink = `/portfolio/${this.props.user.id}`
 
     render() {
-        console.log("these are the props in Edit Screen", this.props)
+        // console.log("these are the props in Edit Screen", this.props)
         return (
             <div>
                 <NavBar  user={this.props.user} logout={this.props.logout}/>

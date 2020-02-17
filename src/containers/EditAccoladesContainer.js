@@ -15,7 +15,7 @@ export default class EditAccoladesContainer extends Component {
                 link: "",
                 order: 0
         }
-        // console.log(this.props.accolades)
+
     }
 
     handleSubmit = (e, id) => {
@@ -31,7 +31,7 @@ export default class EditAccoladesContainer extends Component {
                     order: this.state.order
             }
             delete objToSend['id']
-            console.log('%c This is the object being sent to add', 'color: #deff8b;', objToSend)
+ 
                 this.props.addObj('accolade', objToSend )
             })
         } else {
@@ -44,7 +44,7 @@ export default class EditAccoladesContainer extends Component {
                     link: this.state.link,
                     order: this.state.order
             }
-            console.log('%c This is the object being sent to edit', 'color: #deff8b;', objToSend)
+
                 this.props.editObj('accolade', objToSend )
             })
         }
@@ -66,15 +66,11 @@ export default class EditAccoladesContainer extends Component {
     }
 
     handleFormChange = (e) => {
-        console.log(e.target.name)
+
        
         this.setState({
             [e.target.name]: e.target.value
         })
-    }
-
-    componentDidUpdate(){
-        console.log(this.state)
     }
 
     changeEditing = (e, cardDetails) => {
