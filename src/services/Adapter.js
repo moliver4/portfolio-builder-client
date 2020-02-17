@@ -1,4 +1,6 @@
-const ROOT = 'http://localhost:3000/api/v1'
+// const ROOT = 'http://localhost:3000/api/v1' 
+//^^testing developement only
+const ROOT = 'https://serene-journey-12782.herokuapp.com/api/v1'
 const LOGIN = `${ROOT}/login`
 const SIGNUP = `${ROOT}/users`
 const USERSURL = `${ROOT}/users`
@@ -7,12 +9,7 @@ const PROJECTSURL = `${ROOT}/projects`
 const EDUCATIONSURL = `${ROOT}/educations`
 const EXPERIENCESURL = `${ROOT}/experiences`
 const ACCOLADESURL = `${ROOT}/accolades`
-// const USERSURL = 'https://serene-journey-12782.herokuapp.com/users'
-// const SKILLSURL = 'https://serene-journey-12782.herokuapp.com/skills'
-// const PROJECTSURL = 'https://serene-journey-12782.herokuapp.com/projects'
-// const EDUCATIONSURL = 'https://serene-journey-12782.herokuapp.com/educations'
-// const EXPERIENCESURL = 'https://serene-journey-12782.herokuapp.com/experiences'
-// const ACCOLADESURL = 'https://serene-journey-12782.herokuapp.com/accolades'
+
 //to use this class, import into the page as Adapter.
 //have an object assembled with necessary information to pass into the method. some methods will need the ID as well
 //call methods as Adapter.fetchUser(obj) this will return a promise that you will do something with
