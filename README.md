@@ -2,11 +2,19 @@
 
 Hello! This is the github repo for the client-side of Portfolio Builder Lite.
 
-* sign in with your current email or create a new user account
+* sign in with your current email or create a new user account with an email and password
     view, create and edit items in your portfolio
     view your finalized portfolio!
 
 * after your portfolio is created, the link can be shared without a user needing to login. So your portfolio/resume can be seen by an employer directly without hassle.
+
+## Built with
+React
+Bootstrap
+Ruby on Rails API
+Authentication with bcrypt and jwt tokens
+PostGreSQL
+
 ## Hosted 
 Hosted here at [www.portfoliobuilderlite.com](www.portfoliobuilderlite.com)
 

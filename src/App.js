@@ -334,6 +334,7 @@ class App extends React.Component {
   }
 
   logoutHandler = () => {
+    localStorage.clear()
     this.resetState()
   }
 
