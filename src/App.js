@@ -14,7 +14,7 @@ class App extends React.Component {
   
     this.state = {
       loggedIn: false,
-      email: "",
+      newUser: false,
       user: {},
       skills: [],
       projects: [],
@@ -24,6 +24,12 @@ class App extends React.Component {
     }
   }
 
+  toggleSignIn = () => {
+    this.setState(prevState => ({
+        newUser: !prevState.newUser
+    }))
+}
+
   //toggles logIn and logout (optional)
   toggleLogin = () => {
     this.setState(prevState => {
@@ -31,7 +37,10 @@ class App extends React.Component {
     })
   }
 
+  //**MAYBE DELETE THIS? */
   submitLoginHandler = (e) => {
+
+    console.log("pressed")
     e.preventDefault()
     if (this.state.email.length < 6) {
       window.alert('Please enter a valid email address.')
@@ -46,6 +55,7 @@ class App extends React.Component {
 
   // DK - keep loggedIn state change in the body of setState so up-to-date state is sent down to components
   updateState = (data) => {
+    console.log('inside App, updateState method', data)
     this.setState({
       user: data.user,
       skills: data.skills,
@@ -313,7 +323,7 @@ class App extends React.Component {
   resetState=() => {
     this.setState({
       loggedIn: false,
-      email: "",
+      newUser: false,
       user: {},
       skills: [],
       projects: [],
@@ -328,7 +338,6 @@ class App extends React.Component {
   }
 
 
-
   render() {
     return (
       <div>
@@ -338,6 +347,9 @@ class App extends React.Component {
             exact path="/" 
             render={()=> <LoginScreen 
               loggedIn={!this.state.loggedIn}
+              toggleSignIn={this.toggleSignIn}
+              newUser={this.state.newUser}
+              updateState={this.updateState}
               submitLogin={this.submitLoginHandler} 
               handleInputChange={this.inputEmailChangeHandler} 
               email={this.state.email}

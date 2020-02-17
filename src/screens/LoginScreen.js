@@ -1,9 +1,112 @@
-import React from 'react'
+import React, { useState, Fragment } from 'react'
 import LoginHOC from '../HOCs/LoginHOC'
 import logo from '../images/logo2.png'
 import Footer from '../components/Footer'
+import Adapter from '../services/Adapter'
 
-const LoginScreen = ({ email, submitLogin, handleInputChange}) => {
+const LoginScreen = ({ newUser, toggleSignIn, loggedIn, updateState }) => {
+    const [email, setEmail]=useState('')
+    const [password, setPassword]=useState('')
+
+    const handleLogin = (e) => {
+        e.preventDefault()
+        Adapter.login(email, password)
+        // .then(console.log)
+        .then(data => {
+            localStorage.setItem('jwt', data.jwt)
+            updateState(data.user)
+            setEmail('')
+            setPassword('')
+        })
+        .catch(error => console.log('error message login', error))
+    }
+
+    const handleSignup = (e) => {
+        e.preventDefault()
+        Adapter.signup(email, password)
+        // .then(console.log)
+        .then(data => {
+            localStorage.setItem('jwt', data.jwt)
+            updateState(data)
+            setEmail('')
+            setPassword('')
+        })
+        .catch(error => console.log('error message login', error))
+    }
+
+    const showForm = () => {
+        if (!newUser) {
+            return (
+                <>
+                <h4>Login or SignUp to Get Started</h4>
+                <form className='py-3' id="login-form" onSubmit={handleLogin}>
+                            <div className='form-group text-center' >
+                                    <label htmlFor='email_address'> </label> 
+                                    <input 
+                                        style={styles.email}
+                                        className='form text-center'
+                                        placeholder="Enter email"
+                                        type='text' 
+                                        value={email} 
+                                        name='email_address'
+                                        onChange={(e) => setEmail(e.target.value)}
+                                    />
+                                    <small id="emailHelp" className="form-text text-muted">Please enter a username or email for this portfolio.</small>
+                                    <label htmlFor='email_address'> </label> 
+                                    <input 
+                                        style={styles.email}
+                                        className='form text-center'
+                                        placeholder="Enter password"
+                                        type='password' 
+                                        value={password} 
+                                        name='password'
+                                        onChange={(e) => setPassword(e.target.value)}
+                                    />
+                                    
+                            </div>
+                            <input onClick={(e) => handleLogin(e)} type='button' style={styles.logIn} className="btn btn-outline-info" value='Login' />
+                            <button style={styles.logIn} className="btn btn-outline-info" onClick={toggleSignIn}>Don't have an account? Sign Up Here</button>
+                        </form>
+                        
+                </>
+            )
+        } else {
+             return (
+             <>
+             <h4>SignUp to Get Started</h4>
+                <form className='py-3' id="login-form" onSubmit={handleLogin}>
+                            <div className='form-group text-center' >
+                                    <label htmlFor='email_address'> </label> 
+                                    <input 
+                                        style={styles.email}
+                                        className='form text-center'
+                                        placeholder="Enter email"
+                                        type='text' 
+                                        value={email} 
+                                        name='email_address'
+                                        onChange={(e) => setEmail(e.target.value)}
+                                    />
+                                    <small id="emailHelp" className="form-text text-muted">Please enter a username or email for this portfolio.</small>
+                                    <label htmlFor='email_address'> </label> 
+                                    <input 
+                                        style={styles.email}
+                                        className='form text-center'
+                                        placeholder="Enter password"
+                                        type='password' 
+                                        value={password} 
+                                        name='password'
+                                        onChange={(e) => setPassword(e.target.value)}
+                                    />
+                                    
+                            </div>
+                            <input onClick={(e) => handleSignup(e)} type='button' style={styles.logIn} className="btn btn-outline-info" value='SignUp' />
+                            <button style={styles.logIn} className="btn btn-outline-info" onClick={toggleSignIn}>Have an account? Log In Here</button>
+                        </form>
+                        
+                </>
+             )
+        }
+    }
 
     return (
         <div>
@@ -14,23 +117,7 @@ const LoginScreen = ({ email, submitLogin, handleInputChange}) => {
                     <div className='col' width='25'>
 
                         <img className='py-5' width="150px" src={logo} ></img>
-                        <h4>Login or SignUp to Get Started</h4>
-                        <form className='py-3' id="login-form" onSubmit={submitLogin}>
-                            <div className='form-group text-center' >
-                                    <label htmlFor='email_address'> </label> 
-                                    <input 
-                                        style={styles.email}
-                                        className='form text-center'
-                                        placeholder="Enter email"
-                                        type='text' 
-                                        value={email} 
-                                        name='email_address'
-                                        onChange={(e) => handleInputChange(e)}
-                                    />
-                                    <small id="emailHelp" className="form-text text-muted">Please enter a username or email for this portfolio.</small>
-                            </div>
-                            <input onClick={(e) => submitLogin(e)} type='button' style={styles.logIn} className="btn btn-outline-info" value='Login' />
-                        </form>
+                        {showForm()}
 
                         <div className="p-3 mb-2 text-white" style={styles.textContainer}>
                             <h2>Welcome to MVP Portfolio Builder Lite!</h2>
@@ -59,7 +146,7 @@ const LoginScreen = ({ email, submitLogin, handleInputChange}) => {
 }
 
 const styles = {
-    logIn: {marginTop: 10},
+    logIn: {marginTop: 10, marginBottom: 10, marginLeft: 20},
     email: {
         width: '50%',
         height: 40,

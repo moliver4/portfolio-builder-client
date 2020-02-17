@@ -24,9 +24,9 @@ const EditAccoladeForm = (props) => {
                     <label for="picture-url">External Link </label>  
                     <input className="form-control" type='text' name='link' value={link} onChange={e => props.handleFormChange(e)}/>
                 </div>
-                <div class="form-group">
+                <div className="form-group">
                 <label for="priority">Priority</label>
-                    <select onChange={e => props.handleFormChange(e)} class="form-control" name="order">
+                    <select onChange={e => props.handleFormChange(e)} className="form-control" name="order">
                     <option selected >Make a selection</option>
                     <option value="3">High</option>
                     <option value="2">Medium</option>
