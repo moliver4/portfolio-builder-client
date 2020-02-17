@@ -19,7 +19,7 @@ PostGreSQL
 Hosted here at [www.portfoliobuilderlite.com](www.portfoliobuilderlite.com)
 
 ## Demo ##
-![Demo Gif Here](https://github.com/moliver4/portfolio-builder-client/blob/master/ezgif.com-video-to-gif.gif)
+![Demo Gif Here](https://github.com/moliver4/portfolio-builder-client/blob/master/pbdemo.gif)
 
 ## Why We Made This ##
 Working in a group collaborative effort, we wanted to fully exercise our understanding of ReactJS and Routing. We wanted to create something that would allow all team members to gain important experience with async behaviors, controlled forms, CSS, etc, while also providing a potentially useful product.
