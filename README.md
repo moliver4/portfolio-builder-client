@@ -7,6 +7,9 @@ Hello! This is the github repo for the client-side of Portfolio Builder Lite.
     view your finalized portfolio!
 
 * after your portfolio is created, the link can be shared without a user needing to login. So your portfolio/resume can be seen by an employer directly without hassle.
+## Hosted 
+Hosted here at [www.portfoliobuilderlite.com](www.portfoliobuilderlite.com)
+
 ## Demo ##
 ![Demo Gif Here](https://github.com/moliver4/portfolio-builder-client/blob/master/ezgif.com-video-to-gif.gif)
 
@@ -39,6 +42,12 @@ $ rails db:seed //if you want dummy data
 $ rails s //start server 
 
 ```
+
+## TODO ##
+Add additional template layouts
+Add authentication
+
+
 ### Acknowledgements
 Huge Thanks to all friends and peers who contributed with suggestions and support.
 
