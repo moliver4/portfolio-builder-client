@@ -39,8 +39,6 @@ class App extends React.Component {
 
   //**MAYBE DELETE THIS? */
   submitLoginHandler = (e) => {
-
-    console.log("pressed")
     e.preventDefault()
     if (this.state.email.length < 6) {
       window.alert('Please enter a valid email address.')
@@ -55,7 +53,6 @@ class App extends React.Component {
 
   // DK - keep loggedIn state change in the body of setState so up-to-date state is sent down to components
   updateState = (data) => {
-    console.log('inside App, updateState method', data)
     this.setState({
       user: data.user,
       skills: data.skills,
@@ -111,38 +108,37 @@ class App extends React.Component {
           return {
             skills: [...prevState.skills, data]
           }
-        }, () => console.log('skill added') )
+        })
         break
       case 'project':
         this.setState(prevState=> {
           return {
             projects: [...prevState.projects, data]
           }
-        }, () => console.log('project added') )
+        })
         break
       case 'education':
         this.setState(prevState=> {
           return {
             education: [...prevState.education, data]
           }
-        }, () => console.log('education added') )
+        })
         break
       case 'experience':
         this.setState(prevState=> {
           return {
             experiences: [...prevState.experiences, data]
           }
-        }, () => console.log('experience added') )
+        })
         break
       case 'accolade':
         this.setState(prevState=> {
           return {
             accolades: [...prevState.accolades, data]
           }
-        }, () => console.log('accolade added') )
+        })
         break
       default:
-        console.log('nothing was added and everything is broken')
         break
     }
   }
@@ -175,51 +171,50 @@ class App extends React.Component {
         temp.then(data => this.editObjStateHandler('user', data))
         break
       default:
-        console.log('i got nothing, nothing was edited and i cry')
+
         break
     }
   }
 
   editObjStateHandler = (name, data) => {
-    console.log(`${name} data: ${data} made it to set state handler for edit`) 
+
     switch(name){
       case 'skill':
         this.setState(prevState=> {
           return {
             skills: this.editHelper(prevState.skills, data)
           }
-        }, () => console.log('skill edited') )
+        })
         break
       case 'project':
         this.setState(prevState=> {
           return {
             projects: this.editHelper(prevState.projects, data)
           }
-        }, () => console.log('project edited') )
+        })
         break
       case 'education':
         this.setState(prevState=> {
           return {
             education: this.editHelper(prevState.education, data)
           }
-        }, () => console.log('education edited') )
+        })
         break
       case 'experience':
         this.setState(prevState=> {
           return {
             experiences: this.editHelper(prevState.experiences, data)
           }
-        }, () => console.log('experience edited') )
+        })
         break
       case 'accolade':
         this.setState(prevState=> {
           return {
             accolades: this.editHelper(prevState.accolades, data)
           }
-        }, () => console.log('accolade edited') )
+        })
         break
       case 'user':
-        console.log('updating state of user. It will become this: ', data)
         this.setState( 
            {
             user: data
@@ -227,7 +222,6 @@ class App extends React.Component {
          )
         break
       default:
-        console.log('nothing was edited and everything is broken')
         break
     }
   }
@@ -264,57 +258,57 @@ class App extends React.Component {
         temp.then(data => this.deleteObjStateHandler('accolade', data))
         break
       default:
-        console.log('i got nothing, delete fetch broken')
+
         break
     }
   }
 
   deleteObjStateHandler = (name, data) => {
-    console.log(`${name} id: ${data.id} made it to set state handler for delete`)
+
     switch(name){
       case 'skill':
         this.setState(prevState=> {
           return {
             skills: this.deleteHelper(prevState.skills, data.id)
           }
-        }, () => console.log('skill deleted') )
+        })
         break
       case 'project':
         this.setState(prevState=> {
           return {
             projects: this.deleteHelper(prevState.projects, data.id)
           }
-        }, () => console.log('project deleted') )
+        })
         break
       case 'education':
         this.setState(prevState=> {
           return {
             education: this.deleteHelper(prevState.education, data.id)
           }
-        }, () => console.log('education deleted') )
+        })
         break
       case 'experience':
         this.setState(prevState=> {
           return {
             experiences: this.deleteHelper(prevState.experiences, data.id)
           }
-        }, () => console.log('experience deleted') )
+        })
         break
       case 'accolade':
         this.setState(prevState=> {
           return {
             accolades: this.deleteHelper(prevState.accolades, data.id)
           }
-        }, () => console.log('accolade deleted') )
+        })
         break
       default:
-        console.log('nothing was deleted and everything is broken')
+
         break
     }
   }
 
   deleteHelper = (prev, id) => {
-    console.log(prev, id)
+
     return prev.filter(o => o.id !== id)
   }
 

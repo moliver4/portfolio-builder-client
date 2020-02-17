@@ -2,7 +2,7 @@ import React from 'react'
 
 
 const EditSkillForm = (props) => {
-    console.log('skillform details', props.cardDetails)
+
 
     const { category, name, proficiency, link_url, order } = props.cardDetails
   

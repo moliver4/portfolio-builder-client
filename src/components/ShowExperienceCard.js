@@ -4,8 +4,6 @@ import React, { Component } from 'react'
 
 const ShowExperienceCard = (props) => {
 
-    console.log(props.cardDetails)
-
     const {id, company, role, summary, start_date, end_date, external_link} = props.cardDetails
 
     return(

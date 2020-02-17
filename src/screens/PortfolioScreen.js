@@ -41,7 +41,7 @@ export class PortfolioScreen extends Component {
     }
 
     setError = (error) => {
-        console.log(error)
+        // console.log(error)
         this.setState({error: true})
     }
 
@@ -64,7 +64,7 @@ export class PortfolioScreen extends Component {
     
     sortData = (data) => {
         let sorted = data.sort((a,b) => b.order - a.order)
-        console.log(sorted)
+        // console.log(sorted)
         return sorted 
         
     }

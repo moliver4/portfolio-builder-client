@@ -4,8 +4,6 @@ import React, { Component } from 'react'
 
 const ShowSkillsCard = (props) => {
 
-    console.log(props.cardDetails)
-
     const { id, category, name, proficiency, link_url } = props.cardDetails
 
     const showProf=(p)=> {
@@ -16,7 +14,7 @@ const ShowSkillsCard = (props) => {
         } else if (p === 3) {
             return 'Expert'
         } else {
-            console.log('hello')
+            return
         }
     }
 

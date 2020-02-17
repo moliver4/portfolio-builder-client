@@ -4,7 +4,6 @@ import React from 'react'
 
 const ShowEducationCard = (props) => {
 
-  console.log(props.cardDetails)
 
   const { id, institution, major, grad_date, external_link} = props.cardDetails
 

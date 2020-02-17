@@ -4,7 +4,6 @@ import React from 'react'
 
 const ShowAccoladeCard = (props) => {
 
-    console.log(props.cardDetails)
 
     const {id, name, summary, link} = props.cardDetails
 

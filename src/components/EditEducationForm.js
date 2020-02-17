@@ -5,7 +5,7 @@ import React from "react"
 //deconstruct props 
 
 const EditEducationForm = (props) => {
-  console.log(props.cardDetails)
+
 
   const { institution, major, grad_date, external_link, order } = props.cardDetails
 

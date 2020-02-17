@@ -5,7 +5,7 @@ import React from "react"
 //deconstruct props 
 
 const EditAccoladeForm = (props) => {
-  console.log(props.cardDetails)
+
 
   const { name, summary, link, order } = props.cardDetails
 
