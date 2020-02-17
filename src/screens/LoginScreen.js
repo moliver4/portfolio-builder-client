@@ -127,7 +127,7 @@ const LoginScreen = ({ newUser, toggleSignIn, loggedIn, updateState }) => {
                         </div>
 
                         <div style={styles.video}>
-                            <iframe src='https://www.youtube.com/embed/LLfgOdKEudE'
+                            <iframe src='https://youtu.be/hKEhS3w0bls'
                             frameBorder='0'
                             allow='autoplay;'
                             allowFullScreen
