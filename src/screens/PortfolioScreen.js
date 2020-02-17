@@ -14,7 +14,7 @@ export class PortfolioScreen extends Component {
         this.state = {
             loggedInUser: props.loggedInUser,
             user: {},
-            skills: [],
+            skills: null,
             projects: [],
             education: [],
             experiences: [],
@@ -71,7 +71,7 @@ export class PortfolioScreen extends Component {
     // if user is logged in (prop passed from app.js), show the edit button that redirects to edit/user_id page
 
     render() {
-        if (this.state.skills.length > 0) {
+        if (this.state.skills !== null) {
         return (
             <div> 
                 {this.props.loggedIn && this.state.match ? <NavBar portfolio={true} logout={this.props.logout}/> : null} 
